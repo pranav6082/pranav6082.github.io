@@ -1,0 +1,9 @@
+title: "Pranav Garg"
+description: "Posts by Pranav Garg, cofounder of Kolo, on building with AI."
+url: "https://pranav6082.github.io"
+theme: jekyll-theme-primer
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+include:
+  - llms.txt

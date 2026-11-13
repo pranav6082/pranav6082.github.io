@@ -1,0 +1,14 @@
+# Pranav Garg: building Kolo with AI
+
+> Posts by Pranav Garg, cofounder of Kolo (Indian home-building advisors), on doing all his product work through Claude: how he organises AI threads, an autonomous work 'factory', and token spend as a resource. Newest first.
+
+## Posts
+
+- [Tokens are a resource, like money and time](https://raw.githubusercontent.com/pranav6082/pranav6082.github.io/main/posts/2026-10-30-tokens-are-a-resource.md) (30 October 2026): Token spend has to move the outcome in proportion, the same rule that always applied to money and engineering time.
+- [The factory I built, and why I shut it down](https://raw.githubusercontent.com/pranav6082/pranav6082.github.io/main/posts/2026-10-30-the-factory.md) (30 October 2026): A system that turned every Slack and email request into a ticket and closed 618 of 867 in a couple of days, then burnt too many tokens.
+- [How I organise my Claude threads](https://raw.githubusercontent.com/pranav6082/pranav6082.github.io/main/posts/2026-10-28-organising-claude-threads.md) (28 October 2026): Threads by project, with a control room and child threads, work better than threads by function.
+
+## Optional
+
+- [Website](https://pranav6082.github.io/)
+- [LinkedIn](https://www.linkedin.com/in/pranav6082/)
