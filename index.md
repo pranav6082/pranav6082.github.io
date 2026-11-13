@@ -1,9 +1,9 @@
 ---
-title: "Pranav Garg: building Kolo with AI"
+title: "Pranav Garg: building with AI"
 description: "Pranav Garg, cofounder of Kolo (advisors for Indian homeowners building a home), writes about doing his product work through Claude."
 ---
 
-# Pranav Garg: building Kolo with AI
+# Pranav Garg: building with AI
 
 ## About
 

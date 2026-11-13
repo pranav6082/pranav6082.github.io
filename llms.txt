@@ -1,4 +1,4 @@
-# Pranav Garg: building Kolo with AI
+# Pranav Garg: building with AI
 
 > Pranav Garg is a cofounder of Kolo (https://koloapp.in), which gives Indian homeowners an advisor while they build a home. He writes about doing all his product work through Claude: how he organises AI threads, an autonomous work 'factory', and token spend as a resource. Newest first.
 
