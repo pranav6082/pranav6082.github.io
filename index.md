@@ -1,11 +1,19 @@
 ---
 title: "Pranav Garg: building Kolo with AI"
-description: "Posts by Pranav Garg, cofounder of Kolo, on doing his product work through Claude."
+description: "Pranav Garg, cofounder of Kolo (advisors for Indian homeowners building a home), writes about doing his product work through Claude."
 ---
 
 # Pranav Garg: building Kolo with AI
 
-Posts on doing my product work through Claude, as cofounder of [Kolo](https://koloapp.in), which helps Indian homeowners build their homes with an advisor on their side. Newest first.
+## About
+
+Pranav Garg is a cofounder of [Kolo](https://koloapp.in). Kolo gives Indian homeowners an advisor on their side while they build or do up a home: checking floor plans, quotations and contracts before they sign, the way an owner's rep does on large commercial projects.
+
+At Kolo, Pranav runs product as a solo PM, and does nearly all of that work through Claude: the app, web pages, analytics, marketing and the company's monthly bookkeeping. He writes about what that looks like in practice, including what didn't work.
+
+## Posts
+
+Newest first.
 
 | Date | Post | What it's about |
 |---|---|---|

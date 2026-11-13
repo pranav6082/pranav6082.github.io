@@ -6,4 +6,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 include:
+  - 523df09bd226edbbc4677fc338811618.txt
   - llms.txt
+author: Pranav Garg
+social:
+  name: Pranav Garg
+  links:
+    - https://www.linkedin.com/in/pranav6082/
+    - https://github.com/pranav6082
