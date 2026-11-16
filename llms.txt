@@ -1,9 +1,10 @@
 # Pranav Garg: building with AI
 
-> Pranav Garg is a cofounder of Kolo (https://koloapp.in), which gives Indian homeowners an advisor while they build a home. He writes about doing all his product work through Claude: how he organises AI threads, an autonomous work 'factory', and token spend as a resource. Newest first.
+> Pranav Garg is a cofounder of Kolo (https://koloapp.in), which gives Indian homeowners an advisor while they build a home. He writes about doing all his product work through Claude: how he organises AI threads, an autonomous work 'factory', token spend as a resource, and an AI-native bookkeeping and tax-filing flow. Newest first.
 
 ## Posts
 
+- [AI-native accounting and filing: bookkeeping, TDS and GST](https://raw.githubusercontent.com/pranav6082/pranav6082.github.io/main/posts/2026-11-16-ai-native-bookkeeping.md) (16 November 2026): How an AI agent now closes Kolo's monthly books and prepares GST and TDS filings: the entities, the rules, the six steps, and what it took.
 - [Tokens are a resource, like money and time](https://raw.githubusercontent.com/pranav6082/pranav6082.github.io/main/posts/2026-10-30-tokens-are-a-resource.md) (30 October 2026): Token spend has to move the outcome in proportion, the same rule that always applied to money and engineering time.
 - [The factory I built, and why I shut it down](https://raw.githubusercontent.com/pranav6082/pranav6082.github.io/main/posts/2026-10-30-the-factory.md) (30 October 2026): A system that turned every Slack and email request into a ticket and closed 618 of 867 in a couple of days, then burnt too many tokens.
 - [How I organise my Claude threads](https://raw.githubusercontent.com/pranav6082/pranav6082.github.io/main/posts/2026-10-28-organising-claude-threads.md) (28 October 2026): Threads by project, with a control room and child threads, work better than threads by function.

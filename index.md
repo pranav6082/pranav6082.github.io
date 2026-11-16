@@ -17,6 +17,7 @@ Newest first.
 
 | Date | Post | What it's about |
 |---|---|---|
+| 16 November 2026 | [AI-native accounting and filing: bookkeeping, TDS and GST](posts/2026-11-16-ai-native-bookkeeping.html) | How an AI agent now closes Kolo's monthly books and prepares GST and TDS filings: the entities, the rules, the six steps, and what it took. |
 | 30 October 2026 | [Tokens are a resource, like money and time](posts/2026-10-30-tokens-are-a-resource.html) | Token spend has to move the outcome in proportion, the same rule that always applied to money and engineering time. |
 | 30 October 2026 | [The factory I built, and why I shut it down](posts/2026-10-30-the-factory.html) | A system that turned every Slack and email request into a ticket and closed 618 of 867 in a couple of days, then burnt too many tokens. |
 | 28 October 2026 | [How I organise my Claude threads](posts/2026-10-28-organising-claude-threads.html) | Threads by project, with a control room and child threads, work better than threads by function. |
