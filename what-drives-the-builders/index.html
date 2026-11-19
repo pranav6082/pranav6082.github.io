@@ -162,6 +162,7 @@ button:disabled{opacity:.35;cursor:default}
 #stage{touch-action:none;cursor:grab}#stage.drag{cursor:grabbing}
 #intros .intro.isnew{border-color:var(--new)}#intros .intro:not(.isnew){border-color:var(--line)}
 @media (max-width:767px){.zbar{left:6px;bottom:6px}.zbar button{font-size:12px;padding:5px 9px;min-width:32px}.zbar #zin,.zbar #zout{font-size:17px;padding:3px 9px}}
+.more{margin-top:22px;font-size:15px}.more a{color:var(--muted)}
 </style>
 </head>
 <body>
@@ -1426,6 +1427,7 @@ function render(){
   $('sIn').scrollTop=0;
   $('prev').disabled=i===0;$('next').disabled=i===T.length-1;
   var fid=Object.keys(nw).concat(Object.keys(nn));if(st.f)fid=fid.concat(st.f);focus(fid,!!st.core||(!!st.people&&!fid.length));
+  if(i===T.length-1){var mo=document.createElement('p');mo.className='more';mo.innerHTML='<a href="2/">Next article: how one oil company came to do everything →</a>';nb.appendChild(mo);}
   showIntro(0);$('icard').classList.toggle('hide',i>=INTRO);document.body.classList.toggle('introon',i<INTRO);
 }
 function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}

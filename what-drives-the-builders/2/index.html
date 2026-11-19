@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>What drives the builders</title>
+<meta name="description" content="Two nights of asking how one oil company came to run shops, phones, cricket and AI, and who decides what it does next.">
+<link rel="canonical" href="https://pranav6082.github.io/what-drives-the-builders/2/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:title" content="What drives the builders">
+<meta property="og:description" content="Two nights of asking how one oil company came to run shops, phones, cricket and AI, and who decides what it does next.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pranav6082.github.io/what-drives-the-builders/2/">
+<meta property="og:image" content="https://pranav6082.github.io/what-drives-the-builders/og-card-v2.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What drives the builders">
+<meta name="twitter:description" content="Two nights of asking how one oil company came to run shops, phones, cricket and AI, and who decides what it does next.">
+<meta name="twitter:image" content="https://pranav6082.github.io/what-drives-the-builders/og-card-v2.png">
+<style>
+:root{color-scheme:light;--bg:#d9cfb8;--cork:#cdbf9f;--ink:#1d1d1b;--muted:#5d5a52;--panel:#fbfaf6;--line:#cfc8b6;
+--co:#e3ecf5;--coB:#4a6b8a;--per:#fff3bf;--perB:#a07c00;--ev:#ffffff;--evB:#8a8a82;--ct:#efe7fb;--ctB:#7048a8;
+--str:#9c2b23;--new:#e8590c;--lab:#fbfaf6;--note:#fff9db;
+--tr:#e3f2e1;--trB:#3f7d3a;--gov:#ecebe6;--govB:#6b6b66;--fu:#fff0d6;--fuB:#b06f00;--tk:#2f9e44;--lk:#5d5a52}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden}
+body{background:var(--bg);color:var(--ink);font:15px/1.4 -apple-system,system-ui,sans-serif}
+.pin{transition:opacity .35s}
+.k-per,.k-fam,.k-team{--kf:var(--per);--ks:var(--perB)}
+.k-co,.k-listed,.k-private,.k-place,.k-tech{--kf:var(--co);--ks:var(--coB)}
+.k-trust{--kf:var(--tr);--ks:var(--trB)}
+.k-gov{--kf:var(--gov);--ks:var(--govB)}
+.k-fund{--kf:var(--fu);--ks:var(--fuB)}
+.k-post,.k-doc,.k-video{--kf:var(--ev);--ks:var(--evB)}
+.k-globe{--kf:var(--ct);--ks:var(--ctB)}
+.f{fill:var(--kf);stroke:var(--ks);stroke-width:1.6;stroke-linejoin:round}
+.w{fill:var(--ks);stroke:none}
+.ln{fill:none;stroke:var(--ks);stroke-width:1.6}
+.tk{fill:var(--panel);stroke:var(--tk);stroke-width:1.4}.tkl{fill:none;stroke:var(--tk);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lk{fill:none;stroke:var(--lk);stroke-width:2.2}.lkb{fill:var(--lk)}
+.play{fill:#c92a2a}
+.pin .pl{fill:var(--lab);stroke:var(--line);stroke-width:1.2}
+.pin .nm{font-weight:700;font-size:15px;fill:var(--ink)}
+.pin .sb{font-size:12px;fill:var(--muted)}
+.pin .tack{fill:#c92a2a}
+.cn{fill:var(--panel);stroke:var(--muted);stroke-width:1}.cnt{font-size:10px;font-weight:700;fill:var(--ink);letter-spacing:.04em}
+.pin .deg{fill:var(--ink)}
+.pin .degt{fill:var(--panel);font-size:11px;font-weight:700}
+.pin.new .o,.pin.new .pl{stroke:var(--new);stroke-width:3.2}
+.pin.core .o,.pin.core .pl{stroke:#c92a2a;stroke-width:4}
+.str line{stroke:var(--str);stroke-width:2.2;transition:opacity .35s;stroke-linecap:round}
+.str.fam line{stroke-dasharray:10 6}
+.str.side line{stroke-dasharray:.5 6;stroke-width:3.2}
+.str.ctry line{stroke:var(--ctB);stroke-dasharray:14 4 2 4;stroke-width:2.2}
+.str.trail line{stroke:var(--muted);stroke-dasharray:4 4;stroke-width:1.8}
+.str.act line{marker-end:url(#mA)}
+.str.new line{stroke:var(--new);stroke-width:4}
+.str.side.new line{stroke-width:4.6}
+.str.act.new line{marker-end:url(#mAn)}
+#mA path{fill:var(--str)}#mAn path{fill:var(--new)}
+.str rect{fill:var(--lab);stroke:var(--line)}
+.str text{font-size:12px;fill:var(--ink);font-style:italic}
+.str.new text{font-weight:700;font-style:normal}
+.dim{opacity:.55}
+.faint{opacity:.22}
+.hide{display:none}
+#nar p.lead{font-weight:700;font-size:20.5px;line-height:1.45}
+.band rect{fill:rgba(251,250,246,.28);stroke:none}
+.band.fr rect{fill:rgba(227,236,245,.45);stroke:var(--coB);stroke-width:2;stroke-dasharray:8 6}
+.band text{font-size:13px;font-weight:800;letter-spacing:.09em;fill:var(--muted);text-transform:uppercase}
+.band.fr text{fill:var(--coB)}
+.band.hide{display:none}
+#motive rect{fill:var(--note);stroke:var(--perB);stroke-width:1.5}
+#motive .fold{fill:var(--cork);stroke:var(--perB);stroke-width:1.5}
+#motive .tack{fill:#c92a2a}
+#motive text{fill:var(--ink);font-size:13px}
+#motive .h{font-weight:800;font-size:14px;letter-spacing:.05em}
+/* opening picture */
+#intro{position:absolute;inset:0;width:100%;height:100%;display:block}#intro.hide{display:none}
+#intro .ih{font-weight:800;font-size:26px;letter-spacing:.06em;fill:var(--ink)}
+#intro .is{font-size:20px;font-style:italic;fill:var(--muted)}
+#intro .ax{stroke:var(--muted);stroke-width:2.2}#intro .axt{font-size:19px;fill:var(--muted);font-weight:600}
+#iA path{fill:var(--muted)}
+#intro .gone{opacity:.3}#intro .gone .f{stroke-dasharray:3 3}
+/* steps */
+#prog{height:3px;background:var(--line);border-radius:2px;margin:0 0 14px;overflow:hidden}#prog i{display:block;height:100%;background:var(--new);transition:width .3s}
+#ttl{font-size:28px;line-height:1.2;margin:0 0 18px;letter-spacing:-.01em}
+#nar p{font-size:19px;line-height:1.65;margin:0 0 16px}
+#nar blockquote{margin:4px 0 18px;border-left:4px solid var(--new);background:var(--bg);border-radius:0 8px 8px 0;padding:10px 14px}
+#nar blockquote span{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:4px}
+#nar blockquote q{white-space:pre-line;quotes:none;font:600 16.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+#newb{margin-top:22px;border-top:1px solid var(--line);padding-top:12px}#newb.hide{display:none}
+#intros{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+#intros .intro{grid-template-columns:34px 1fr;gap:0 10px;padding:8px 10px;margin:0;border-width:1px;align-items:center}
+#intros .intro svg{width:34px;height:30px}
+#intros .intro h3{font-size:15px}#intros .intro h3 small{margin-left:6px;font-size:10.5px}
+#intros .intro p{font-size:13.5px;line-height:1.35;color:var(--muted)}
+/* layout: story 40% | map 60% */
+#app{display:grid;grid-template-columns:40% 60%;height:100%}
+#story{display:flex;flex-direction:column;min-height:0;background:var(--panel);border-right:1px solid var(--line)}
+#sIn{flex:1;overflow:auto;padding:36px 44px 24px;max-width:780px;width:100%;margin:0 auto}
+.meta{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted);margin:0 0 14px}
+#count{font-variant-numeric:tabular-nums;font-weight:600}
+.src{text-transform:uppercase;letter-spacing:.05em;font-size:11px;border:1px solid var(--line);border-radius:4px;padding:1px 6px}
+#w{font-size:23px;line-height:1.45;margin:0 0 20px;font-weight:500}
+.lbl{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:5px}
+#typed{border-left:4px solid var(--new);background:var(--bg);border-radius:0 8px 8px 0;padding:10px 14px;margin:0 0 20px}
+#typed.hide{display:none}
+#q{margin:0;font:600 17px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-line;color:var(--ink)}
+#back{margin:0 0 20px}#back.hide{display:none}
+#r{margin:0;font-size:18px;line-height:1.6}
+.intro{display:grid;grid-template-columns:52px 1fr;gap:4px 14px;align-items:start;border:1.5px solid var(--new);border-radius:10px;padding:14px 16px;margin:0 0 14px;background:var(--bg)}
+.intro svg{grid-row:span 2}
+.intro h3{margin:0;font-size:19px;line-height:1.25}
+.intro h3 small{font-weight:500;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-left:8px}
+.intro p{margin:0;font-size:17px;line-height:1.6}
+#nw{font-size:13.5px;color:var(--muted);margin:6px 0 0;line-height:1.5}
+#nw b{color:var(--new)}
+.bar{display:flex;gap:10px;align-items:center;justify-content:flex-start;padding:12px 44px 16px;border-top:1px solid var(--line);max-width:780px;width:100%;margin:0 auto}
+button{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:8px 16px;cursor:pointer}
+button.pri{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.bar button{font-size:14px;padding:6px 14px;min-height:40px;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:8px}.bar button.pri{background:transparent;color:var(--ink);border-color:var(--muted);font-weight:600}.bar button:disabled{opacity:.3}
+button:disabled{opacity:.35;cursor:default}
+#mapcol{position:relative;min-height:0;background:var(--cork)}
+#stage{position:absolute;inset:0;overflow:hidden;background:var(--cork)}
+#board{display:block;width:100%;height:100%}
+#icard{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;padding:28px 28px 64px;background:var(--cork)}#icard.hide{display:none}#icard img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.2)}body.introon .zbar,body.introon .mapbar,body.introon #key{display:none!important}body.introon #icard{padding:0;background:#1F4A36}body.introon #icard #ictext{display:flex}#ictext{display:none;flex-direction:column;justify-content:center;gap:18px;width:100%;height:100%;padding:8% 10%;color:#f4efe2}#ictext b{font-size:44px;line-height:1.08;letter-spacing:-.015em}#ictext span{font-size:21px;line-height:1.45;opacity:.85;max-width:30ch}
+#ititle{display:none;font-size:42px;line-height:1.08;font-weight:700;letter-spacing:-.015em;margin:4px 0 24px;color:var(--ink)}body.introon #ititle{display:block}
+@media (max-width:767px){#icard{padding:12px 12px 54px}body.introon #mapcol{height:calc(100vw * 630 / 1200);border-bottom:0}#ictext{padding:18px 22px;gap:8px}#ictext b{font-size:26px}#ictext span{font-size:14.5px}body.introon #ititle{display:none}}
+.mapbar{position:absolute;right:10px;bottom:10px;display:flex;gap:6px;z-index:3}
+.mapbar button{font-size:13px;padding:6px 11px;opacity:.95}
+#key{position:fixed;top:8px;right:8px;z-index:5;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12px;box-shadow:0 2px 10px rgba(0,0,0,.18);display:grid;grid-template-columns:auto auto;gap:2px 12px;max-width:calc(100vw - 16px)}
+#key.hide{display:none}
+#key h4{grid-column:1/-1;margin:2px 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+#key .r{display:flex;align-items:center;gap:6px;white-space:nowrap}
+#key svg{flex:none}
+@media (max-width:767px){
+ #app{display:flex;flex-direction:column}
+ #mapcol{flex:none;height:34vh;order:0;border-bottom:1px solid var(--line)}
+ #story{flex:1;order:1;border-right:0}
+ #sIn{padding:10px 16px 8px}.meta{margin-bottom:8px}
+ #ttl{font-size:21px;margin-bottom:10px}#nar p{font-size:16px;line-height:1.55;margin-bottom:11px}#nar p.lead{font-size:17px;line-height:1.4}
+ #nar blockquote{padding:8px 11px;margin-bottom:12px}#nar blockquote q{font-size:14px}
+ #newb{margin-top:12px;padding-top:8px}#intros{grid-template-columns:1fr 1fr;gap:6px}
+ #intros .intro{grid-template-columns:26px 1fr;padding:6px 8px;gap:0 7px}#intros .intro svg{width:26px;height:24px}
+ #intros .intro h3{font-size:13.5px}#intros .intro h3 small{display:none}#intros .intro p{font-size:12px}
+ #q{font-size:14.5px}#typed{padding:8px 11px;margin-bottom:12px}
+ #r{font-size:15px;line-height:1.5}#back{margin-bottom:10px}
+ .intro{grid-template-columns:40px 1fr;padding:10px 12px;gap:2px 10px}.intro svg{width:40px;height:36px}
+ .intro h3{font-size:16px}.intro p{font-size:14.5px;line-height:1.5}.intro{margin-bottom:10px}
+ .bar{padding:8px 16px 12px}
+ .mapbar{right:6px;bottom:6px}.mapbar button{font-size:12px;padding:5px 9px}
+ #key{top:8px;left:8px;right:8px;max-height:60vh;overflow:auto}
+}
+@media (max-width:767px){
+ #sIn{padding-bottom:64px}
+ .bar{position:fixed;left:0;right:0;bottom:0;z-index:4;justify-content:space-between;max-width:none;margin:0;padding:6px 12px calc(6px + env(safe-area-inset-bottom));background:var(--panel)}
+ .bar button{font-size:14px;padding:6px 14px;min-height:40px}
+ .bar button.pri{padding:6px 16px}
+}
+.zbar{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;z-index:3}
+.zbar button{font-size:13px;padding:6px 11px;opacity:.95;min-width:36px}
+.zbar #zin,.zbar #zout{font-size:18px;line-height:1;padding:4px 10px;font-weight:600}
+#stage{touch-action:none;cursor:grab}#stage.drag{cursor:grabbing}
+#intros .intro.isnew{border-color:var(--new)}#intros .intro:not(.isnew){border-color:var(--line)}
+@media (max-width:767px){.zbar{left:6px;bottom:6px}.zbar button{font-size:12px;padding:5px 9px;min-width:32px}.zbar #zin,.zbar #zout{font-size:17px;padding:3px 9px}}
+.more{margin-top:22px;font-size:15px}.more a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="app">
+<main id="story">
+ <div id="sIn">
+  <div id="prog" aria-hidden="true"><i id="progb"></i></div>
+  <p class="meta"><span id="count"></span><span class="src" id="src"></span></p>
+  <h1 id="ititle">What drives the builders</h1>
+  <div id="nar"></div>
+  <div id="newb"><span class="lbl">In this step</span><div id="intros"></div></div>
+  <p id="nw"></p>
+ </div>
+ <div class="bar"><button id="prev" aria-label="Back">← Back</button><button id="next" class="pri" aria-label="Next">Next →</button></div>
+</main>
+<aside id="mapcol">
+ <div id="stage"><svg id="board" xmlns="http://www.w3.org/2000/svg" viewBox="-180 -180 1820 1340" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Evidence board"></svg><svg id="intro" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -10 640 450" preserveAspectRatio="xMidYMid meet" role="img" aria-label="People form entities; people pass, the entity stays"></svg></div>
+ <div id="icard"><div id="ictext"><b>What drives the builders</b><span>People, what drives them, and how that shapes who builds India.</span></div></div><div class="zbar" role="group" aria-label="Map zoom"><button id="zout" aria-label="Zoom out">−</button><button id="zin" aria-label="Zoom in">+</button><button id="zreset" aria-label="Reset zoom">Reset</button></div><div class="mapbar"><button id="keyb">Key</button><button id="fit">Whole board</button></div>
+</aside>
+</div>
+<div id="key" class="hide"></div>
+<script>
+(function(){
+// ---------- final board: fixed positions ----------
+var W=160,H=54;
+var P={
+ // people band
+ mukesh:{t:'per',n:'Mukesh Ambani',s:'runs RIL',x:560,y:-80},
+ ceos:{t:'fam',n:'Hired CEOs',s:'one per business',x:900,y:-80},
+ kiran:{t:'per',n:'Kiran Mani',s:'ran JioStar digital',x:1520,y:-80},
+ isha:{t:'per',n:'Isha Ambani',s:'daughter',x:100,y:110},
+ anant:{t:'per',n:'Anant Ambani',s:'youngest son',x:860,y:110},
+ akash:{t:'per',n:'Akash Ambani',s:'elder son',x:1270,y:110},
+ // Reliance companies
+ ril:{t:'co',n:'Reliance Industries',s:'RIL, the listed parent',x:440,y:300},
+ retail:{t:'co',n:'Reliance Retail',s:'shops, not listed',x:100,y:450},
+ o2c:{t:'co',n:'Energy business',s:'oil to chemicals, green power',x:860,y:450},
+ jio:{t:'co',n:'Jio Platforms',s:'telecom and tech',x:1140,y:450},
+ media:{t:'co',n:'JioStar',s:'TV, Hotstar, films',x:1400,y:450},
+ jiomart:{t:'co',n:'JioMart',s:'online groceries',x:0,y:600},
+ digital:{t:'co',n:'Reliance Digital',s:'electronics stores',x:200,y:600},
+ jfs:{t:'co',n:'Jio Financial',s:'finance arm, listed',x:440,y:600},
+ // outside companies
+ blackrock:{t:'co',n:'BlackRock',s:'fund giant',x:-100,y:790},
+ paytm:{t:'co',n:'Paytm',s:'payments app',x:300,y:790},
+ groups:{t:'co',n:'Adani, Tata, Birla',s:'the other big groups',x:620,y:790},
+ openai:{t:'co',n:'OpenAI',s:'AI lab',x:1520,y:790},
+ // government and countries
+ india:{t:'ctry',n:'India',s:'the setting',x:520,y:940},
+ gov:{t:'co',n:'Government of India',s:'Digital India',x:800,y:940},
+ usa:{t:'ctry',n:'United States',s:"OpenAI's home",x:1520,y:940},
+ // places and technology
+ upi:{t:'co',n:'UPI',s:"India's payment rails",x:440,y:1090},
+ jamnagar:{t:'co',n:'Jamnagar',s:'the refinery, Gujarat',x:960,y:1090},
+ dc:{t:'co',n:'AI data centres',s:'planned, in India',x:1160,y:1090}
+};
+// bands: label, top, bottom, pins (a band shows once one of its pins is on). fr: drawn as the Reliance frame
+var BANDS=[
+ {n:'People',y0:-170,y1:165,ids:['mukesh','ceos','kiran','isha','anant','akash']},
+ {n:'Reliance companies',y0:222,y1:668,ids:['ril','retail','o2c','jio','media','jiomart','digital','jfs'],fr:1},
+ {n:'Other companies',y0:712,y1:850,ids:['blackrock','paytm','groups','openai']},
+ {n:'Government and countries',y0:862,y1:1000,ids:['india','gov','usa']},
+ {n:'Places and technology',y0:1012,y1:1150,ids:['upi','jamnagar','dc']}
+];
+// drawn kind of each pin (default: person)
+var K={ril:'listed',o2c:'co',jamnagar:'place',retail:'co',jiomart:'co',digital:'co',jio:'listed',media:'co',jfs:'listed',blackrock:'fund',
+ ceos:'team',openai:'co',usa:'globe',india:'globe',gov:'gov',groups:'co',dc:'place',paytm:'listed',upi:'tech'};
+var CN={ril:'IN',jio:'IN',jfs:'IN',retail:'IN',blackrock:'US',openai:'US',paytm:'IN'};
+Object.keys(P).forEach(function(id){P[id].i=K[id]||'per';});
+function ppl(id){return P[id].t==='per'||P[id].t==='fam';}
+// kind of each string (default: owns or runs)
+var SK={an_mu:'fam',is_mu:'fam',ak_mu:'fam',ki_oa:'act',us_oa:'ctry',in_gv:'ctry',gr_ri:'trail',jf_pt:'trail'};
+// RIL's ownership of its businesses is shown by the frame they sit in, not by strings
+var S={
+ mu_ri:['mukesh','ril','runs it|decides the money',.6],
+ ce_mu:['ceos','mukesh','report to him'],
+ is_mu:['isha','mukesh','daughter',.45],
+ an_mu:['anant','mukesh','son',.45],
+ ak_mu:['akash','mukesh','son',.72],
+ is_re:['isha','retail','runs it'],
+ an_o2:['anant','o2c','runs it'],
+ ak_ji:['akash','jio','runs it'],
+ ak_md:['akash','media','runs it too'],
+ re_jm:['retail','jiomart','runs it'],
+ re_rd:['retail','digital','runs it'],
+ ri_jf:['ril','jfs','split off|listed alone'],
+ jf_br:['jfs','blackrock','fund house|together',.55],
+ ki_md:['kiran','media','ran its|digital side',.45],
+ ki_oa:['kiran','openai','left for',.72],
+ us_oa:['usa','openai','American firm'],
+ in_gv:['india','gov','its government',.4],
+ gv_ri:['gov','ril','works alongside',.42],
+ gr_ri:['groups','ril','compared|side by side',.3],
+ o2_jn:['o2c','jamnagar','its refinery',.78],
+ ji_dc:['jio','dc','builds them',.3],
+ o2_dc:['o2c','dc','powers them',.3],
+ jf_pt:['jfs','paytm','same game?',.45],
+ pt_up:['paytm','upi','big share',.62],
+ jf_up:['jfs','upi','barely there',.55]
+};
+// ---------- two nights, step by step ----------
+// p: narration. The first line is the step's point. '>' = his typed words, '<' = his spoken words, kept exactly.
+// add: pins and strings this step adds. nt: notes on pins. mv: motive note lines. f: what to focus.
+var INTRO,CONC,MID;function stepLabel(k){return k<INTRO?'Introduction':k>=CONC?'Conclusion':'Step '+(k-INTRO+1)+' of '+MID;}
+var T=[
+ {id:'n0',act:'How it started',p:[
+ "Reliance turns crude oil into chemicals at Jamnagar. It also sold us our AC, the cheapest one we could find, at Reliance Digital. The same name covers a refinery, grocery shops, a phone network, cricket on TV and now AI data centres.",
+ "I wanted to know how one oil company ends up doing all of that, and who actually decides what it does next."],add:[],nt:[],mv:[],intro:1},
+ {id:'n0b',act:'How it started',p:[
+ "Every answer came back to a few people. Mukesh Ambani decides where the money goes. His three children each run a part. Hired CEOs run pieces of those parts, and some of them leave. His father, Dhirubhai, started the company, and it will pass to the children. The people change; Reliance stays.",
+ "This is two nights of asking, four months apart: typing in June, talking in October. Each step adds one piece to the map."],add:[],nt:[],mv:[],intro:2},
+
+ // ---------- night 1: June ----------
+ {id:'r1',act:'Why retail after oil',p:[
+ "Reliance made its name turning oil into chemicals, then moved into shops.",
+ ">Why did reliance did retail after oil",
+ "One night in June I asked Gemini why a company like that would start selling groceries. It gave four reasons: a hedge against oil prices and the climate shift, most Indian shops still being unorganised, steadier cash from shoppers than from business buyers, and stores that feed the phone business."],add:['ril','o2c'],nt:[],mv:[]},
+ {id:'r2',act:'Why retail after oil',p:[
+ "Retail is big: about $44 billion a year, and groceries are most of it.",
+ ">Break down retail buisness in terms of revenue and business metrics in usd by category and brand names",
+ "All four reasons pointed at shoppers, so I wanted the size. The answer: $43.8 billion in revenue and 387 million registered customers, with groceries far ahead of everything else."],add:['retail'],nt:[],mv:[]},
+ {id:'r3',act:'Why retail after oil',p:[
+ "Reliance didn't simply buy Big Bazaar. It took over the store leases after the deal fell through.",
+ "With that split in hand I ranked the brands myself: Smart Bazaar, Reliance Digital, Reliance Fresh. Mostly right, with Smart Bazaar first. Then I remembered Big Bazaar. The $3.4 billion deal for it fell through in 2022, so Reliance took about 800 store leases straight from the landlords."],add:[],nt:[],mv:[],f:['retail']},
+ {id:'r4',act:'Why retail after oil',p:[
+ "JioMart is Reliance's online grocery store.",
+ ">And wtf is jiomart - who buys from it",
+ "I'd heard the name for years without knowing who actually uses it. Two groups do: shoppers in smaller towns hunting discounts, and corner shops that restock through it."],add:['jiomart','re_jm'],nt:[],mv:[]},
+ {id:'r5',act:'Who owns what',p:[
+ "Reliance isn't one company. It's a parent that owns separate businesses, and Jio is one of them.",
+ ">Jio is child company under ril?",
+ "I'd come in asking about shops. If Jio sits under RIL, I wanted to know what else does."],add:['jio'],nt:[],mv:[]},
+ {id:'r6',act:'Who owns what',p:[
+ "Under the parent sit separate empires: energy, retail, telecom, media and finance.",
+ "I asked for the whole structure of RIL in one chart, and added what I knew: Jio Studios and the IPL team sit in the media business too."],add:['media'],nt:[],mv:[]},
+ {id:'r7',act:'Who owns what',p:[
+ "A Reliance share is a share of the parent, RIL. Retail isn't listed on its own.",
+ ">Reliance retail is independently listed?\nTodays reliance share we buy is ril share?",
+ "RIL owns most of Retail and most of Jio, so buying RIL is buying a slice of all of them."],add:[],nt:[['retail','not listed on its own']],mv:[],f:['ril','retail','jio']},
+ {id:'r8',act:'Who owns what',p:[
+ "Jio Financial was split off from RIL and listed on its own. It runs funds with BlackRock.",
+ "I compared it with Zerodha: will it run mutual funds under its own name? Yes, with BlackRock, the American fund giant, as its partner."],add:['jfs','ri_jf','blackrock','jf_br'],nt:[],mv:[]},
+ {id:'r9',act:'What binds it together',p:[
+ "I wanted the one idea that holds oil, shops, phones, cricket and funds together.",
+ ">Why this business? Amd whats the overarching philosophy amd vision which binds all of this together",
+ "A vision tells me what the people at the top want. The answer: \"What is good for India is good for Reliance.\" Each business goes after a bottleneck in daily life."],add:[],nt:[],mv:[],f:['ril','o2c','retail','jio','media','jfs']},
+ {id:'r10',act:'What binds it together',p:[
+ "\"Nation building\" isn't a full answer. They still have to pick which ten things to do.",
+ ">Its not that simple right - nation building needs say thousand things - they have to select whcih 10 they do and sequence them",
+ "The AI backed off, and called Reliance a careful allocator of money, with a filter for which ten."],add:[],nt:[],mv:[],f:['ril']},
+ {id:'r11',act:'What binds it together',p:[
+ "My guess at their filter: huge money upfront, and everyone ends up using it. AI fits perfectly.",
+ "Payments: everyone uses them, but they need no big money upfront. Highways and airports: big money, but not everyone uses them. This is my reading of their filter, not something they've said."],add:[],nt:[],mv:[],f:['ril','jio']},
+ {id:'r12',act:'What binds it together',p:[
+ "For AI, Reliance would buy chips, make the power, build data centres and use someone else's model.",
+ ">So ai - buy chips, produce energy, build data centers, buy model - dont think they are building theor own model from scratch- app is theors anyways",
+ "TV fits my filter too: news, serials, streaming, cricket, Bollywood."],add:['dc','ji_dc'],nt:[],mv:[]},
+ {id:'r13',act:'What binds it together',p:[
+ "Open models make more sense for them than paying GPT or Claude for every token.",
+ "Open models can sit in a data centre in India, be trained and improved, and be handed to Jio. For chips: Nvidia when they need the most advanced, maybe Google's TPUs too."],add:[],nt:[],mv:[],f:['dc','jio']},
+ {id:'r14',act:'The people',p:[
+ "Every one of these plans needs a huge number of people.",
+ ">All of this would require massive massive workforce- excluding ops work",
+ "The answer agreed that people are the choke point: money buys land and chips, not engineers. Reliance's plan is to lure Indian researchers home with computing power and to fund university programmes."],add:[],nt:[],mv:[],f:['dc','ril']},
+ {id:'r15',act:'The people',p:[
+ "Mukesh runs all of it with a very small group at the top.",
+ ">I mean not just the ai thing - while ril business- how does mukesh operates? Like Microsoft has cvp, jensen has 23 direct reports",
+ "Microsoft has layers of vice presidents. Jensen Huang keeps a flat team. Reliance has a small circle, led by the owner."],add:['mukesh','mu_ri'],nt:[],mv:[]},
+ {id:'r16',act:'The people',p:[
+ "Each business has hired CEOs, about seven in all, and they answer to Mukesh.",
+ ">Who all are these ceos and how many",
+ "Pankaj Pawar and Kiran Thomas at Jio, Jeyandran Venugopal at Retail, Hitesh Sethia at Jio Financial, Kevin Vaz and Kiran Mani in media."],add:['ceos','ce_mu'],nt:[],mv:[]},
+ {id:'r17',act:'The people',p:[
+ "Anant, the youngest son, runs the energy side, oil included.",
+ "Gemini suggested a follow-up and I tapped it: who runs the old oil business, if the heirs are focused on retail, tech and green energy?"],add:['anant','an_o2','an_mu'],nt:[],mv:[]},
+ {id:'r18',act:'The people',p:[
+ "A family business hiring global tech people is a marriage that may not last.",
+ ">Tech ceos is where core indian folls meet global folks - so that marriage is interesting if it survives- these tech ceos are all new"],add:[],nt:[],mv:['will the hired tech people stay?'],people:1,f:['ceos','mukesh']},
+ {id:'r19',act:'The people',p:[
+ "Kiran Mani shows it: he ran JioStar's digital side, then left to run OpenAI in Asia.",
+ ">Kiran mani left for oai",
+ "The answer called it the perfect case study of that fragile marriage."],add:['kiran','ki_md','openai','ki_oa','usa','us_oa'],nt:[],mv:[],people:1},
+ {id:'r20',act:'The people',p:[
+ "To keep people like that, the job has to feel like a mission for the country, plus world-class standing. That's my guess, not a fact.",
+ ">Nation building- like in arm forces - has to Probably be up for nation building plus high class in ceoness"],add:[],nt:[],mv:['a mission, plus standing (my guess)'],people:1,f:['ceos','kiran']},
+ {id:'r21',act:'Government and the gaps',p:[
+ "Reliance works alongside the government, as a kind of infrastructure partner.",
+ ">And how specifically is this tied with government and politics as nation building is theor core role",
+ "If nation building is the pitch, I wanted to see where the government comes in. The answer pointed to Digital India and the like."],add:['india','gov','in_gv','gv_ri'],nt:[],mv:[]},
+ {id:'r22',act:'Government and the gaps',p:[
+ "By my own filter, health, education and farming should be in. Reliance is barely there.",
+ ">But ynlike retail and telecom - yhey are nil in education and heath and things like agri - farmers- sector wjere 400m people are",
+ "Everyone needs them, and they take big money. The answer: these run on trust and people, not spending. Farming turned political after the 2020–21 protests, health needs doctors, and an app can't replace a teacher."],add:[],nt:[],mv:[],f:['ril','gov']},
+ {id:'r23',act:'The other groups',p:[
+ "Next I put Reliance beside Adani, Tata and Birla, to compare how each group thinks.",
+ ">Adani vs tata vs birlas in same axis compare ideologies etc whatever we have discussed in the thread",
+ "Reliance owns the pipes everyone uses. Adani builds what the state needs. Tata is mostly owned by charitable trusts. Birla makes cement and aluminium."],add:['groups','gr_ri'],nt:[],mv:[]},
+ {id:'r24',act:'The other groups',p:[
+ "Real estate, banks, education, health: none of the big groups really owns them.",
+ ">Real estate? Banks? Education? Heath? These sectors are not covered/owned by these groups",
+ "Lining the groups up made the gaps show. The answer: real estate is local land and politics, banks run into the RBI's rules for business groups, and health and education come back to trust."],add:[],nt:[],mv:[],f:['groups']},
+ {id:'r25',act:'The other groups',p:[
+ "Where Reliance goes, it comes for all of it.",
+ ">So reliance mostly in category they operate - they mostly come for everything, sheer dominance",
+ "Even retail, small next to telecom and streaming, is big enough to set the market."],add:[],nt:[],mv:[],f:['ril','retail','jio']},
+ {id:'r26',act:'The other groups',p:[
+ "We bought our AC at Reliance Digital because it was the cheapest.",
+ ">We had to buy ac - cheapest was in reliance digital",
+ "The answer: it buys straight from makers, gets volume rebates, and earns the margin back elsewhere in the group. I said Amazon and Croma have the same advantages. Same pool, it said, different games: Amazon spends to win, Croma sells on service."],add:['digital','re_rd'],nt:[],mv:[]},
+ {id:'r27',act:'The other groups',p:[
+ "It isn't just Reliance. No group, and not even the government, has made a dent in education, health and farming.",
+ ">I think not just teliance - no business group and even govt has not made a demt in education , health and agriculture",
+ "I added this the next afternoon."],add:[],nt:[],mv:[],f:['groups','gov']},
+ {id:'r28',act:'The other groups',p:[
+ "Jamnagar is where the refinery is, on the coast of Gujarat.",
+ "That evening I looked it up on Maps, to see the refinery and whether it has a port. Maps showed a Jamnagar Port, and that is where the June trail ends."],add:['jamnagar','o2_jn'],nt:[],mv:[]},
+
+ // ---------- night 2: October ----------
+ {id:'s1',act:'Who runs what',p:[
+ "Each of Mukesh's three children runs one part: Anant energy, Isha retail, Akash telecom.",
+ "<So, company: Anand Money has the oil business, Esha Money has the retail business, and Akash Money has the telecom business. Is that split correct?",
+ "Four months later I came back to it late at night, speaking instead of typing. Jio Platforms had listed the week before. The split was mostly right, names aside."],add:['isha','is_re','is_mu','akash','ak_ji','ak_mu'],nt:[['jio','listed October 2026']],mv:[]},
+ {id:'s2',act:'Who runs what',p:[
+ "Media sits with Akash too: JioHotstar, Mumbai Indians, the film studio.",
+ "<So then what about G Hotstar and Mumbai Zenith, the other sports franchise that is under all?"],add:['ak_md'],nt:[],mv:[]},
+ {id:'s3',act:'Who runs what',p:[
+ "Four people sit at the top: Mukesh and his three children.",
+ "<Basically all Reliance businesses, we are trying to map them to these four individuals who hit them directly.",
+ "I wanted every business mapped to one of them."],add:[],nt:[],mv:[],people:1,f:['mukesh','anant','isha','akash']},
+ {id:'s4',act:'Whose money',p:[
+ "The children run the businesses. The money is Mukesh's.",
+ "<Obviously everything is under Mukesh's money overall anyways.",
+ "The answer agreed: he decides where the capital goes, and they run the operations."],add:[],nt:[['mukesh','decides where the money goes']],mv:['Mukesh: the money stays with him'],people:1,f:['mukesh','ril']},
+ {id:'s5',act:'What I can buy',p:[
+ "A Reliance share is still a share of RIL, the parent.",
+ "<Now so when I buy the share of Reliance that is R I L's share is it",
+ "The same question I'd asked in June."],add:[],nt:[],mv:[],f:['ril']},
+ {id:'s6',act:'What I can buy',p:[
+ "The new listing was Jio Platforms, the telecom and tech arm.",
+ "<So the latest Jio IPO is is for what then?",
+ "RIL is listed. Jio Financial was split off and listed. This was the third."],add:[],nt:[],mv:[],f:['ril','jfs','jio']},
+ {id:'s7',act:'How they feed each other',p:[
+ "I guessed wrong: media sits with Akash, not Anant. The data centres sit under Jio Platforms.",
+ "<So this network 18 and the whole thing sits under Anant is it like Jio Hotstar and Jio cinemas"],add:[],nt:[],mv:[],f:['akash','media','dc','jio']},
+ {id:'s8',act:'How they feed each other',p:[
+ "Anant's energy business powers Akash's data centres. The brothers' businesses feed each other.",
+ "<So, in geo platforms, we'll need energy for data centers. So, it's like this vertical is getting its services to that vertical.",
+ "Data centres need power, and the oil business is the energy business too."],add:['o2_dc'],nt:[],mv:[]},
+ {id:'s9',act:'The finance arm',p:[
+ "Jio Financial is not a bank. It's an investment company the RBI regulates.",
+ "<Jiofin is for what then? Finance for what",
+ "It does wallets, loans and investing, for people and for shops."],add:[],nt:[['jfs','not a bank']],mv:[],f:['jfs']},
+ {id:'s10',act:'The finance arm',p:[
+ "Splitting finance off was a deliberate move, and games this big need a big reason.",
+ "<why go all the way to create the independent structures demerge all of that I mean because these are like very very very very big games right so the objective also must have been like quite grand",
+ "The reason given: a finance arm needs its own capital and carries loans, so splitting it off keeps that weight off RIL's books."],add:[],nt:[],mv:[],f:['jfs','ril']},
+ {id:'s11',act:'The finance arm',p:[
+ "Lending pays today. The funds compound later.",
+ "So they lend now, and the fund house with BlackRock grows over time, the way Zerodha has its own fund house."],add:[],nt:[],mv:[],f:['jfs','blackrock']},
+ {id:'s12',act:'The finance arm',p:[
+ "The payments side is the Paytm game, with a much bigger group behind it.",
+ "<And payments Bank is separate from nbfc arm. What's the payments Bank game So looks like this consumer thing is what paytm is"],add:['paytm','jf_pt'],nt:[],mv:[]},
+ {id:'s13',act:'The finance arm',p:[
+ "In UPI, Jio barely shows up. Its play is shops, not people.",
+ "<if you take UPI payment share … Google Pay, PhonePe, and Paytm. So … where is sort of Jio this payments bank in that?",
+ "The QR codes and card machines at the counter, like Pine Labs."],add:['upi','pt_up','jf_up'],nt:[],mv:[]},
+ {id:'s15',act:'The finance arm',p:[
+ "Jio's payments are for walking into a store and scanning a code, not paying on a website.",
+ "<So, the Jio thing that we're talking about is for all offline payments. Go to the store or the vendor, scan the QR."],add:[],nt:[],mv:[],f:['jfs','upi']},
+ {id:'s16',act:'Is the flywheel real',p:[
+ "Cross-selling alone can't be the strategy. Each business has to make money on its own.",
+ "<So it looks like cross-selling itself cannot be a business strategy, right?",
+ "I took a summary of everything to a fresh chat. Someone with Jio fibre may watch Hotstar, but won't keep buying more and more from the same family."],add:[],nt:[],mv:[],f:['jio','media','retail']},
+ {id:'s17',act:'Is the flywheel real',p:[
+ "My reading of the method: spend big upfront, price out the others, then lock customers into the whole family of businesses.",
+ "<The core thing in itself has to work. Plus as a standalone player, you will have a CAC problem there. This whole flywheel can severely reduce CAC",
+ "The AI agreed and laid it out in four stages: oil cash pays for the build, tens of billions go into fibre, towers and stores, prices drop low enough to squeeze rivals, and the services lock customers in. An AI agreeing doesn't make it true."],add:[],nt:[],mv:['invest big, price out, lock in (my reading)'],people:1,f:['ril','mukesh']},
+
+ // ---------- conclusion ----------
+ {id:'c1',act:'Where the nights landed',p:[
+ "Two nights, and I ended up at the same family both times. Mukesh keeps the money. Anant, Isha and Akash each run a part. The hired CEOs run pieces of those parts, and some, like Kiran Mani, leave for OpenAI.",
+ "Oil paid for the shops, the phones and now the data centres, and the parts feed each other. It runs like a family business that happens to be one of the biggest in the country."],add:[],nt:[],mv:[],core:1},
+ {id:'n8',act:'What is still open',p:[
+ "What stays with me is what's missing. By their own filter, huge money upfront and everyone uses it, health, education and farming should be in. Around 400 million people work in farming. Reliance is barely there, and neither is any other group, or the government.",
+ "So I'm left with a question that isn't about Reliance. Who builds those, and what would make someone want to?"],add:[],nt:[],mv:[],core:1}
+];
+INTRO=T.findIndex(function(t){return t.id==='n0b';})+1;CONC=T.findIndex(function(t){return t.id==='c1';});MID=CONC-INTRO;
+
+// ---------- build ----------
+var NS='http://www.w3.org/2000/svg',svg=document.getElementById('board');
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e;}
+var df=el('defs',{});['mA','mAn'].forEach(function(m){var mk=el('marker',{id:m,viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:15,markerHeight:15,markerUnits:'userSpaceOnUse',orient:'auto'},df);el('path',{d:'M0,0 L10,5 L0,10 Z'},mk);});
+var gB=el('g',{}),BE=[];BANDS.forEach(function(b){var g=el('g',{'class':'band hide'+(b.fr?' fr':'')},gB);el('rect',{x:-165,y:b.y0,width:1790,height:b.y1-b.y0,rx:14},g);var t=el('text',{x:-148,y:b.y0+22},g);t.textContent=b.n;BE.push(g);});
+var gS=el('g',{}),gP=el('g',{}),gM=el('g',{id:'motive','class':'hide'});
+var SE={},PE={},notes={};
+Object.keys(S).forEach(function(id){var s=S[id],a=P[s[0]],b=P[s[1]],t=s[3]==null?.5:s[3];
+ var g=el('g',{'class':'str hide '+(SK[id]||'own')},gS);g._ln=el('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y},g);
+ var lx=a.x+(b.x-a.x)*t,ly=a.y+(b.y-a.y)*t,lines=s[2].split('|');
+ var r=el('rect',{rx:4},g),tx=el('text',{x:lx,'text-anchor':'middle'},g);
+ lines.forEach(function(L,i){var ts=el('tspan',{x:lx,y:ly+(i-(lines.length-1)/2)*14+4},tx);ts.textContent=L;});
+ g._lab=[r,tx];SE[id]=g;});
+function person(g,dx,k){var t=el('g',{transform:'translate('+dx+',0) scale('+k+')'},g);
+ el('path',{'class':'o f',d:'M-16,0 C-16,-11 -9,-15 0,-15 C9,-15 16,-11 16,0 Z'},t);el('circle',{'class':'o f',cx:0,cy:-25,r:8.5},t);}
+function building(g){el('rect',{'class':'o f',x:-15,y:-34,width:30,height:34},g);
+ for(var r=0;r<3;r++)for(var c=0;c<2;c++)el('rect',{'class':'w',x:c?3:-10,y:-29+r*8,width:7,height:4.5},g);
+ el('rect',{'class':'w',x:-3.5,y:-7,width:7,height:7},g);}
+function icon(g,k){
+ if(k==='per')person(g,0,1);
+ else if(k==='fam'){person(g,-15,.78);person(g,15,.78);person(g,0,1);}
+ else if(k==='co')building(g);
+ else if(k==='listed'){building(g);el('rect',{'class':'tk',x:9,y:-42,width:22,height:15,rx:3},g);el('polyline',{'class':'tkl',points:'12.5,-31 17,-35.5 21,-33 27.5,-39'},g);}
+ else if(k==='private'){building(g);el('path',{'class':'lk',d:'M14.5,-25 v-5 a4.5,4.5 0 0 1 9,0 v5'},g);el('rect',{'class':'lkb',x:12,y:-25,width:14,height:11,rx:2},g);}
+ else if(k==='trust'){el('path',{'class':'o f',d:'M0,-39 L17,-33 V-19 C17,-8 9,-3 0,0 C-9,-3 -17,-8 -17,-19 V-33 Z'},g);
+  el('path',{'class':'w',d:'M0,-11 C-9,-17 -9,-25 -4.5,-26 C-2,-26.5 0,-24.5 0,-22.5 C0,-24.5 2,-26.5 4.5,-26 C9,-25 9,-17 0,-11 Z'},g);}
+ else if(k==='gov'){el('path',{'class':'o f',d:'M-22,-27 L0,-39 L22,-27 Z'},g);el('rect',{'class':'o f',x:-20,y:-27,width:40,height:4},g);
+  [-16,-7,2,11].forEach(function(x){el('rect',{'class':'o f',x:x,y:-23,width:5,height:19},g);});el('rect',{'class':'o f',x:-23,y:-4,width:46,height:4},g);}
+ else if(k==='fund'){[ -4,-13,-22].forEach(function(y){el('path',{'class':'o f',d:'M-14,'+(y-7)+' L-14,'+y+' A14,5 0 0 0 14,'+y+' L14,'+(y-7)+' Z'},g);el('ellipse',{'class':'o f',cx:0,cy:y-7,rx:14,ry:5},g);});}
+ else if(k==='post'){el('rect',{'class':'o f',x:-22,y:-37,width:44,height:35,rx:5},g);el('circle',{'class':'w',cx:-14,cy:-29,r:4},g);
+  el('rect',{'class':'w',x:-7,y:-31,width:18,height:3,rx:1},g);el('rect',{'class':'w',x:-16,y:-21,width:32,height:3,rx:1},g);el('rect',{'class':'w',x:-16,y:-14,width:24,height:3,rx:1},g);
+  el('path',{'class':'ln',d:'M-15,-7 h5 M-2,-7 h5 M11,-7 h5'},g);}
+ else if(k==='doc'){el('path',{'class':'o f',d:'M-15,-39 H6 L15,-30 V0 H-15 Z'},g);el('path',{'class':'ln',d:'M6,-39 V-30 H15'},g);
+  [[-29,12],[-23,20],[-17,20],[-11,14]].forEach(function(l){el('rect',{'class':'w',x:-10,y:l[0],width:l[1],height:2.5},g);});el('path',{'class':'ln',d:'M2,-5 c3,-4 5,2 8,-2'},g);}
+ else if(k==='globe'){el('circle',{'class':'o f',cx:0,cy:-20,r:18},g);el('ellipse',{'class':'ln',cx:0,cy:-20,rx:7.5,ry:18},g);
+  el('path',{'class':'ln',d:'M-18,-20 H18 M-15.5,-29 H15.5 M-15.5,-11 H15.5'},g);}
+ else if(k==='team'){person(g,-15,.78);person(g,15,.78);person(g,0,1);}
+ else if(k==='place'){el('path',{'class':'o f',d:'M-22,0 V-20 L-12,-27 V-20 L-2,-27 V-20 L8,-27 V-38 H16 V0 Z'},g);el('rect',{'class':'w',x:-17,y:-12,width:6,height:6},g);el('rect',{'class':'w',x:-6,y:-12,width:6,height:6},g);el('rect',{'class':'w',x:5,y:-12,width:6,height:6},g);}
+ else if(k==='tech'){el('rect',{'class':'o f',x:-14,y:-34,width:28,height:28,rx:3},g);el('rect',{'class':'w',x:-6,y:-26,width:12,height:12,rx:1},g);
+  el('path',{'class':'ln',d:'M-8,-34 v-5 M0,-34 v-5 M8,-34 v-5 M-8,-6 v5 M0,-6 v5 M8,-6 v5 M-14,-28 h-5 M-14,-20 h-5 M-14,-12 h-5 M14,-28 h5 M14,-20 h5 M14,-12 h5'},g);}
+ else if(k==='video'){el('rect',{'class':'o f',x:-23,y:-35,width:46,height:31,rx:6},g);el('path',{'class':'play',d:'M-5,-26 L8,-19.5 L-5,-13 Z'},g);}
+}
+Object.keys(P).forEach(function(id){var p=P[id];var g=el('g',{'class':'pin hide '+p.t+' k-'+p.i,transform:'translate('+p.x+','+p.y+')',tabindex:0},gP);
+ icon(el('g',{},g),p.i);
+ if(CN[id]){var cw=CN[id].length*7+8;el('rect',{'class':'cn',x:-24-cw,y:-44,width:cw,height:15,rx:3},g);var ct=el('text',{'class':'cnt',x:-24-cw/2,y:-33,'text-anchor':'middle'},g);ct.textContent=CN[id];}
+ var pl=el('rect',{'class':'pl',x:-60,y:2,width:120,height:36,rx:4},g);
+ var n=el('text',{'class':'nm',x:0,y:18,'text-anchor':'middle'},g);n.textContent=p.n;
+ var s=el('text',{'class':'sb',x:0,y:32,'text-anchor':'middle'},g);s.textContent=p.s;
+ var tk=el('circle',{'class':'tack',cx:-54,cy:6,r:4.5},g);
+ var d=el('g',{'class':'hide'},g);var dc=el('circle',{'class':'deg',cx:54,cy:3,r:10},d);var dt=el('text',{'class':'degt',x:54,y:7,'text-anchor':'middle'},d);
+ g._nm=[n,s,pl,tk,dc,dt];g._deg=[d,dt];PE[id]=g;notes[id]=[];
+ g.addEventListener('click',function(){showNotes(id)});});
+// motive note
+gM.setAttribute('transform','rotate(-1.2 -2 -35)');el('rect',{x:-150,y:-130,width:295,height:188,rx:2},gM);el('path',{'class':'fold',d:'M123,58 L145,36 L145,58 Z'},gM);el('circle',{'class':'tack',cx:-2,cy:-123,r:5.5},gM);
+var mh=el('text',{'class':'h',x:-134,y:-103},gM);mh.textContent='MOTIVE?';
+var mt=el('text',{x:-134,y:-77},gM);
+// size labels
+function sizeLabels(){Object.keys(SE).forEach(function(id){var g=SE[id],was=g.classList.contains('hide');g.classList.remove('hide');var b=g._lab[1].getBBox();g._lab[0].setAttribute('x',b.x-5);g._lab[0].setAttribute('y',b.y-2);g._lab[0].setAttribute('width',b.width+10);g._lab[0].setAttribute('height',b.height+4);if(was)g.classList.add('hide');});}
+sizeLabels();
+var HW={};
+Object.keys(PE).forEach(function(id){var g=PE[id],q=g._nm,n=q[0],sb=q[1],fs=15;g.classList.remove('hide');
+ while(n.getBBox().width>150&&fs>11){fs-=.5;n.style.fontSize=fs+'px';}var fz=12;while(sb.getBBox().width>150&&fz>9.5){fz-=.5;sb.style.fontSize=fz+'px';}
+ var w=Math.max(n.getBBox().width,sb.getBBox().width)+16;q[2].setAttribute('x',-w/2);q[2].setAttribute('width',w);
+ q[3].setAttribute('cx',-w/2+6);q[4].setAttribute('cx',w/2);q[5].setAttribute('x',w/2);HW[id]=w/2;g.classList.add('hide');});
+// arrowed strings stop at the edge of the target pin
+Object.keys(SE).forEach(function(id){if((SK[id]||'own')!=='act')return;var a=P[S[id][0]],b=P[S[id][1]],dx=a.x-b.x,dy=a.y-b.y;
+ var hw=Math.max(HW[S[id][1]],24)+3,vh=dy>0?41:43,t=Math.min(dx?hw/Math.abs(dx):9,dy?vh/Math.abs(dy):9);
+ SE[id]._ln.setAttribute('x2',b.x+dx*t);SE[id]._ln.setAttribute('y2',b.y+dy*t);});
+// ---------- opening picture: people form entities; people pass, the entity stays ----------
+var IS=document.getElementById('intro'),IPL=[];
+var idf=el('defs',{},IS),imk=el('marker',{id:'iA',viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:16,markerHeight:16,markerUnits:'userSpaceOnUse',orient:'auto'},idf);el('path',{d:'M0,0 L10,5 L0,10 Z'},imk);
+function itext(p,x,y,c,t){var e=el('text',{'class':c,x:x,y:y,'text-anchor':'middle'},p);e.textContent=t;return e;}
+function ip(p,x,y,st){var g=el('g',{'class':'pin k-per'+(st==='new'?' new':'')+(st==='gone'?' gone':''),transform:'translate('+x+','+y+') scale(1.2)'},p);person(g,0,1);}
+function istr(p,x1,y1,x2,y2,c){var g=el('g',{'class':'str '+c},p);el('line',{x1:x1,y1:y1,x2:x2,y2:y2},g);}
+function ipin(p,x,y,k,nm){var g=el('g',{'class':'pin k-'+k,transform:'translate('+x+','+y+') scale(1.25)'},p);icon(el('g',{},g),k);
+ var pl=el('rect',{'class':'pl',rx:4},g),n=el('text',{'class':'nm',x:0,y:20,'text-anchor':'middle'},g);n.textContent=nm;IPL.push([pl,n]);}
+var gIA=el('g',{},IS),sA=el('g',{},gIA),pA=el('g',{},gIA);
+itext(pA,300,34,'ih','PEOPLE COME FIRST');itext(pA,300,66,'is','a group of people forms an entity');
+[[100,'fam','Family'],[300,'co','Company'],[500,'gov','Government']].forEach(function(c){
+ [-44,0,44].forEach(function(dx){ip(pA,c[0]+dx,160,'on');istr(sA,c[0]+dx,140,c[0],300,'own');});
+ ipin(pA,c[0],330,c[1],c[2]);});
+var gIB=el('g',{},IS),sB=el('g',{},gIB),pB=el('g',{},gIB);
+itext(pB,300,34,'ih','PEOPLE PASS');itext(pB,300,66,'is','the entity stays');
+istr(sB,100,305,500,305,'own');
+[[100,'then',['on','on','on']],[300,'later',['gone','on','new']],[500,'now',['new','gone','on']]].forEach(function(s){
+ s[2].forEach(function(st,j){var x=s[0]+(j-1)*44;ip(pB,x,160,st);istr(sB,x,140,s[0],300,st==='gone'?'trail':'own');});
+ ipin(pB,s[0],330,'co','Company');itext(pB,s[0],432,'axt',s[1]);});
+el('line',{'class':'ax',x1:30,y1:405,x2:580,y2:405,'marker-end':'url(#iA)'},pB);
+IPL.forEach(function(q){var b=q[1].getBBox();q[0].setAttribute('x',b.x-8);q[0].setAttribute('y',b.y-3);q[0].setAttribute('width',b.width+16);q[0].setAttribute('height',b.height+6);});
+function introLayout(k){var W=stage.clientWidth,H=stage.clientHeight,tall=!W||!H||W/H<1.05;
+ gIA.style.display=(k===2&&!tall)?'none':'';gIB.style.display=k===2?'':'none';
+ gIB.setAttribute('transform',tall?'translate(0,480)':'translate(0,0)');
+ IS.setAttribute('viewBox',(k===2&&tall)?'-20 -10 640 1010':'-20 -10 640 540');}
+function showIntro(k){IS.classList.toggle('hide',!k);svg.style.display=k?'none':'';if(k)introLayout(k);}
+// ---------- step ----------
+var i=0,stage=document.getElementById('stage'),fit=false;
+function $(x){return document.getElementById(x)}
+function render(){
+ var st=T[i],on={},nw={},nn={},deg={},mv=[];
+ for(var k=0;k<=i;k++){(T[k].add||[]).forEach(function(x){on[x]=1;if(k===i)nw[x]=1;});mv=mv.concat(T[k].mv||[]);}
+ (st.nt||[]).forEach(function(n){nn[n[0]]=1;});
+ Object.keys(notes).forEach(function(id){notes[id]=[];});
+ for(var k=0;k<=i;k++)(T[k].nt||[]).forEach(function(n){notes[n[0]].push(n[1]);});
+ Object.keys(SE).forEach(function(id){var g=SE[id],v=!!on[id];g.classList.toggle('hide',!v);g.classList.toggle('new',!!nw[id]);
+  if(v){deg[S[id][0]]=(deg[S[id][0]]||0)+1;deg[S[id][1]]=(deg[S[id][1]]||0)+1;}
+  g.classList.toggle('dim',v&&!nw[id]&&!st.core);g.classList.toggle('faint',v&&!nw[id]&&!!st.people&&!(ppl(S[id][0])&&ppl(S[id][1])));});
+ var maxd=0;Object.keys(deg).forEach(function(k){maxd=Math.max(maxd,deg[k])});
+ Object.keys(PE).forEach(function(id){var g=PE[id],v=!!on[id],isNew=!!nw[id]||!!nn[id];g.classList.toggle('hide',!v);g.classList.toggle('new',isNew);
+  g.classList.toggle('dim',v&&!isNew&&!st.people&&!st.core);
+  g.classList.toggle('faint',v&&!isNew&&!!st.people&&!ppl(id));
+  g.classList.toggle('core',!!st.core&&deg[id]>=maxd-1&&maxd>0);
+  var d=deg[id]||0;g._deg[0].classList.toggle('hide',d<2);g._deg[1].textContent=d;});
+ BANDS.forEach(function(b,j){BE[j].classList.toggle('hide',!b.ids.some(function(id){return on[id];}));});
+ gM.classList.toggle('hide',!st.people&&!st.core);
+ while(mt.firstChild)mt.removeChild(mt.firstChild);
+ mv.forEach(function(m,j){var ts=el('tspan',{x:-134,dy:j?24:0},mt);ts.textContent='• '+m;});
+ // story
+  $('count').textContent=stepLabel(i);
+  $('progb').style.width=(i<INTRO?0:i>=CONC?100:(i-INTRO+1)/MID*100)+'%';
+  $('src').textContent=st.act;
+  var rank='';if(st.core){rank=Object.keys(deg).sort(function(a,b){return deg[b]-deg[a]}).slice(0,4).map(function(k){return P[k].n+' '+deg[k]}).join(', ');}
+  var nb=$('nar');nb.innerHTML='';
+  st.p.forEach(function(t){if(t.charAt(0)==='>'||t.charAt(0)==='<'){var bq=document.createElement('blockquote');bq.innerHTML='<span>'+(t.charAt(0)==='<'?'What I said':'What I typed')+'</span>';var q=document.createElement('q');q.textContent=t.slice(1);bq.appendChild(q);nb.appendChild(bq);}
+   else{var pp=document.createElement('p');if(!nb.children.length&&!st.intro)pp.className='lead';pp.textContent=t.replace('{RANK}',rank);nb.appendChild(pp);}});
+  var ib=$('intros');ib.innerHTML='';var inv={},nx=[];function addI(id){if(P[id]&&!inv[id]){inv[id]=1;nx.push(id);}}Object.keys(nw).forEach(addI);Object.keys(nn).forEach(addI);(st.f||[]).forEach(function(id){if(P[id])addI(id);else if(S[id]){addI(S[id][0]);addI(S[id][1]);}});Object.keys(nw).forEach(function(id){if(S[id]){addI(S[id][0]);addI(S[id][1]);}});
+  $('newb').classList.toggle('hide',!nx.length);
+  nx.forEach(function(id){var d=document.createElement('div');d.className='intro'+(nw[id]?' isnew':'');
+   var sv=document.createElementNS(NS,'svg');sv.setAttribute('viewBox','-25 -44 52 46');icon(el('g',{'class':'k-'+P[id].i},sv),P[id].i);d.appendChild(sv);
+   var w=document.createElement('div');var h=document.createElement('h3');h.textContent=P[id].n;var sm=document.createElement('small');sm.textContent=KW[P[id].i];h.appendChild(sm);w.appendChild(h);
+   var pp=document.createElement('p');pp.textContent=P[id].s;w.appendChild(pp);d.appendChild(w);ib.appendChild(d);});
+  $('nw').innerHTML='';
+  $('sIn').scrollTop=0;
+  $('prev').disabled=i===0;$('next').disabled=i===T.length-1;
+  var fid=Object.keys(nw).concat(Object.keys(nn));if(st.f)fid=fid.concat(st.f);focus(fid,!!st.core||(!!st.people&&!fid.length));
+  if(i===T.length-1){var mo=document.createElement('p');mo.className='more';mo.innerHTML='<a href="../">← Previous article: who builds India\'s trains, and who owns them</a>';nb.appendChild(mo);}
+  showIntro(0);$('icard').classList.toggle('hide',i>=INTRO);document.body.classList.toggle('introon',i<INTRO);
+}
+function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+function showNotes(id){var p=P[id];$('nw').innerHTML='<b>'+esc(p.n)+':</b> '+(notes[id].length?notes[id].map(esc).join(' · '):'no notes yet');}
+var KL={tweet:'the tweet',page:'a page I opened',search:'Google search','AI Mode':'AI Mode','AI Mode, new search':'AI Mode, new search',board:'the board'};
+var TL={tweet:'What I saw',page:'What I opened',search:'What I searched','AI Mode':'What I typed','AI Mode, new search':'What I typed'};
+var KW={per:'person',fam:'family',co:'company',listed:'listed company',private:'private holding company',trust:'trust',gov:'government',team:'group of people',place:'place',tech:'technology',fund:'fund',post:'post',doc:'contract',video:'video',globe:'country'};
+// ---------- zoom to what the story is about ----------
+var BX=-180,BY=-180,BW=1820,BH=1340,vb=[BX,BY,BW,BH],anim=null,lastIds=[],lastAll=true;
+var Z=1,PX=0,PY=0,baseVB=[BX,BY,BW,BH];
+function userVB(b){var w=b[2]/Z,h=b[3]/Z,cx=b[0]+b[2]/2+PX,cy=b[1]+b[3]/2+PY;cx=Math.max(BX,Math.min(BX+BW,cx));cy=Math.max(BY,Math.min(BY+BH,cy));PX=cx-(b[0]+b[2]/2);PY=cy-(b[1]+b[3]/2);return[cx-w/2,cy-h/2,w,h];}
+function setVB(t){baseVB=t.slice();PX=0;PY=0;t=userVB(t);if(anim)cancelAnimationFrame(anim);var f=vb.slice(),t0=performance.now();
+ (function step(now){var k=Math.min(1,(now-t0)/450),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;vb=f.map(function(v,j){return v+(t[j]-v)*e});svg.setAttribute('viewBox',vb.join(' '));if(k<1)anim=requestAnimationFrame(step);})(t0);
+ clearTimeout(setVB.t);setVB.t=setTimeout(function(){if(anim)cancelAnimationFrame(anim);vb=t.slice();svg.setAttribute('viewBox',vb.join(' '));},520);}
+function focus(ids,all){lastIds=ids;lastAll=all;var W=stage.clientWidth,H=stage.clientHeight;if(!W||!H)return;
+ var whole=[BX,BY-10,BW,BH+230];if(fit){setVB(whole);return;}
+ var xs=[],ys=[];ids.forEach(function(id){if(P[id]){xs.push(P[id].x);ys.push(P[id].y);}else if(S[id]){[S[id][0],S[id][1]].forEach(function(k){xs.push(P[k].x);ys.push(P[k].y);});}});
+ if(!xs.length){if(all)setVB(whole);return;}
+ var x0=Math.min.apply(0,xs),x1=Math.max.apply(0,xs),y0=Math.min.apply(0,ys),y1=Math.max.apply(0,ys);
+ var s0=Math.min(W/BW,H/BH),s=Math.max(s0,Math.min(W/(x1-x0+300),H/(y1-y0+190),1.1));
+ var vw=W/s,vh=H/s,cx=(x0+x1)/2,cy=(y0+y1)/2;
+ var bx=vw>=BW?BX+(BW-vw)/2:Math.max(BX-60,Math.min(BX+BW+60-vw,cx-vw/2)),by=vh>=BH?BY+(BH-vh)/2:Math.max(BY-40,Math.min(BY+BH+40-vh,cy-vh/2));
+ setVB([bx,by,vw,vh]);}
+
+// ---------- map zoom (map only; level kept across steps) ----------
+function applyUser(){clearTimeout(setVB.t);if(anim)cancelAnimationFrame(anim);vb=userVB(baseVB);svg.setAttribute('viewBox',vb.join(' '));$('zreset').disabled=(Z===1&&!PX&&!PY);$('zin').disabled=Z>=8;$('zout').disabled=Z<=0.5;}
+function zoomAt(nz,mx,my){nz=Math.max(0.5,Math.min(8,nz));var W=stage.clientWidth,H=stage.clientHeight;if(!W||!H){Z=nz;applyUser();return;}
+ if(mx==null){mx=W/2;my=H/2;}var c=vb,s=Math.min(W/c[2],H/c[3]),ox=(W-c[2]*s)/2,oy=(H-c[3]*s)/2,bx=c[0]+(mx-ox)/s,by=c[1]+(my-oy)/s;
+ Z=nz;var w=baseVB[2]/Z,h=baseVB[3]/Z,s2=Math.min(W/w,H/h),ox2=(W-w*s2)/2,oy2=(H-h*s2)/2,nx=bx-(mx-ox2)/s2,ny=by-(my-oy2)/s2;
+ PX=nx+w/2-(baseVB[0]+baseVB[2]/2);PY=ny+h/2-(baseVB[1]+baseVB[3]/2);applyUser();}
+$('zin').onclick=function(){zoomAt(Z*1.4)};$('zout').onclick=function(){zoomAt(Z/1.4)};$('zreset').onclick=function(){Z=1;PX=0;PY=0;applyUser();};$('zreset').disabled=true;
+stage.addEventListener('wheel',function(e){e.preventDefault();var r=stage.getBoundingClientRect();var d=e.deltaMode===1?e.deltaY*16:e.deltaY;zoomAt(Z*Math.exp(-d*(e.ctrlKey?0.01:0.002)),e.clientX-r.left,e.clientY-r.top);},{passive:false});
+var ptr={},pinch=null,dragged=false,last=null;
+function pts(){return Object.keys(ptr).map(function(k){return ptr[k]})}
+stage.addEventListener('pointerdown',function(e){if(e.target.closest&&e.target.closest('button'))return;ptr[e.pointerId]={x:e.clientX,y:e.clientY};dragged=false;var p=pts();
+ if(p.length===2){pinch={d:Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y)||1,z:Z};}else{pinch=null;last={x:e.clientX,y:e.clientY,sx:e.clientX,sy:e.clientY};}});
+stage.addEventListener('pointermove',function(e){if(!ptr[e.pointerId])return;ptr[e.pointerId]={x:e.clientX,y:e.clientY};var p=pts(),r=stage.getBoundingClientRect();
+ if(p.length>=2&&pinch){dragged=true;var d=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);zoomAt(pinch.z*d/pinch.d,(p[0].x+p[1].x)/2-r.left,(p[0].y+p[1].y)/2-r.top);return;}
+ if(!last)return;if(!dragged&&Math.hypot(e.clientX-last.sx,e.clientY-last.sy)<5)return;
+ if(!dragged){dragged=true;stage.classList.add('drag');try{stage.setPointerCapture(e.pointerId)}catch(_){}}
+ var W=stage.clientWidth,H=stage.clientHeight,s=Math.min(W/vb[2],H/vb[3]);PX-=(e.clientX-last.x)/s;PY-=(e.clientY-last.y)/s;last.x=e.clientX;last.y=e.clientY;applyUser();});
+function up(e){delete ptr[e.pointerId];if(pts().length<2)pinch=null;if(!pts().length){last=null;stage.classList.remove('drag');}}
+stage.addEventListener('pointerup',up);stage.addEventListener('pointercancel',up);
+stage.addEventListener('click',function(e){if(dragged){e.stopPropagation();e.preventDefault();dragged=false;}},true);
+function layout(){$('fit').textContent=fit?'This step':'Whole board';}
+function go(d){i=Math.max(0,Math.min(T.length-1,i+d));if(i>0&&!keyTouched&&typeof showKey==='function'&&keyOn){keyOn=false;showKey();}render();}
+$('next').onclick=function(){go(1)};
+$('prev').onclick=function(){go(-1)};
+$('fit').onclick=function(){fit=!fit;layout();focus(lastIds,true);};
+document.addEventListener('keydown',function(e){if(/TEXTAREA|INPUT/.test((e.target||{}).tagName||''))return;if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1);}if(e.key==='ArrowLeft'){e.preventDefault();go(-1);}});
+window.addEventListener('resize',function(){focus(lastIds,lastAll);if(T[i].intro)introLayout(T[i].intro);});
+layout();render();
+// ---------- key ----------
+var key=$('key'),KS=[['per','Person'],['fam','Family, as a group'],['co','Company'],['listed','Listed company'],['gov','Government'],['team','Group of people'],['place','Place'],['tech','Technology'],['fund','Fund'],['globe','Country']];
+function kh(t){var h=document.createElement('h4');h.textContent=t;key.appendChild(h);}
+function krow(draw,label,vb){var r=document.createElement('div');r.className='r';var sv=document.createElementNS(NS,'svg');sv.setAttribute('width',30);sv.setAttribute('height',26);sv.setAttribute('viewBox',vb);draw(sv);r.appendChild(sv);var sp=document.createElement('span');sp.textContent=label;r.appendChild(sp);key.appendChild(r);}
+kh('Pins');KS.forEach(function(k){krow(function(sv){icon(el('g',{'class':'k-'+k[0]},sv),k[0]);},k[1],'-25 -44 52 46');});
+krow(function(sv){el('rect',{'class':'cn',x:-17,y:-30,width:34,height:17,rx:3},sv);var t=el('text',{'class':'cnt',x:0,y:-18,'text-anchor':'middle'},sv);t.textContent='IN';},'Country tag','-25 -44 52 46');
+krow(function(sv){el('rect',{x:-18,y:-36,width:36,height:32,rx:1,fill:'var(--note)',stroke:'var(--perB)','stroke-width':1.6},sv);el('circle',{cx:0,cy:-33,r:3.5,fill:'#c92a2a'},sv);},'Note: motive','-25 -44 52 46');
+kh('Strings');[['own','owns or runs'],['fam','family'],['act','did this to'],['ctry','country behind it'],['trail','led me there']].forEach(function(k){
+ krow(function(sv){var g=el('g',{'class':'str '+k[0]},sv);el('line',{x1:2,y1:9,x2:k[0]==='act'?24:28,y2:9},g);},k[1],'0 0 30 18');});
+var keyOn=false,keyTouched=false;function showKey(){key.classList.toggle('hide',!keyOn);$('keyb').textContent=keyOn?'Hide key':'Key';}
+$('keyb').onclick=function(){keyOn=!keyOn;keyTouched=true;showKey();};showKey();
+window.__board={T:T,P:P,S:S,go:function(n){i=n;render();},zoom:function(z){zoomAt(z)},get z(){return Z},get vb(){return vb.slice()}};
+})();
+</script>
+</body>
+</html>
