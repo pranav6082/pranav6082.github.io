@@ -28,7 +28,7 @@ Research I do outside work, one question at a time.
 
 | Date | Exploration | What it's about |
 |---|---|---|
-| 19 November 2026 | [Who builds the Vande Bharat trains](explorations/case-board.html) | A step-by-step board following one night's research, from a train contract to who controls Tata. |
+| 19 November 2026 | [What drives the builders](what-drives-the-builders/) | People, their motivations and aspirations, and how those shape nation building and technology building. One night of research, step by step. |
 
 For AI agents: [llms.txt](https://pranav6082.github.io/llms.txt) lists every post as plain text.
 

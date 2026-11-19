@@ -11,7 +11,7 @@
 
 ## Personal explorations
 
-- [Who builds the Vande Bharat trains](https://pranav6082.github.io/explorations/case-board.html) (19 November 2026): A step-by-step board following one night's research, from a train contract to who controls Tata.
+- [What drives the builders](https://pranav6082.github.io/what-drives-the-builders/) (19 November 2026): People, their motivations and aspirations, and how those shape nation building and technology building. One night of research, step by step.
 
 ## Optional
 
