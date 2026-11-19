@@ -1391,7 +1391,7 @@ function render(){
   $('sIn').scrollTop=0;
   $('prev').disabled=i===0;$('next').disabled=i===T.length-1;
   var fid=Object.keys(nw).concat(Object.keys(nn));if(st.f)fid=fid.concat(st.f);focus(fid,!!st.core||(!!st.people&&!fid.length));
-  showIntro(st.intro||0);
+  showIntro(0);
 }
 function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
 function showNotes(id){var p=P[id];$('nw').innerHTML='<b>'+esc(p.n)+':</b> '+(notes[id].length?notes[id].map(esc).join(' · '):'no notes yet');}
