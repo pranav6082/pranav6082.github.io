@@ -93,8 +93,8 @@ body{background:var(--bg);color:var(--ink);font:15px/1.4 -apple-system,system-ui
 #intros .intro svg{width:34px;height:30px}
 #intros .intro h3{font-size:15px}#intros .intro h3 small{margin-left:6px;font-size:10.5px}
 #intros .intro p{font-size:13.5px;line-height:1.35;color:var(--muted)}
-/* layout: story 60% | map 40% */
-#app{display:grid;grid-template-columns:60% 40%;height:100%}
+/* layout: story 40% | map 60% */
+#app{display:grid;grid-template-columns:40% 60%;height:100%}
 #story{display:flex;flex-direction:column;min-height:0;background:var(--panel);border-right:1px solid var(--line)}
 #sIn{flex:1;overflow:auto;padding:36px 44px 24px;max-width:780px;width:100%;margin:0 auto}
 .meta{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted);margin:0 0 14px}
@@ -152,6 +152,12 @@ button:disabled{opacity:.35;cursor:default}
  .bar button{font-size:17px;padding:12px 22px;min-height:48px}
  .bar button.pri{padding:12px 30px}
 }
+.zbar{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;z-index:3}
+.zbar button{font-size:13px;padding:6px 11px;opacity:.95;min-width:36px}
+.zbar #zin,.zbar #zout{font-size:18px;line-height:1;padding:4px 10px;font-weight:600}
+#stage{touch-action:none;cursor:grab}#stage.drag{cursor:grabbing}
+#intros .intro.isnew{border-color:var(--new)}#intros .intro:not(.isnew){border-color:var(--line)}
+@media (max-width:767px){.zbar{left:6px;bottom:6px}.zbar button{font-size:12px;padding:5px 9px;min-width:32px}.zbar #zin,.zbar #zout{font-size:17px;padding:3px 9px}}
 </style>
 </head>
 <body>
@@ -161,14 +167,14 @@ button:disabled{opacity:.35;cursor:default}
   <div id="prog" aria-hidden="true"><i id="progb"></i></div>
   <p class="meta"><span id="count"></span><span class="src" id="src"></span></p>
   <div id="nar"></div>
-  <div id="newb"><span class="lbl">New on the wall</span><div id="intros"></div></div>
+  <div id="newb"><span class="lbl">In this step</span><div id="intros"></div></div>
   <p id="nw"></p>
  </div>
  <div class="bar"><button id="prev" aria-label="Back">← Back</button><button id="next" class="pri" aria-label="Next">Next →</button></div>
 </main>
 <aside id="mapcol">
  <div id="stage"><svg id="board" xmlns="http://www.w3.org/2000/svg" viewBox="-170 -120 1630 1080" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Evidence board"></svg><svg id="intro" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -10 640 450" preserveAspectRatio="xMidYMid meet" role="img" aria-label="People form entities; people pass, the entity stays"></svg></div>
- <div class="mapbar"><button id="keyb">Key</button><button id="fit">Whole board</button></div>
+ <div class="zbar" role="group" aria-label="Map zoom"><button id="zout" aria-label="Zoom out">−</button><button id="zin" aria-label="Zoom in">+</button><button id="zreset" aria-label="Reset zoom">Reset</button></div><div class="mapbar"><button id="keyb">Key</button><button id="fit">Whole board</button></div>
 </aside>
 </div>
 <div id="key" class="hide"></div>
@@ -1224,7 +1230,7 @@ var T=[
 "act": "Why they live like this",
 "p": [
 "The last thing I opened was Noel Tata's full interview from the HT Leadership Summit.",
-"The only place on the wall where one of these people speaks for himself."
+"The only place on the board where one of these people speaks for himself."
 ],
 "add": [
 "youtube",
@@ -1400,9 +1406,9 @@ function render(){
   var nb=$('nar');nb.innerHTML='';
   st.p.forEach(function(t){if(t.charAt(0)==='>'){var bq=document.createElement('blockquote');bq.innerHTML='<span>What I typed</span>';var q=document.createElement('q');q.textContent=t.slice(1);bq.appendChild(q);nb.appendChild(bq);}
    else{var pp=document.createElement('p');pp.textContent=t.replace('{RANK}',rank);nb.appendChild(pp);}});
-  var ib=$('intros');ib.innerHTML='';var nx=Object.keys(nw).filter(function(id){return P[id]});
+  var ib=$('intros');ib.innerHTML='';var inv={},nx=[];function addI(id){if(P[id]&&!inv[id]){inv[id]=1;nx.push(id);}}Object.keys(nw).forEach(addI);Object.keys(nn).forEach(addI);(st.f||[]).forEach(function(id){if(P[id])addI(id);else if(S[id]){addI(S[id][0]);addI(S[id][1]);}});Object.keys(nw).forEach(function(id){if(S[id]){addI(S[id][0]);addI(S[id][1]);}});
   $('newb').classList.toggle('hide',!nx.length);
-  nx.forEach(function(id){var d=document.createElement('div');d.className='intro';
+  nx.forEach(function(id){var d=document.createElement('div');d.className='intro'+(nw[id]?' isnew':'');
    var sv=document.createElementNS(NS,'svg');sv.setAttribute('viewBox','-25 -44 52 46');icon(el('g',{'class':'k-'+P[id].i},sv),P[id].i);d.appendChild(sv);
    var w=document.createElement('div');var h=document.createElement('h3');h.textContent=P[id].n;var sm=document.createElement('small');sm.textContent=KW[P[id].i];h.appendChild(sm);w.appendChild(h);
    var pp=document.createElement('p');pp.textContent=P[id].s;w.appendChild(pp);d.appendChild(w);ib.appendChild(d);});
@@ -1419,7 +1425,9 @@ var TL={tweet:'What I saw',page:'What I opened',search:'What I searched','AI Mod
 var KW={per:'person',fam:'family',co:'company',listed:'listed company',private:'private holding company',trust:'trust',gov:'regulator',fund:'fund',post:'post',doc:'contract',video:'video',globe:'country'};
 // ---------- zoom to what the story is about ----------
 var BX=-170,BY=-120,BW=1630,BH=1080,vb=[BX,BY,BW,BH],anim=null,lastIds=[],lastAll=true;
-function setVB(t){if(anim)cancelAnimationFrame(anim);var f=vb.slice(),t0=performance.now();
+var Z=1,PX=0,PY=0,baseVB=[BX,BY,BW,BH];
+function userVB(b){var w=b[2]/Z,h=b[3]/Z,cx=b[0]+b[2]/2+PX,cy=b[1]+b[3]/2+PY;cx=Math.max(BX,Math.min(BX+BW,cx));cy=Math.max(BY,Math.min(BY+BH,cy));PX=cx-(b[0]+b[2]/2);PY=cy-(b[1]+b[3]/2);return[cx-w/2,cy-h/2,w,h];}
+function setVB(t){baseVB=t.slice();PX=0;PY=0;t=userVB(t);if(anim)cancelAnimationFrame(anim);var f=vb.slice(),t0=performance.now();
  (function step(now){var k=Math.min(1,(now-t0)/450),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;vb=f.map(function(v,j){return v+(t[j]-v)*e});svg.setAttribute('viewBox',vb.join(' '));if(k<1)anim=requestAnimationFrame(step);})(t0);
  clearTimeout(setVB.t);setVB.t=setTimeout(function(){if(anim)cancelAnimationFrame(anim);vb=t.slice();svg.setAttribute('viewBox',vb.join(' '));},520);}
 function focus(ids,all){lastIds=ids;lastAll=all;var W=stage.clientWidth,H=stage.clientHeight;if(!W||!H)return;
@@ -1431,7 +1439,28 @@ function focus(ids,all){lastIds=ids;lastAll=all;var W=stage.clientWidth,H=stage.
  var vw=W/s,vh=H/s,cx=(x0+x1)/2,cy=(y0+y1)/2;
  var bx=vw>=BW?BX+(BW-vw)/2:Math.max(BX-60,Math.min(BX+BW+60-vw,cx-vw/2)),by=vh>=BH?BY+(BH-vh)/2:Math.max(BY-40,Math.min(BY+BH+40-vh,cy-vh/2));
  setVB([bx,by,vw,vh]);}
-function layout(){$('fit').textContent=fit?'Zoom in':'Whole board';}
+
+// ---------- map zoom (map only; level kept across steps) ----------
+function applyUser(){clearTimeout(setVB.t);if(anim)cancelAnimationFrame(anim);vb=userVB(baseVB);svg.setAttribute('viewBox',vb.join(' '));$('zreset').disabled=(Z===1&&!PX&&!PY);$('zin').disabled=Z>=8;$('zout').disabled=Z<=0.5;}
+function zoomAt(nz,mx,my){nz=Math.max(0.5,Math.min(8,nz));var W=stage.clientWidth,H=stage.clientHeight;if(!W||!H){Z=nz;applyUser();return;}
+ if(mx==null){mx=W/2;my=H/2;}var c=vb,s=Math.min(W/c[2],H/c[3]),ox=(W-c[2]*s)/2,oy=(H-c[3]*s)/2,bx=c[0]+(mx-ox)/s,by=c[1]+(my-oy)/s;
+ Z=nz;var w=baseVB[2]/Z,h=baseVB[3]/Z,s2=Math.min(W/w,H/h),ox2=(W-w*s2)/2,oy2=(H-h*s2)/2,nx=bx-(mx-ox2)/s2,ny=by-(my-oy2)/s2;
+ PX=nx+w/2-(baseVB[0]+baseVB[2]/2);PY=ny+h/2-(baseVB[1]+baseVB[3]/2);applyUser();}
+$('zin').onclick=function(){zoomAt(Z*1.4)};$('zout').onclick=function(){zoomAt(Z/1.4)};$('zreset').onclick=function(){Z=1;PX=0;PY=0;applyUser();};$('zreset').disabled=true;
+stage.addEventListener('wheel',function(e){e.preventDefault();var r=stage.getBoundingClientRect();var d=e.deltaMode===1?e.deltaY*16:e.deltaY;zoomAt(Z*Math.exp(-d*(e.ctrlKey?0.01:0.002)),e.clientX-r.left,e.clientY-r.top);},{passive:false});
+var ptr={},pinch=null,dragged=false,last=null;
+function pts(){return Object.keys(ptr).map(function(k){return ptr[k]})}
+stage.addEventListener('pointerdown',function(e){if(e.target.closest&&e.target.closest('button'))return;ptr[e.pointerId]={x:e.clientX,y:e.clientY};dragged=false;var p=pts();
+ if(p.length===2){pinch={d:Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y)||1,z:Z};}else{pinch=null;last={x:e.clientX,y:e.clientY,sx:e.clientX,sy:e.clientY};}});
+stage.addEventListener('pointermove',function(e){if(!ptr[e.pointerId])return;ptr[e.pointerId]={x:e.clientX,y:e.clientY};var p=pts(),r=stage.getBoundingClientRect();
+ if(p.length>=2&&pinch){dragged=true;var d=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y);zoomAt(pinch.z*d/pinch.d,(p[0].x+p[1].x)/2-r.left,(p[0].y+p[1].y)/2-r.top);return;}
+ if(!last)return;if(!dragged&&Math.hypot(e.clientX-last.sx,e.clientY-last.sy)<5)return;
+ if(!dragged){dragged=true;stage.classList.add('drag');try{stage.setPointerCapture(e.pointerId)}catch(_){}}
+ var W=stage.clientWidth,H=stage.clientHeight,s=Math.min(W/vb[2],H/vb[3]);PX-=(e.clientX-last.x)/s;PY-=(e.clientY-last.y)/s;last.x=e.clientX;last.y=e.clientY;applyUser();});
+function up(e){delete ptr[e.pointerId];if(pts().length<2)pinch=null;if(!pts().length){last=null;stage.classList.remove('drag');}}
+stage.addEventListener('pointerup',up);stage.addEventListener('pointercancel',up);
+stage.addEventListener('click',function(e){if(dragged){e.stopPropagation();e.preventDefault();dragged=false;}},true);
+function layout(){$('fit').textContent=fit?'This step':'Whole board';}
 function go(d){i=Math.max(0,Math.min(T.length-1,i+d));if(i>0&&!keyTouched&&typeof showKey==='function'&&keyOn){keyOn=false;showKey();}render();}
 $('next').onclick=function(){go(1)};
 $('prev').onclick=function(){go(-1)};
@@ -1450,7 +1479,7 @@ kh('Strings');[['own','owns or runs'],['fam','family'],['act','did this to'],['s
  krow(function(sv){var g=el('g',{'class':'str '+k[0]},sv);el('line',{x1:2,y1:9,x2:k[0]==='act'?24:28,y2:9},g);},k[1],'0 0 30 18');});
 var keyOn=false,keyTouched=false;function showKey(){key.classList.toggle('hide',!keyOn);$('keyb').textContent=keyOn?'Hide key':'Key';}
 $('keyb').onclick=function(){keyOn=!keyOn;keyTouched=true;showKey();};showKey();
-window.__board={T:T,P:P,S:S,go:function(n){i=n;render();}};
+window.__board={T:T,P:P,S:S,go:function(n){i=n;render();},zoom:function(z){zoomAt(z)},get z(){return Z},get vb(){return vb.slice()}};
 })();
 </script>
 </body>
