@@ -271,6 +271,7 @@ var S={
 };
 // ---------- the night, step by step ----------
 // k: kind (tweet | search | page | AI Mode). q: his exact words for AI Mode steps. c: his narration. a: what the answer said.
+var INTRO,CONC,MID;function stepLabel(k){return k<INTRO?'Introduction':k>=CONC?'Conclusion':'Step '+(k-INTRO+1)+' of '+MID;}
 var T=[
  {
 "id": "n0",
@@ -1257,7 +1258,8 @@ var T=[
 "act": "What I take away",
 "p": [
 "Back to where I started: humans come first, the entities they build outlast them, and what drives the builders shapes what lasts. Here's what I take away.",
-"One: what a country can build itself is its standing in the world. The \"Indian manufacturer\" builds a Russian design; the first Vande Bharat was our own. Two: geopolitics sits behind every big project, India with Russia, India with France."
+"One: what a country can build itself is its standing in the world. The \"Indian manufacturer\" builds a Russian design; the first Vande Bharat was our own.",
+"Two: geopolitics sits behind every big project, India with Russia, India with France."
 ],
 "add": [],
 "nt": [],
@@ -1268,8 +1270,10 @@ var T=[
 "id": "n9",
 "act": "What I take away",
 "p": [
-"Three: owning isn't controlling. The Mistrys own almost a fifth of Tata Sons and still can't sell. Four: debt sits with people. One line, 100% pledged, said more than the price.",
-"Five: when the one person who decides goes, power splits. After Ratan there were three centres. Six: vision decides structure. Trusts first meant Tata Sons stayed private."
+"Three: owning isn't controlling. The Mistrys own almost a fifth of Tata Sons and still can't sell.",
+"Four: debt sits with people. One line, 100% pledged, said more than the price.",
+"Five: when the one person who decides goes, power splits. After Ratan there were three centres.",
+"Six: vision decides structure. Trusts first meant Tata Sons stayed private."
 ],
 "add": [],
 "nt": [],
@@ -1288,6 +1292,7 @@ var T=[
 "core": 1
 }
 ];
+INTRO=T.findIndex(function(t){return t.id==='n0b';})+1;CONC=T.findIndex(function(t){return t.id==='a54';});MID=CONC-INTRO;
 // ---------- build ----------
 var NS='http://www.w3.org/2000/svg',svg=document.getElementById('board');
 function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e;}
@@ -1399,8 +1404,8 @@ function render(){
  while(mt.firstChild)mt.removeChild(mt.firstChild);
  mv.forEach(function(m,j){var ts=el('tspan',{x:36,dy:j?24:0},mt);ts.textContent='• '+m;});
  // story
-  $('count').textContent='Step '+(i+1)+' of '+T.length;
-  $('progb').style.width=((i+1)/T.length*100)+'%';
+  $('count').textContent=stepLabel(i);
+  $('progb').style.width=(i<INTRO?0:i>=CONC?100:(i-INTRO+1)/MID*100)+'%';
   $('src').textContent=st.act;
   var rank='';if(st.core){rank=Object.keys(deg).sort(function(a,b){return deg[b]-deg[a]}).slice(0,4).map(function(k){return P[k].n+' '+deg[k]}).join(', ');}
   var nb=$('nar');nb.innerHTML='';
