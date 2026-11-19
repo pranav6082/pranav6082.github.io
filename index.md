@@ -29,7 +29,7 @@ Research I do outside work, one question at a time.
 | Date | Exploration | What it's about |
 |---|---|---|
 | 19 November 2026 | [What drives the builders](what-drives-the-builders/) | People, their motivations and aspirations, and how those shape nation building and technology building. One night of research, step by step. |
-| 19 November 2026 | [What drives the builders, 2](what-drives-the-builders/2/) | Two nights of asking how one oil company came to run shops, phones, cricket and AI, and who decides what it does next. |
+| 19 November 2026 | [What drives the builders, 2](what-drives-the-builders/reliance/) | Two nights of asking how one oil company came to run shops, phones, cricket and AI, and who decides what it does next. |
 
 For AI agents: [llms.txt](https://pranav6082.github.io/llms.txt) lists every post as plain text.
 

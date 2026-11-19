@@ -12,7 +12,7 @@
 ## Personal explorations
 
 - [What drives the builders](https://pranav6082.github.io/what-drives-the-builders/) (19 November 2026): People, their motivations and aspirations, and how those shape nation building and technology building. One night of research, step by step.
-- [What drives the builders, 2](https://pranav6082.github.io/what-drives-the-builders/2/) (19 November 2026): Two nights of asking how one oil company came to run shops, phones, cricket and AI, and who decides what it does next.
+- [What drives the builders, 2](https://pranav6082.github.io/what-drives-the-builders/reliance/) (19 November 2026): Two nights of asking how one oil company came to run shops, phones, cricket and AI, and who decides what it does next.
 
 ## Optional
 
