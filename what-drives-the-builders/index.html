@@ -2,8 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>What drives the builders</title>
+<meta name="description" content="People, what drives them, and how that shapes who builds India. One night of research, step by step.">
+<link rel="canonical" href="https://pranav6082.github.io/what-drives-the-builders/">
+<link rel="icon" type="image/svg+xml" href="https://pranav6082.github.io/what-drives-the-builders/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://pranav6082.github.io/what-drives-the-builders/apple-touch-icon.png">
+<meta property="og:title" content="What drives the builders">
+<meta property="og:description" content="People, what drives them, and how that shapes who builds India. One night of research, step by step.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pranav6082.github.io/what-drives-the-builders/">
+<meta property="og:image" content="https://pranav6082.github.io/what-drives-the-builders/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="What drives the builders: people pinned to a company, a government and money with red strings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What drives the builders">
+<meta name="twitter:description" content="People, what drives them, and how that shapes who builds India. One night of research, step by step.">
+<meta name="twitter:image" content="https://pranav6082.github.io/what-drives-the-builders/og-image.png">
 <style>
 :root{color-scheme:light;--bg:#d9cfb8;--cork:#cdbf9f;--ink:#1d1d1b;--muted:#5d5a52;--panel:#fbfaf6;--line:#cfc8b6;
 --co:#e3ecf5;--coB:#4a6b8a;--per:#fff3bf;--perB:#a07c00;--ev:#ffffff;--evB:#8a8a82;--ct:#efe7fb;--ctB:#7048a8;
@@ -111,7 +128,7 @@ button:disabled{opacity:.35;cursor:default}
 #key h4{grid-column:1/-1;margin:2px 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 #key .r{display:flex;align-items:center;gap:6px;white-space:nowrap}
 #key svg{flex:none}
-@media (max-width:760px){
+@media (max-width:767px){
  #app{display:flex;flex-direction:column}
  #mapcol{flex:none;height:34vh;order:0;border-bottom:1px solid var(--line)}
  #story{flex:1;order:1;border-right:0}
@@ -128,6 +145,12 @@ button:disabled{opacity:.35;cursor:default}
  .bar{padding:8px 16px 12px}
  .mapbar{right:6px;bottom:6px}.mapbar button{font-size:12px;padding:5px 9px}
  #key{top:8px;left:8px;right:8px;max-height:60vh;overflow:auto}
+}
+@media (max-width:767px){
+ #sIn{padding-bottom:84px}
+ .bar{position:fixed;left:0;right:0;bottom:0;z-index:4;justify-content:space-between;max-width:none;margin:0;padding:10px 16px calc(12px + env(safe-area-inset-bottom));background:var(--panel)}
+ .bar button{font-size:17px;padding:12px 22px;min-height:48px}
+ .bar button.pri{padding:12px 30px}
 }
 </style>
 </head>
