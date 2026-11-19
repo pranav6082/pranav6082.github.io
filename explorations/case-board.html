@@ -1,0 +1,1391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Case Board</title>
+<style>
+:root{--bg:#d9cfb8;--cork:#cdbf9f;--ink:#1d1d1b;--muted:#5d5a52;--panel:#fbfaf6;--line:#cfc8b6;
+--co:#e3ecf5;--coB:#4a6b8a;--per:#fff3bf;--perB:#a07c00;--ev:#ffffff;--evB:#8a8a82;--ct:#efe7fb;--ctB:#7048a8;
+--str:#9c2b23;--new:#e8590c;--lab:#fbfaf6;--note:#fff9db;
+--tr:#e3f2e1;--trB:#3f7d3a;--gov:#ecebe6;--govB:#6b6b66;--fu:#fff0d6;--fuB:#b06f00;--tk:#2f9e44;--lk:#5d5a52}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1a17;--cork:#2a2620;--ink:#ecebe6;--muted:#a7a397;--panel:#1f1e1b;--line:#45413a;
+--co:#22303d;--coB:#74a0c9;--per:#3a3218;--perB:#e0b84a;--ev:#2c2c29;--evB:#9a9a93;--ct:#2e2340;--ctB:#b39ddb;--str:#e0675d;--new:#ff922b;--lab:#1f1e1b;--note:#34301f;--tr:#1f3320;--trB:#7cc576;--gov:#2c2c29;--govB:#b5b3aa;--fu:#3a2c12;--fuB:#e8a33c;--tk:#69db7c;--lk:#c9c5b8}}
+:root[data-theme="dark"]{--bg:#1c1a17;--cork:#2a2620;--ink:#ecebe6;--muted:#a7a397;--panel:#1f1e1b;--line:#45413a;
+--co:#22303d;--coB:#74a0c9;--per:#3a3218;--perB:#e0b84a;--ev:#2c2c29;--evB:#9a9a93;--ct:#2e2340;--ctB:#b39ddb;--str:#e0675d;--new:#ff922b;--lab:#1f1e1b;--note:#34301f;--tr:#1f3320;--trB:#7cc576;--gov:#2c2c29;--govB:#b5b3aa;--fu:#3a2c12;--fuB:#e8a33c;--tk:#69db7c;--lk:#c9c5b8}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden}
+body{background:var(--bg);color:var(--ink);font:15px/1.4 -apple-system,system-ui,sans-serif}
+.pin{transition:opacity .35s}
+.k-per,.k-fam{--kf:var(--per);--ks:var(--perB)}
+.k-co,.k-listed,.k-private{--kf:var(--co);--ks:var(--coB)}
+.k-trust{--kf:var(--tr);--ks:var(--trB)}
+.k-gov{--kf:var(--gov);--ks:var(--govB)}
+.k-fund{--kf:var(--fu);--ks:var(--fuB)}
+.k-post,.k-doc,.k-video{--kf:var(--ev);--ks:var(--evB)}
+.k-globe{--kf:var(--ct);--ks:var(--ctB)}
+.f{fill:var(--kf);stroke:var(--ks);stroke-width:1.6;stroke-linejoin:round}
+.w{fill:var(--ks);stroke:none}
+.ln{fill:none;stroke:var(--ks);stroke-width:1.6}
+.tk{fill:var(--panel);stroke:var(--tk);stroke-width:1.4}.tkl{fill:none;stroke:var(--tk);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lk{fill:none;stroke:var(--lk);stroke-width:2.2}.lkb{fill:var(--lk)}
+.play{fill:#c92a2a}
+.pin .pl{fill:var(--lab);stroke:var(--line);stroke-width:1.2}
+.pin .nm{font-weight:700;font-size:15px;fill:var(--ink)}
+.pin .sb{font-size:12px;fill:var(--muted)}
+.pin .tack{fill:#c92a2a}
+.cn{fill:var(--panel);stroke:var(--muted);stroke-width:1}.cnt{font-size:10px;font-weight:700;fill:var(--ink);letter-spacing:.04em}
+.pin .deg{fill:var(--ink)}
+.pin .degt{fill:var(--panel);font-size:11px;font-weight:700}
+.pin.new .o,.pin.new .pl{stroke:var(--new);stroke-width:3.2}
+.pin.core .o,.pin.core .pl{stroke:#c92a2a;stroke-width:4}
+.str line{stroke:var(--str);stroke-width:2.2;transition:opacity .35s;stroke-linecap:round}
+.str.fam line{stroke-dasharray:10 6}
+.str.side line{stroke-dasharray:.5 6;stroke-width:3.2}
+.str.ctry line{stroke:var(--ctB);stroke-dasharray:14 4 2 4;stroke-width:2.2}
+.str.trail line{stroke:var(--muted);stroke-dasharray:4 4;stroke-width:1.8}
+.str.act line{marker-end:url(#mA)}
+.str.new line{stroke:var(--new);stroke-width:4}
+.str.side.new line{stroke-width:4.6}
+.str.act.new line{marker-end:url(#mAn)}
+#mA path{fill:var(--str)}#mAn path{fill:var(--new)}
+.str rect{fill:var(--lab);stroke:var(--line)}
+.str text{font-size:12px;fill:var(--ink);font-style:italic}
+.str.new text{font-weight:700;font-style:normal}
+.dim{opacity:.55}
+.faint{opacity:.22}
+.hide{display:none}
+#motive rect{fill:var(--note);stroke:var(--perB);stroke-width:1.5}
+#motive .fold{fill:var(--cork);stroke:var(--perB);stroke-width:1.5}
+#motive .tack{fill:#c92a2a}
+#motive text{fill:var(--ink);font-size:13px}
+#motive .h{font-weight:800;font-size:14px;letter-spacing:.05em}
+/* steps */
+#prog{height:3px;background:var(--line);border-radius:2px;margin:0 0 14px;overflow:hidden}#prog i{display:block;height:100%;background:var(--new);transition:width .3s}
+#ttl{font-size:28px;line-height:1.2;margin:0 0 18px;letter-spacing:-.01em}
+#nar p{font-size:19px;line-height:1.65;margin:0 0 16px}
+#nar blockquote{margin:4px 0 18px;border-left:4px solid var(--new);background:var(--bg);border-radius:0 8px 8px 0;padding:10px 14px}
+#nar blockquote span{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:4px}
+#nar blockquote q{quotes:none;font:600 16.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+#newb{margin-top:22px;border-top:1px solid var(--line);padding-top:12px}#newb.hide{display:none}
+#intros{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+#intros .intro{grid-template-columns:34px 1fr;gap:0 10px;padding:8px 10px;margin:0;border-width:1px;align-items:center}
+#intros .intro svg{width:34px;height:30px}
+#intros .intro h3{font-size:15px}#intros .intro h3 small{margin-left:6px;font-size:10.5px}
+#intros .intro p{font-size:13.5px;line-height:1.35;color:var(--muted)}
+/* layout: story 60% | map 40% */
+#app{display:grid;grid-template-columns:60% 40%;height:100%}
+#story{display:flex;flex-direction:column;min-height:0;background:var(--panel);border-right:1px solid var(--line)}
+#sIn{flex:1;overflow:auto;padding:36px 44px 24px;max-width:780px;width:100%;margin:0 auto}
+.meta{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted);margin:0 0 14px}
+#count{font-variant-numeric:tabular-nums;font-weight:600}
+.src{text-transform:uppercase;letter-spacing:.05em;font-size:11px;border:1px solid var(--line);border-radius:4px;padding:1px 6px}
+#w{font-size:23px;line-height:1.45;margin:0 0 20px;font-weight:500}
+.lbl{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:5px}
+#typed{border-left:4px solid var(--new);background:var(--bg);border-radius:0 8px 8px 0;padding:10px 14px;margin:0 0 20px}
+#typed.hide{display:none}
+#q{margin:0;font:600 17px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-line;color:var(--ink)}
+#back{margin:0 0 20px}#back.hide{display:none}
+#r{margin:0;font-size:18px;line-height:1.6}
+.intro{display:grid;grid-template-columns:52px 1fr;gap:4px 14px;align-items:start;border:1.5px solid var(--new);border-radius:10px;padding:14px 16px;margin:0 0 14px;background:var(--bg)}
+.intro svg{grid-row:span 2}
+.intro h3{margin:0;font-size:19px;line-height:1.25}
+.intro h3 small{font-weight:500;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-left:8px}
+.intro p{margin:0;font-size:17px;line-height:1.6}
+#nw{font-size:13.5px;color:var(--muted);margin:6px 0 0;line-height:1.5}
+#nw b{color:var(--new)}
+.bar{display:flex;gap:10px;align-items:center;justify-content:flex-start;padding:12px 44px 16px;border-top:1px solid var(--line);max-width:780px;width:100%;margin:0 auto}
+button{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:8px 16px;cursor:pointer}
+button.pri{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+button:disabled{opacity:.35;cursor:default}
+#mapcol{position:relative;min-height:0;background:var(--cork)}
+#stage{position:absolute;inset:0;overflow:hidden;background:var(--cork)}
+#board{display:block;width:100%;height:100%}
+.mapbar{position:absolute;right:10px;bottom:10px;display:flex;gap:6px;z-index:3}
+.mapbar button{font-size:13px;padding:6px 11px;opacity:.95}
+#key{position:fixed;top:8px;right:8px;z-index:5;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12px;box-shadow:0 2px 10px rgba(0,0,0,.18);display:grid;grid-template-columns:auto auto;gap:2px 12px;max-width:calc(100vw - 16px)}
+#key.hide{display:none}
+#key h4{grid-column:1/-1;margin:2px 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+#key .r{display:flex;align-items:center;gap:6px;white-space:nowrap}
+#key svg{flex:none}
+@media (max-width:760px){
+ #app{display:flex;flex-direction:column}
+ #mapcol{flex:none;height:34vh;order:0;border-bottom:1px solid var(--line)}
+ #story{flex:1;order:1;border-right:0}
+ #sIn{padding:10px 16px 8px}.meta{margin-bottom:8px}
+ #ttl{font-size:21px;margin-bottom:10px}#nar p{font-size:16px;line-height:1.55;margin-bottom:11px}
+ #nar blockquote{padding:8px 11px;margin-bottom:12px}#nar blockquote q{font-size:14px}
+ #newb{margin-top:12px;padding-top:8px}#intros{grid-template-columns:1fr 1fr;gap:6px}
+ #intros .intro{grid-template-columns:26px 1fr;padding:6px 8px;gap:0 7px}#intros .intro svg{width:26px;height:24px}
+ #intros .intro h3{font-size:13.5px}#intros .intro h3 small{display:none}#intros .intro p{font-size:12px}
+ #q{font-size:14.5px}#typed{padding:8px 11px;margin-bottom:12px}
+ #r{font-size:15px;line-height:1.5}#back{margin-bottom:10px}
+ .intro{grid-template-columns:40px 1fr;padding:10px 12px;gap:2px 10px}.intro svg{width:40px;height:36px}
+ .intro h3{font-size:16px}.intro p{font-size:14.5px;line-height:1.5}.intro{margin-bottom:10px}
+ .bar{padding:8px 16px 12px}
+ .mapbar{right:6px;bottom:6px}.mapbar button{font-size:12px;padding:5px 9px}
+ #key{top:8px;left:8px;right:8px;max-height:60vh;overflow:auto}
+}
+</style>
+</head>
+<body>
+<div id="app">
+<main id="story">
+ <div id="sIn">
+  <div id="prog" aria-hidden="true"><i id="progb"></i></div>
+  <p class="meta"><span id="count"></span><span class="src" id="src"></span></p>
+  <div id="nar"></div>
+  <div id="newb"><span class="lbl">New on the wall</span><div id="intros"></div></div>
+  <p id="nw"></p>
+ </div>
+ <div class="bar"><button id="prev" aria-label="Back">← Back</button><button id="next" class="pri" aria-label="Next">Next →</button></div>
+</main>
+<aside id="mapcol">
+ <div id="stage"><svg id="board" xmlns="http://www.w3.org/2000/svg" viewBox="-170 -120 1630 1080" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Evidence board"></svg></div>
+ <div class="mapbar"><button id="keyb">Key</button><button id="fit">Whole board</button></div>
+</aside>
+</div>
+<div id="key" class="hide"></div>
+<script>
+(function(){
+// ---------- final board: fixed positions ----------
+var W=160,H=54;
+var P={
+ tweet:{t:'ev',n:'Kinet on X',s:'the post, 1,920 sleeper coaches',x:110,y:60},
+ kinet:{t:'co',n:'Kinet',s:'builds the sleepers',x:110,y:175},
+ tmh:{t:'co',n:'TMH',s:'train maker, Russia',x:110,y:300},
+ vande:{t:'ev',n:'Vande Bharat',s:'the contract, Railways',x:330,y:175},
+ rvnl:{t:'co',n:'RVNL',s:'rail builder, listed',x:300,y:320},
+ alstom:{t:'co',n:'Alstom',s:'trains, France',x:360,y:60},
+ cdpq:{t:'co',n:'CDPQ',s:'Quebec pension fund',x:610,y:60},
+ emond:{t:'per',n:'Charles Emond',s:'runs CDPQ',x:850,y:60},
+ afcons:{t:'co',n:'Afcons',s:'infrastructure, listed',x:110,y:420},
+ sp:{t:'co',n:'Shapoorji Pallonji',s:'Mistry family group',x:420,y:420},
+ tatasons:{t:'co',n:'Tata Sons',s:'holding co., private',x:720,y:420},
+ cyrus:{t:'per',n:'Cyrus Mistry',s:'ex-chairman',x:420,y:600},
+ venu:{t:'per',n:'Venu Srinivasan',s:'TVS, Tata Sons board',x:960,y:640},
+ ratan:{t:'per',n:'Ratan Tata',s:'ran the show',x:500,y:250},
+ trusts:{t:'co',n:'Tata Trusts',s:'owned by nobody',x:720,y:250},
+ chandra:{t:'per',n:'Chandrasekaran',s:'chairman since 2017',x:960,y:420},
+ rbi:{t:'co',n:'RBI',s:'the regulator',x:720,y:560},
+ noel:{t:'per',n:'Noel Tata',s:'heads the Trusts',x:960,y:250},
+ jimmy:{t:'per',n:'Jimmy Tata',s:"Ratan's brother",x:640,y:160},
+ darius:{t:'per',n:'Darius Khambata',s:'lawyer, trustee',x:1200,y:250},
+ jaguar:{t:'co',n:'Jaguar, Corus',s:'bought abroad',x:420,y:800},
+ vijay:{t:'per',n:'Vijay Singh',s:'trustee',x:1200,y:520},
+ tvs:{t:'co',n:'TVS Motor',s:'TVS group',x:1200,y:720},
+ son:{t:'per',n:'Sudarshan Venu',s:"Venu's son, runs TVS",x:1350,y:620},
+ lakshmi:{t:'per',n:'Lakshmi Venu',s:"Venu's daughter",x:960,y:830},
+ sc:{t:'co',n:'Sundaram-Clayton',s:'TVS group',x:720,y:900},
+ mallika:{t:'per',n:'Mallika Srinivasan',s:"Venu's wife",x:1230,y:880},
+ tafe:{t:'fam',n:'TAFE family',s:'tractors dynasty',x:1380,y:780},
+ russia:{t:'ctry',n:'Russia',s:'designs it',x:-90,y:300},
+ india:{t:'ctry',n:'India',s:'the buyer',x:480,y:150},
+ france:{t:'ctry',n:'France',s:"Alstom's home",x:360,y:-70},
+ canada:{t:'ctry',n:'Canada',s:"the Quebec fund's home",x:610,y:-70},
+ youtube:{t:'ev',n:'YouTube',s:'Noel Tata at HTLS 2026',x:1010,y:125}
+};
+// drawn kind of each pin (default: person)
+var K={russia:'globe',india:'globe',france:'globe',canada:'globe',kinet:'private',tmh:'co',tweet:'post',vande:'doc',youtube:'video',rvnl:'listed',afcons:'listed',alstom:'co',jaguar:'co',tvs:'co',sc:'co',
+ cdpq:'fund',sp:'private',tatasons:'private',trusts:'trust',rbi:'gov',tafe:'fam'};
+var CN={kinet:'IN·RU',tmh:'RU',rvnl:'IN',alstom:'FR',cdpq:'CA',afcons:'IN',sp:'IN',tatasons:'IN',trusts:'IN',rbi:'IN',tvs:'IN',sc:'IN'};
+Object.keys(P).forEach(function(id){P[id].i=K[id]||'per';});
+function ppl(id){return P[id].t==='per'||P[id].t==='fam';}
+// kind of each string (default: owns or runs)
+var SK={ru_tm:'ctry',in_vb:'ctry',in_rv:'ctry',fr_al:'ctry',ca_cd:'ctry',tw_ki:'trail',vb_al:'trail',rv_af:'trail',yt_no:'trail',ji_ra:'fam',so_ve:'fam',la_ve:'fam',ma_la:'fam',ma_ve:'fam',ma_tf:'fam',
+ ve_cy:'act',cy_af:'act',rb_ts:'act',no_ch:'act',ve_ch:'act',ve_da:'act',da_no:'side',vi_ve:'side'};
+var S={
+ tw_ki:['tweet','kinet','posted it'],
+ ki_vb:['kinet','vande','builds under it'],
+ tm_ki:['tmh','kinet','Russian side 75%'],
+ rv_ki:['rvnl','kinet','owns 25%'],
+ vb_al:['vande','alstom','same research'],
+ al_cd:['alstom','cdpq','behind it'],
+ cd_em:['cdpq','emond','runs it'],
+ rv_af:['rvnl','afcons','came to mind'],
+ sp_af:['sp','afcons','owns 50.17%|pledged 100%'],
+ sp_ts:['sp','tatasons','owns 18.4%'],
+ cy_sp:['cyrus','sp','Mistry family|ran it ~20 yrs'],
+ cy_ts:['cyrus','tatasons','chairman 2012|ousted 2016'],
+ ve_cy:['venu','cyrus','seconded the motion',.3],
+ ra_tr:['ratan','trusts','head'],
+ ra_ts:['ratan','tatasons','ran the show'],
+ ch_ts:['chandra','tatasons','chairman'],
+ cy_af:['cyrus','afcons','turned it around'],
+ rb_ts:['rbi','tatasons','wants it listed'],
+ tr_ts:['trusts','tatasons','owns 66%'],
+ no_tr:['noel','trusts','heads it'],
+ no_ch:['noel','chandra','voted against|(4–1)'],
+ ve_ch:['venu','chandra','voted for|same direction'],
+ ji_ra:['jimmy','ratan','brother|leaked letters'],
+ da_no:['darius','noel',"on Noel's|side"],
+ ja_ts:['jaguar','tatasons','bought with debt|by Tata Motors, Steel',.35],
+ vi_ve:['vijay','venu','wrote together|for listing'],
+ ve_da:['venu','darius','hit back at|(The Hindu)',.55],
+ ve_tv:['venu','tvs','his group'],
+ so_tv:['son','tvs','runs it'],
+ so_ve:['son','venu','son, same side'],
+ la_ve:['lakshmi','venu','daughter|partition notice'],
+ la_sc:['lakshmi','sc','runs it'],
+ ma_la:['mallika','lakshmi','mother|same side'],
+ ma_ve:['mallika','venu','wife|opposite views',.6],
+ ma_tf:['mallika','tafe',"her family's dynasty"],
+ yt_no:['youtube','noel','his interview'],
+ ru_tm:['russia','tmh','Russian firm',.45],
+ in_vb:['india','vande','pays for it'],
+ in_rv:['india','rvnl','its rail company',.6],
+ fr_al:['france','alstom','French firm'],
+ ca_cd:['canada','cdpq','Quebec, Canada']
+};
+// ---------- the night, step by step ----------
+// k: kind (tweet | search | page | AI Mode). q: his exact words for AI Mode steps. c: his narration. a: what the answer said.
+var T=[
+ {
+"id": "n0",
+"act": "Why I do this",
+"p": [
+"I want to understand how the world really works, and see real examples of it playing out: business, technology, governments, incentives, motivations, and where the world stands right now.",
+"How I go about it: I start from one thing I come across and keep asking who's behind it. It always starts from the human, who wanted what."
+],
+"add": [],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a0",
+"act": "Who builds the trains",
+"p": [
+"It started with a post on X from Kinet Railway Solutions: \"Kinet Railway Solutions, an Indian manufacturer of electric passenger trains, was established to manufacture and maintain 1,920 Vande Bharat sleeper coaches.\"",
+"I shared it and asked the obvious thing. Is this private? Who are the founders? I ask that first because the founders tell me who wanted this, and that's where everything else starts."
+],
+"add": [
+"tweet",
+"kinet",
+"tw_ki"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a1",
+"act": "Who builds the trains",
+"p": [
+"Behind that is the question I always have with an Indian project: who are the parties, and which part of the value chain is in India and which is outside? With all the talk of Atmanirbhar, that's the part I care about.",
+"So I went to the contract itself: the Railways' agreement to build and maintain the Vande Bharat trains."
+],
+"add": [
+"vande",
+"ki_vb"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a2",
+"act": "Who builds the trains",
+"p": [
+"The answer surprised me. Russian firms hold 75% of Kinet, led by TMH, a Russian train maker. The train's design sits with them.",
+"So the \"Indian manufacturer\" in the post builds a train designed in Russia."
+],
+"add": [
+"tmh",
+"tm_ki",
+"russia",
+"ru_tm"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a3",
+"act": "Who builds the trains",
+"p": [
+"Then the levels, because capability is what I'm really after. Labour is a capability. Running a factory is one. Designing deep tech systems is another, and so is running the thing for years.",
+"Here, Indian workers assemble the trains at the Railways' own factory in Latur, and Indian suppliers make the car bodies, bogies and motors. The design stays in Russia."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"kinet",
+"tmh",
+"vande"
+]
+},
+ {
+"id": "a4",
+"act": "Who builds the trains",
+"p": [
+"So India writes the spec, pays, approves every train and owns the factory. It decides what gets built, but not how it's engineered."
+],
+"add": [
+"india",
+"in_vb"
+],
+"nt": [],
+"mv": [],
+"f": [
+"kinet",
+"vande"
+]
+},
+ {
+"id": "n1",
+"act": "Who builds the trains",
+"p": [
+"The first Vande Bharat was different. Indian Railways' own factory in Chennai designed it, so India owned that know-how.",
+"Maybe because the first one was a chair car, and a chair car is simpler to build than a sleeper."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"kinet",
+"vande"
+]
+},
+ {
+"id": "a5",
+"act": "Who builds the trains",
+"p": [
+"Working out how the deal actually runs, I found the Indian partner: RVNL, the government's rail-building company, with 25% of Kinet. And it turned out RVNL is publicly listed.",
+"That's the only way an ordinary investor gets even a sliver of this deal."
+],
+"add": [
+"rvnl",
+"rv_ki",
+"in_rv"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a6",
+"act": "Who builds the trains",
+"p": [
+"So I ran the loop I run on any company. Is it listed? How has the price moved since it listed: a day, a month, six months, a year, five years, all of it? What are its revenue and cash flow? Who runs it? Who owns it?",
+"For RVNL I pulled up the price, the technicals and the financials. Together they tell me how a company is doing and who's behind it, so that's how I look at every company from here on."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"rvnl"
+]
+},
+ {
+"id": "a7",
+"act": "Who builds the trains",
+"p": [
+"The same railway digging brought up Alstom. For a foreign company I ask two things: how big is it in the world, and how big is it here?",
+"What fascinated me was how long it's been here: building for Indian railways for about 100 years, metro projects included."
+],
+"add": [
+"alstom",
+"vb_al"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a8",
+"act": "Who builds the trains",
+"p": [
+"Then the country behind each company, because that's where governments come in. Alstom is French, so that's India and France working together. The sleeper Vande Bharat is India and Russia.",
+"Geopolitics defines all of these commercial projects."
+],
+"add": [
+"france",
+"fr_al"
+],
+"nt": [],
+"mv": [],
+"f": [
+"alstom",
+"tmh",
+"kinet",
+"russia",
+"india"
+]
+},
+ {
+"id": "a9",
+"act": "Who builds the trains",
+"p": [
+"And who owns Alstom? A pension fund from Quebec sits behind it, and one man runs that fund, Charles Emond.",
+"From a train, to the company that makes it, to the person running the money behind it. It was the first time I asked who's behind a company. Not the last."
+],
+"add": [
+"cdpq",
+"al_cd",
+"emond",
+"cd_em",
+"canada",
+"ca_cd"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a10",
+"act": "Follow the money",
+"p": [
+"Then Afcons came to mind, another Indian builder. I knew it from the Bangalore Metro and a bridge.",
+"A metro or a bridge isn't just a contract. It ties back to nation building: everyone from Ashwini Vaishnaw to Modi talks about engineering like this. And this time the builder was an Indian company."
+],
+"add": [
+"afcons",
+"rv_af"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "n2",
+"act": "Follow the money",
+"p": [
+"That's the geopolitics angle again. What a country can build in-house is what decides its standing in the world. Technological capability.",
+"Look at UPI, BrahMos, or Reliance's refinery at Jamnagar. Say the US now has Venezuelan oil, and Jamnagar is maybe the only refinery that can refine it. That's capability turning into a place in the world."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"afcons"
+]
+},
+ {
+"id": "n3",
+"act": "Follow the money",
+"p": [
+"And geopolitics has its own reach: internal security, UN votes, all of it.",
+"I'd seen the same pattern in separate research on nuclear and space. Our own scientists, technologists and business people build those capabilities. Then the country's politics shapes them, and they get used on the world stage."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"afcons"
+]
+},
+ {
+"id": "n4",
+"act": "Follow the money",
+"p": [
+"Back to Afcons, and the same loop. Is it listed? Yes. How has the price moved? Down, continuously, since the day it listed."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"afcons"
+]
+},
+ {
+"id": "a11",
+"act": "Follow the money",
+"p": [
+"It listed at ₹463. That night it was ₹217.99, and profit was down 61% that quarter.",
+"A price that only goes down made me want to know who owns it. So I asked."
+],
+"add": [],
+"nt": [
+[
+"afcons",
+"listed at ₹463; ₹217.99 that night"
+]
+],
+"mv": [],
+"f": [
+"afcons"
+]
+},
+ {
+"id": "a12",
+"act": "Follow the money",
+"p": [
+"The owners are the Shapoorji Pallonji Group, with 50.17% of Afcons. And one line stopped me: 100% of that holding is pledged.",
+"That one line mattered more than the price."
+],
+"add": [
+"sp",
+"sp_af"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a13",
+"act": "Follow the money",
+"p": [
+"Pledged means the owners have borrowed against every share they hold. If the price falls far enough, the lenders can sell.",
+"The debt sits with the group, not with Afcons. A fact about a company turned out to be a fact about the people who own it."
+],
+"add": [],
+"nt": [
+[
+"sp",
+"every Afcons share it owns is collateral for loans"
+]
+],
+"mv": []
+},
+ {
+"id": "n5",
+"act": "Follow the money",
+"p": [
+"That's the core of all of this. In the end it's about humans: humans controlling entities, and everything around them."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"sp",
+"afcons"
+]
+},
+ {
+"id": "a14",
+"act": "The owner behind the owner",
+"p": [
+"So who are these owners? An old Mumbai family group, founded in 1865. They built the RBI building, the BSE and the Chenab bridge.",
+"And they had been selling: Eureka Forbes, a port."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"sp",
+"afcons"
+]
+},
+ {
+"id": "a15",
+"act": "The owner behind the owner",
+"p": [
+"Then the line that changed the night. This family owns about 18.4% of Tata Sons, the private company at the top of the whole Tata group.",
+"I'd come in asking about a share price. Now I wanted to know who these people were."
+],
+"add": [
+"tatasons",
+"sp_ts"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a16",
+"act": "The owner behind the owner",
+"p": [
+"They're the Mistrys. Shapoor Mistry owns half the group, and Cyrus Mistry's sons, Firoz and Zahan, a quarter each.",
+"A family that has owned a slice of someone else's empire since the 1930s."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"sp",
+"tatasons"
+]
+},
+ {
+"id": "a17",
+"act": "The owner behind the owner",
+"p": [
+"One of them once ran that empire. Cyrus Mistry became chairman of Tata Sons in 2012. Four years later, the board threw him out.",
+"One man tied to both sides: the family that owns Afcons, and the company that family owns a slice of. I'd asked about a builder, and found a boardroom fight."
+],
+"add": [
+"cyrus",
+"cy_sp",
+"cy_ts"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a18",
+"act": "The owner behind the owner",
+"p": [
+"Thrown out by whom? On 24 October 2016, seven of the nine directors voted him out. He wasn't allowed to vote. One of them, Venu Srinivasan, seconded the motion.",
+"For now Venu was just a name on a list. And a list of names didn't feel like the people who actually decided."
+],
+"add": [
+"venu",
+"ve_cy"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a19",
+"act": "The owner behind the owner",
+"p": [
+"The Supreme Court upheld it in 2021. The Mistrys still own their stake, worth billions on paper, but they can't easily sell it.",
+"That was the first thing the night showed me. You can own almost a fifth of something and still be shown the door."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"cyrus",
+"sp",
+"tatasons"
+]
+},
+ {
+"id": "a20",
+"act": "Who really decides",
+"p": [
+">yeah sure. these guys are just the face - who was the main perosn running the show - ratan tata? or someone else",
+"It was Ratan Tata, not through a title but as head of the Tata Trusts, which own about two-thirds of Tata Sons. Two months before the vote, he had put Venu on the board."
+],
+"add": [
+"ratan",
+"trusts",
+"ra_tr",
+"ra_ts"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a21",
+"act": "Who really decides",
+"p": [
+"I assumed Ratan had picked Cyrus in the first place. He hadn't: a five-member panel chose him in 2011.",
+"The reasons given for removing him were business ones: the Nano, the European steel business, a Welspun deal, contracts going to his own family's group."
+],
+"add": [],
+"nt": [
+[
+"cyrus",
+"picked by a five-person panel in 2011"
+]
+],
+"mv": []
+},
+ {
+"id": "a22",
+"act": "Who really decides",
+"p": [
+"His replacement was Chandrasekaran, the head of TCS, picked by a panel that included Ratan and Venu.",
+"A hired professional, not an owner. And the first chairman who wasn't a Parsi."
+],
+"add": [
+"chandra",
+"ch_ts"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a23",
+"act": "Who really decides",
+"p": [
+"Then the story came back to where I'd started. Cyrus had run his family's group too, and turned Afcons around after they bought it in 2000.",
+"He died in September 2022. After that his family sold assets, and in 2024 listed Afcons, mostly by selling their own shares. The price I'd looked up was there because the owners were selling."
+],
+"add": [
+"cy_af"
+],
+"nt": [
+[
+"sp",
+"sold assets, listed Afcons in 2024"
+]
+],
+"mv": []
+},
+ {
+"id": "a24",
+"act": "Who really decides",
+"p": [
+"Afcons matters in its own way: the Chenab bridge, the Atal Tunnel, most of the big city metros. About 71% of its work comes from the government.",
+"But it's small next to Tata. The bigger fight was over Tata itself, and the word that kept coming up was \"listed\"."
+],
+"add": [],
+"nt": [
+[
+"afcons",
+"built the Chenab bridge, the Atal Tunnel, city metros"
+]
+],
+"mv": []
+},
+ {
+"id": "a25",
+"act": "Who really decides",
+"p": [
+"The regulator wants Tata Sons public. The RBI treats it as a large finance company and told it to list. Tata asked to be let off; the RBI refused.",
+"The Mistrys want a listing too. The Trusts don't."
+],
+"add": [
+"rbi",
+"rb_ts"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a26",
+"act": "Who really decides",
+"p": [
+"Same loop for Tata Sons. Listed? No. Who owns it? The Trusts about two-thirds, the Mistrys under a fifth, the Tata family 2–3%.",
+"Now I could see what each owner wants. A listing would let the Mistrys sell. The Trusts oppose it."
+],
+"add": [
+"tr_ts"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a27",
+"act": "Who really decides",
+"p": [
+"I tried to say it back in my own words: Chandrasekaran is the boss, deciding where the money goes, like Mukesh Ambani.",
+"Half right. He decides where the money goes, but he's hired on a fixed term, and the Trusts hold a veto. Reliance is run by its owner."
+],
+"add": [],
+"nt": [
+[
+"chandra",
+"hired; the Trusts hold a veto"
+]
+],
+"mv": []
+},
+ {
+"id": "a28",
+"act": "Who really decides",
+"p": [
+"There used to be one boss, Ratan. Who's the boss now? Nobody owns the Trusts; they're charitable. And since 2022, whoever chairs the Trusts can't also chair Tata Sons.",
+"So there's no single boss. There are three power centres: Noel Tata at the Trusts, Chandrasekaran, and Shapoor Mistry."
+],
+"add": [
+"noel",
+"no_tr"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a29",
+"act": "Who really decides",
+"p": [
+"Noel's wife, Aloo, is a Mistry. So the man holding the Trusts' veto is tied by marriage to the family that was thrown out.",
+"Three people with power, and no one above them. What happens when they disagree?"
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"noel",
+"sp",
+"trusts"
+]
+},
+ {
+"id": "a30",
+"act": "Who really decides",
+"p": [
+"They already had. In September 2026 the board voted 4–1 for Chandrasekaran. Noel was the one against.",
+"Venu voted for. The same Venu who seconded the motion against Cyrus."
+],
+"add": [
+"no_ch"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a31",
+"act": "Who really decides",
+"p": [
+"The Trusts say the vote doesn't count, because their own nominees split 1–1: Noel no, Venu yes.",
+"Venu sits on the board for the Trusts, and voted against the Trusts' own chairman."
+],
+"add": [
+"ve_ch"
+],
+"nt": [
+[
+"venu",
+"a Trust nominee on the Tata Sons board"
+]
+],
+"mv": []
+},
+ {
+"id": "a32",
+"act": "Who really decides",
+"p": [
+">yeah so that the issue - \"tata\" is not controlled by \"tata\"",
+"Even the family is split. Ratan's own brother, Jimmy Tata, backs Chandrasekaran, against Noel. The Tatas own under 3% directly; trustees and hired professionals run it."
+],
+"add": [
+"jimmy",
+"ji_ra"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a33",
+"act": "Who really decides",
+"p": [
+"On Noel's side is Darius Khambata, a senior lawyer, once Advocate General of Maharashtra, and a Tata trustee.",
+"Each camp has its people. Not long ago, one man held all of them together."
+],
+"add": [
+"darius",
+"da_no"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a34",
+"act": "When the one person goes",
+"p": [
+"My own guess was that this started because Ratan died. He died on 9 October 2024, aged 86. Two days later, Noel took over the Trusts.",
+"He had to go someday. When he went, nobody was left who could decide alone."
+],
+"add": [],
+"nt": [
+[
+"ratan",
+"died October 2024"
+],
+[
+"noel",
+"took over the Trusts days later"
+]
+],
+"mv": []
+},
+ {
+"id": "a35",
+"act": "When the one person goes",
+"p": [
+"What each side wants is clear now. Chandrasekaran wants Tata Sons listed: money for chips, electric cars and Air India, a way out for the Mistrys, and less of a veto for the Trusts.",
+"Noel wants something else: to merge two group companies into Tata Sons instead."
+],
+"add": [],
+"nt": [
+[
+"chandra",
+"wants Tata Sons listed"
+]
+],
+"mv": []
+},
+ {
+"id": "n6",
+"act": "When the one person goes",
+"p": [
+"Ratan's vision was always nation building. For him the Trusts mattered most, because the Trusts run schools and hospitals.",
+"So there's a P0 and a P1, and Tata Sons has to stay private. That was the core argument, and the vision."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"ratan",
+"trusts",
+"tatasons"
+]
+},
+ {
+"id": "a36",
+"act": "When the one person goes",
+"p": [
+"Ratan had wanted it private. He made it a private company in 2017, because staying private let him take long bets: Jaguar Land Rover, Corus, Air India."
+],
+"add": [],
+"nt": [
+[
+"ratan",
+"kept it private, for long bets"
+]
+],
+"mv": []
+},
+ {
+"id": "n7",
+"act": "When the one person goes",
+"p": [
+"It isn't about right or wrong. It's about whose vision. Chandrasekaran says even today that going public doesn't mean less control, or less money for the Trusts.",
+"Maybe that's evolving, because the world is evolving. Who knows."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"chandra",
+"trusts",
+"tatasons"
+]
+},
+ {
+"id": "a37",
+"act": "When the one person goes",
+"p": [
+"Even those bets weren't paid for with Tata Sons' own cash. Tata Motors and Tata Steel bought them, with debt. Corus alone cost $12.1 billion.",
+"Big bets, made with borrowed money."
+],
+"add": [
+"jaguar",
+"ja_ts"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a38",
+"act": "When the one person goes",
+"p": [
+"Chandrasekaran backs listing, and opposes Noel's claim to a veto. They had already clashed in February, over Air India's losses and BigBasket.",
+"Two men, two ideas of what Tata should be."
+],
+"add": [],
+"nt": [
+[
+"chandra",
+"opposes Noel's veto claim"
+]
+],
+"mv": []
+},
+ {
+"id": "a39",
+"act": "When the one person goes",
+"p": [
+"Then Venu again. In November he and Vijay Singh wrote arguing for a listing. Vijay Singh had backed Ratan's no-listing line until mid-2025.",
+"People who once stood with Ratan's line were now pushing the other way."
+],
+"add": [
+"vijay",
+"vi_ve"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a40",
+"act": "When the one person goes",
+"p": [
+"Khambata wrote a letter rebutting them, and they hit back. I read it in The Hindu.",
+"The fight was out in the open now."
+],
+"add": [
+"ve_da"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a41",
+"act": "When the one person goes",
+"p": [
+">thats what - 1 person or 2 max has to lay the vision and decide - it was ratan earlier. looks like chandrashekar, venu and golf guy are taking those - maybe just chandrashekar and venu",
+"The golf guy was Vijay Singh. The pair driving the new direction together are Chandrasekaran and Venu."
+],
+"add": [],
+"nt": [
+[
+"venu",
+"with Chandrasekaran, \"driving the new direction\""
+]
+],
+"mv": []
+},
+ {
+"id": "a42",
+"act": "When the one person goes",
+"p": [
+"Venu kept coming back. He seconded the motion against Cyrus, voted for Chandrasekaran, and wrote for the listing.",
+"One of the two men deciding Tata's future. So what's happening in his own house?"
+],
+"add": [],
+"nt": [],
+"mv": [],
+"f": [
+"venu",
+"chandra",
+"cyrus"
+]
+},
+ {
+"id": "a43",
+"act": "The decider's own house",
+"p": [
+"Venu is the TVS man, so the same loop. It's doing well: profit up 52%, the world's third-largest two-wheeler maker. A Venu family trust owns most of the holding company, and his son, Sudarshan Venu, became chairman in August 2025.",
+"A father handing the business to his son."
+],
+"add": [
+"tvs",
+"son",
+"ve_tv",
+"so_tv",
+"so_ve"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a44",
+"act": "The decider's own house",
+"p": [
+"His daughter, Lakshmi Venu, wants something else. On 16 November 2026 she sent her father a partition notice: a demand to divide the family's holdings.",
+"A man helping decide Tata's future, being asked to split his own."
+],
+"add": [
+"lakshmi",
+"la_ve"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a45",
+"act": "The decider's own house",
+"p": [
+"So it's son and father against mother and daughter? Yes. Venu's wife, Mallika Srinivasan, is on her daughter's side.",
+"His side points to a 2020 family split and a 2024 agreement. Hers points to a daughter's equal right to family property."
+],
+"add": [
+"sc",
+"la_sc",
+"mallika",
+"ma_la"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a46",
+"act": "The decider's own house",
+"p": [
+"They come from two business dynasties: his is TVS, hers owns the tractor maker TAFE. It's now in the Chennai courts.",
+"Two family empires inside one marriage."
+],
+"add": [
+"tafe",
+"ma_ve",
+"ma_tf"
+],
+"nt": [],
+"mv": []
+},
+ {
+"id": "a47",
+"act": "The decider's own house",
+"p": [
+"A split along gender lines is rare. It's possible because of a 2005 change to the inheritance law.",
+"I stopped thinking about companies."
+],
+"add": [],
+"nt": [
+[
+"lakshmi",
+"a split by gender, after the 2005 inheritance law"
+]
+],
+"mv": []
+},
+ {
+"id": "a48",
+"act": "Why they live like this",
+"p": [
+">what the actual fuck! how do these folks even live man",
+"The answer: very rich business families often end up like this, separate lives under one name."
+],
+"add": [],
+"nt": [],
+"mv": [
+"separate lives under one name"
+],
+"people": 1
+},
+ {
+"id": "a49",
+"act": "Why they live like this",
+"p": [
+"I pushed. Why do this until you die? What does that identity even give you?",
+"Power, legacy, a name, it said."
+],
+"add": [],
+"nt": [],
+"mv": [
+"power, legacy, identity tied to the name"
+],
+"people": 1
+},
+ {
+"id": "a50",
+"act": "Why they live like this",
+"p": [
+"Really? Someone with that much success reduces a life to that? Maybe in India it's dharma: each side believing its fight for control is the right thing.",
+"It agreed with all of it. Too easily."
+],
+"add": [],
+"nt": [],
+"mv": [
+"dharma: each side thinks its fight is right"
+],
+"people": 1
+},
+ {
+"id": "a51",
+"act": "Why they live like this",
+"p": [
+">these are only my projections - u cant just blindly agree to what i say",
+"It admitted it had over-agreed, and split what's verified from what's my reading. Everything on the motive note is my guess, not a fact."
+],
+"add": [],
+"nt": [],
+"mv": [
+"(my projections, not facts)"
+],
+"people": 1
+},
+ {
+"id": "a52",
+"act": "Why they live like this",
+"p": [
+"So I went to what they actually say in public. Noel: \"charity owns commerce\". Mallika: a son and a daughter are equal. Venu: temples and Carnatic music. Chandrasekaran: marathons.",
+"What they say they care about, in their own words."
+],
+"add": [],
+"nt": [
+[
+"noel",
+"says \"charity owns commerce\""
+],
+[
+"mallika",
+"says son and daughter are equal"
+],
+[
+"venu",
+"talks temples, music"
+],
+[
+"chandra",
+"runs marathons"
+]
+],
+"mv": [],
+"people": 1
+},
+ {
+"id": "a53",
+"act": "Why they live like this",
+"p": [
+"The last thing I opened was Noel Tata's full interview from the HT Leadership Summit.",
+"The only place on the wall where one of these people speaks for himself."
+],
+"add": [
+"youtube",
+"yt_no"
+],
+"nt": [],
+"mv": [],
+"people": 1
+},
+ {
+"id": "a54",
+"act": "What the night showed",
+"p": [
+"I never went back to Afcons. Count the strings: {RANK}. People own things they can't control, and they borrow, go to court and fight in public over the difference.",
+"Something this big still turns on what one or two people want: it was Ratan, now it looks like Chandrasekaran and Venu. Why they live like this, I can only guess. Those guesses are mine."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"core": 1
+},
+ {
+"id": "n8",
+"act": "What I take away",
+"p": [
+"Back to why I started: to see how the world really works, starting from the human. Here's what I take away.",
+"One: what a country can build itself is its standing in the world. The \"Indian manufacturer\" builds a Russian design; the first Vande Bharat was our own. Two: geopolitics sits behind every big project, India with Russia, India with France."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"core": 1
+},
+ {
+"id": "n9",
+"act": "What I take away",
+"p": [
+"Three: owning isn't controlling. The Mistrys own almost a fifth of Tata Sons and still can't sell. Four: debt sits with people. One line, 100% pledged, said more than the price.",
+"Five: when the one person who decides goes, power splits. After Ratan there were three centres. Six: vision decides structure. Trusts first meant Tata Sons stayed private."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"core": 1
+},
+ {
+"id": "n10",
+"act": "What I take away",
+"p": [
+"And under all of it: it's humans. Humans controlling entities, and what each of them wants. Venu helps decide Tata's future while his own family splits."
+],
+"add": [],
+"nt": [],
+"mv": [],
+"core": 1
+}
+];
+// ---------- build ----------
+var NS='http://www.w3.org/2000/svg',svg=document.getElementById('board');
+function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e;}
+var df=el('defs',{});['mA','mAn'].forEach(function(m){var mk=el('marker',{id:m,viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:15,markerHeight:15,markerUnits:'userSpaceOnUse',orient:'auto'},df);el('path',{d:'M0,0 L10,5 L0,10 Z'},mk);});
+var gS=el('g',{}),gP=el('g',{}),gM=el('g',{id:'motive','class':'hide'});
+var SE={},PE={},notes={};
+Object.keys(S).forEach(function(id){var s=S[id],a=P[s[0]],b=P[s[1]],t=s[3]==null?.5:s[3];
+ var g=el('g',{'class':'str hide '+(SK[id]||'own')},gS);g._ln=el('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y},g);
+ var lx=a.x+(b.x-a.x)*t,ly=a.y+(b.y-a.y)*t,lines=s[2].split('|');
+ var r=el('rect',{rx:4},g),tx=el('text',{x:lx,'text-anchor':'middle'},g);
+ lines.forEach(function(L,i){var ts=el('tspan',{x:lx,y:ly+(i-(lines.length-1)/2)*14+4},tx);ts.textContent=L;});
+ g._lab=[r,tx];SE[id]=g;});
+function person(g,dx,k){var t=el('g',{transform:'translate('+dx+',0) scale('+k+')'},g);
+ el('path',{'class':'o f',d:'M-16,0 C-16,-11 -9,-15 0,-15 C9,-15 16,-11 16,0 Z'},t);el('circle',{'class':'o f',cx:0,cy:-25,r:8.5},t);}
+function building(g){el('rect',{'class':'o f',x:-15,y:-34,width:30,height:34},g);
+ for(var r=0;r<3;r++)for(var c=0;c<2;c++)el('rect',{'class':'w',x:c?3:-10,y:-29+r*8,width:7,height:4.5},g);
+ el('rect',{'class':'w',x:-3.5,y:-7,width:7,height:7},g);}
+function icon(g,k){
+ if(k==='per')person(g,0,1);
+ else if(k==='fam'){person(g,-15,.78);person(g,15,.78);person(g,0,1);}
+ else if(k==='co')building(g);
+ else if(k==='listed'){building(g);el('rect',{'class':'tk',x:9,y:-42,width:22,height:15,rx:3},g);el('polyline',{'class':'tkl',points:'12.5,-31 17,-35.5 21,-33 27.5,-39'},g);}
+ else if(k==='private'){building(g);el('path',{'class':'lk',d:'M14.5,-25 v-5 a4.5,4.5 0 0 1 9,0 v5'},g);el('rect',{'class':'lkb',x:12,y:-25,width:14,height:11,rx:2},g);}
+ else if(k==='trust'){el('path',{'class':'o f',d:'M0,-39 L17,-33 V-19 C17,-8 9,-3 0,0 C-9,-3 -17,-8 -17,-19 V-33 Z'},g);
+  el('path',{'class':'w',d:'M0,-11 C-9,-17 -9,-25 -4.5,-26 C-2,-26.5 0,-24.5 0,-22.5 C0,-24.5 2,-26.5 4.5,-26 C9,-25 9,-17 0,-11 Z'},g);}
+ else if(k==='gov'){el('path',{'class':'o f',d:'M-22,-27 L0,-39 L22,-27 Z'},g);el('rect',{'class':'o f',x:-20,y:-27,width:40,height:4},g);
+  [-16,-7,2,11].forEach(function(x){el('rect',{'class':'o f',x:x,y:-23,width:5,height:19},g);});el('rect',{'class':'o f',x:-23,y:-4,width:46,height:4},g);}
+ else if(k==='fund'){[ -4,-13,-22].forEach(function(y){el('path',{'class':'o f',d:'M-14,'+(y-7)+' L-14,'+y+' A14,5 0 0 0 14,'+y+' L14,'+(y-7)+' Z'},g);el('ellipse',{'class':'o f',cx:0,cy:y-7,rx:14,ry:5},g);});}
+ else if(k==='post'){el('rect',{'class':'o f',x:-22,y:-37,width:44,height:35,rx:5},g);el('circle',{'class':'w',cx:-14,cy:-29,r:4},g);
+  el('rect',{'class':'w',x:-7,y:-31,width:18,height:3,rx:1},g);el('rect',{'class':'w',x:-16,y:-21,width:32,height:3,rx:1},g);el('rect',{'class':'w',x:-16,y:-14,width:24,height:3,rx:1},g);
+  el('path',{'class':'ln',d:'M-15,-7 h5 M-2,-7 h5 M11,-7 h5'},g);}
+ else if(k==='doc'){el('path',{'class':'o f',d:'M-15,-39 H6 L15,-30 V0 H-15 Z'},g);el('path',{'class':'ln',d:'M6,-39 V-30 H15'},g);
+  [[-29,12],[-23,20],[-17,20],[-11,14]].forEach(function(l){el('rect',{'class':'w',x:-10,y:l[0],width:l[1],height:2.5},g);});el('path',{'class':'ln',d:'M2,-5 c3,-4 5,2 8,-2'},g);}
+ else if(k==='globe'){el('circle',{'class':'o f',cx:0,cy:-20,r:18},g);el('ellipse',{'class':'ln',cx:0,cy:-20,rx:7.5,ry:18},g);
+  el('path',{'class':'ln',d:'M-18,-20 H18 M-15.5,-29 H15.5 M-15.5,-11 H15.5'},g);}
+ else if(k==='video'){el('rect',{'class':'o f',x:-23,y:-35,width:46,height:31,rx:6},g);el('path',{'class':'play',d:'M-5,-26 L8,-19.5 L-5,-13 Z'},g);}
+}
+Object.keys(P).forEach(function(id){var p=P[id];var g=el('g',{'class':'pin hide '+p.t+' k-'+p.i,transform:'translate('+p.x+','+p.y+')',tabindex:0},gP);
+ icon(el('g',{},g),p.i);
+ if(CN[id]){var cw=CN[id].length*7+8;el('rect',{'class':'cn',x:-24-cw,y:-44,width:cw,height:15,rx:3},g);var ct=el('text',{'class':'cnt',x:-24-cw/2,y:-33,'text-anchor':'middle'},g);ct.textContent=CN[id];}
+ var pl=el('rect',{'class':'pl',x:-60,y:2,width:120,height:36,rx:4},g);
+ var n=el('text',{'class':'nm',x:0,y:18,'text-anchor':'middle'},g);n.textContent=p.n;
+ var s=el('text',{'class':'sb',x:0,y:32,'text-anchor':'middle'},g);s.textContent=p.s;
+ var tk=el('circle',{'class':'tack',cx:-54,cy:6,r:4.5},g);
+ var d=el('g',{'class':'hide'},g);var dc=el('circle',{'class':'deg',cx:54,cy:3,r:10},d);var dt=el('text',{'class':'degt',x:54,y:7,'text-anchor':'middle'},d);
+ g._nm=[n,s,pl,tk,dc,dt];g._deg=[d,dt];PE[id]=g;notes[id]=[];
+ g.addEventListener('click',function(){showNotes(id)});});
+// motive note
+gM.setAttribute('transform','rotate(-1.2 167 845)');el('rect',{x:20,y:745,width:295,height:200,rx:2},gM);el('path',{'class':'fold',d:'M293,945 L315,923 L315,945 Z'},gM);el('circle',{'class':'tack',cx:167,cy:752,r:5.5},gM);
+var mh=el('text',{'class':'h',x:36,y:772},gM);mh.textContent='MOTIVE?';
+var mt=el('text',{x:36,y:798},gM);
+// size labels
+function sizeLabels(){Object.keys(SE).forEach(function(id){var g=SE[id],was=g.classList.contains('hide');g.classList.remove('hide');var b=g._lab[1].getBBox();g._lab[0].setAttribute('x',b.x-5);g._lab[0].setAttribute('y',b.y-2);g._lab[0].setAttribute('width',b.width+10);g._lab[0].setAttribute('height',b.height+4);if(was)g.classList.add('hide');});}
+sizeLabels();
+var HW={};
+Object.keys(PE).forEach(function(id){var g=PE[id],q=g._nm,n=q[0],sb=q[1],fs=15;g.classList.remove('hide');
+ while(n.getBBox().width>150&&fs>11){fs-=.5;n.style.fontSize=fs+'px';}var fz=12;while(sb.getBBox().width>150&&fz>9.5){fz-=.5;sb.style.fontSize=fz+'px';}
+ var w=Math.max(n.getBBox().width,sb.getBBox().width)+16;q[2].setAttribute('x',-w/2);q[2].setAttribute('width',w);
+ q[3].setAttribute('cx',-w/2+6);q[4].setAttribute('cx',w/2);q[5].setAttribute('x',w/2);HW[id]=w/2;g.classList.add('hide');});
+// arrowed strings stop at the edge of the target pin
+Object.keys(SE).forEach(function(id){if((SK[id]||'own')!=='act')return;var a=P[S[id][0]],b=P[S[id][1]],dx=a.x-b.x,dy=a.y-b.y;
+ var hw=Math.max(HW[S[id][1]],24)+3,vh=dy>0?41:43,t=Math.min(dx?hw/Math.abs(dx):9,dy?vh/Math.abs(dy):9);
+ SE[id]._ln.setAttribute('x2',b.x+dx*t);SE[id]._ln.setAttribute('y2',b.y+dy*t);});
+// ---------- step ----------
+var i=0,stage=document.getElementById('stage'),fit=false;
+function $(x){return document.getElementById(x)}
+function render(){
+ var st=T[i],on={},nw={},nn={},deg={},mv=[];
+ for(var k=0;k<=i;k++){(T[k].add||[]).forEach(function(x){on[x]=1;if(k===i)nw[x]=1;});mv=mv.concat(T[k].mv||[]);}
+ (st.nt||[]).forEach(function(n){nn[n[0]]=1;});
+ Object.keys(notes).forEach(function(id){notes[id]=[];});
+ for(var k=0;k<=i;k++)(T[k].nt||[]).forEach(function(n){notes[n[0]].push(n[1]);});
+ Object.keys(SE).forEach(function(id){var g=SE[id],v=!!on[id];g.classList.toggle('hide',!v);g.classList.toggle('new',!!nw[id]);
+  if(v){deg[S[id][0]]=(deg[S[id][0]]||0)+1;deg[S[id][1]]=(deg[S[id][1]]||0)+1;}
+  g.classList.toggle('dim',v&&!nw[id]&&!st.core);g.classList.toggle('faint',v&&!nw[id]&&!!st.people&&!(ppl(S[id][0])&&ppl(S[id][1])));});
+ var maxd=0;Object.keys(deg).forEach(function(k){maxd=Math.max(maxd,deg[k])});
+ Object.keys(PE).forEach(function(id){var g=PE[id],v=!!on[id],isNew=!!nw[id]||!!nn[id];g.classList.toggle('hide',!v);g.classList.toggle('new',isNew);
+  g.classList.toggle('dim',v&&!isNew&&!st.people&&!st.core);
+  g.classList.toggle('faint',v&&!isNew&&!!st.people&&!ppl(id));
+  g.classList.toggle('core',!!st.core&&deg[id]>=maxd-1&&maxd>0);
+  var d=deg[id]||0;g._deg[0].classList.toggle('hide',d<2);g._deg[1].textContent=d;});
+ gM.classList.toggle('hide',!st.people&&!st.core);
+ while(mt.firstChild)mt.removeChild(mt.firstChild);
+ mv.forEach(function(m,j){var ts=el('tspan',{x:36,dy:j?24:0},mt);ts.textContent='• '+m;});
+ // story
+  $('count').textContent='Step '+(i+1)+' of '+T.length;
+  $('progb').style.width=((i+1)/T.length*100)+'%';
+  $('src').textContent=st.act;
+  var rank='';if(st.core){rank=Object.keys(deg).sort(function(a,b){return deg[b]-deg[a]}).slice(0,4).map(function(k){return P[k].n+' '+deg[k]}).join(', ');}
+  var nb=$('nar');nb.innerHTML='';
+  st.p.forEach(function(t){if(t.charAt(0)==='>'){var bq=document.createElement('blockquote');bq.innerHTML='<span>What I typed</span>';var q=document.createElement('q');q.textContent=t.slice(1);bq.appendChild(q);nb.appendChild(bq);}
+   else{var pp=document.createElement('p');pp.textContent=t.replace('{RANK}',rank);nb.appendChild(pp);}});
+  var ib=$('intros');ib.innerHTML='';var nx=Object.keys(nw).filter(function(id){return P[id]});
+  $('newb').classList.toggle('hide',!nx.length);
+  nx.forEach(function(id){var d=document.createElement('div');d.className='intro';
+   var sv=document.createElementNS(NS,'svg');sv.setAttribute('viewBox','-25 -44 52 46');icon(el('g',{'class':'k-'+P[id].i},sv),P[id].i);d.appendChild(sv);
+   var w=document.createElement('div');var h=document.createElement('h3');h.textContent=P[id].n;var sm=document.createElement('small');sm.textContent=KW[P[id].i];h.appendChild(sm);w.appendChild(h);
+   var pp=document.createElement('p');pp.textContent=P[id].s;w.appendChild(pp);d.appendChild(w);ib.appendChild(d);});
+  $('nw').innerHTML='';
+  $('sIn').scrollTop=0;
+  $('prev').disabled=i===0;$('next').disabled=i===T.length-1;
+  var fid=Object.keys(nw).concat(Object.keys(nn));if(st.f)fid=fid.concat(st.f);focus(fid,!!st.core||(!!st.people&&!fid.length));
+}
+function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+function showNotes(id){var p=P[id];$('nw').innerHTML='<b>'+esc(p.n)+':</b> '+(notes[id].length?notes[id].map(esc).join(' · '):'no notes yet');}
+var KL={tweet:'the tweet',page:'a page I opened',search:'Google search','AI Mode':'AI Mode','AI Mode, new search':'AI Mode, new search',board:'the board'};
+var TL={tweet:'What I saw',page:'What I opened',search:'What I searched','AI Mode':'What I typed','AI Mode, new search':'What I typed'};
+var KW={per:'person',fam:'family',co:'company',listed:'listed company',private:'private holding company',trust:'trust',gov:'regulator',fund:'fund',post:'post',doc:'contract',video:'video',globe:'country'};
+// ---------- zoom to what the story is about ----------
+var BX=-170,BY=-120,BW=1630,BH=1080,vb=[BX,BY,BW,BH],anim=null,lastIds=[],lastAll=true;
+function setVB(t){if(anim)cancelAnimationFrame(anim);var f=vb.slice(),t0=performance.now();
+ (function step(now){var k=Math.min(1,(now-t0)/450),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;vb=f.map(function(v,j){return v+(t[j]-v)*e});svg.setAttribute('viewBox',vb.join(' '));if(k<1)anim=requestAnimationFrame(step);})(t0);
+ clearTimeout(setVB.t);setVB.t=setTimeout(function(){if(anim)cancelAnimationFrame(anim);vb=t.slice();svg.setAttribute('viewBox',vb.join(' '));},520);}
+function focus(ids,all){lastIds=ids;lastAll=all;var W=stage.clientWidth,H=stage.clientHeight;if(!W||!H)return;
+ var whole=[BX,BY,BW,BH];if(fit){setVB(whole);return;}
+ var xs=[],ys=[];ids.forEach(function(id){if(P[id]){xs.push(P[id].x);ys.push(P[id].y);}else if(S[id]){[S[id][0],S[id][1]].forEach(function(k){xs.push(P[k].x);ys.push(P[k].y);});}});
+ if(!xs.length){if(all)setVB(whole);return;}
+ var x0=Math.min.apply(0,xs),x1=Math.max.apply(0,xs),y0=Math.min.apply(0,ys),y1=Math.max.apply(0,ys);
+ var s0=Math.min(W/BW,H/BH),s=Math.max(s0,Math.min(W/(x1-x0+300),H/(y1-y0+190),1.1));
+ var vw=W/s,vh=H/s,cx=(x0+x1)/2,cy=(y0+y1)/2;
+ var bx=vw>=BW?BX+(BW-vw)/2:Math.max(BX-60,Math.min(BX+BW+60-vw,cx-vw/2)),by=vh>=BH?BY+(BH-vh)/2:Math.max(BY-40,Math.min(BY+BH+40-vh,cy-vh/2));
+ setVB([bx,by,vw,vh]);}
+function layout(){$('fit').textContent=fit?'Zoom in':'Whole board';}
+function go(d){i=Math.max(0,Math.min(T.length-1,i+d));if(i>0&&!keyTouched&&typeof showKey==='function'&&keyOn){keyOn=false;showKey();}render();}
+$('next').onclick=function(){go(1)};
+$('prev').onclick=function(){go(-1)};
+$('fit').onclick=function(){fit=!fit;layout();focus(lastIds,true);};
+document.addEventListener('keydown',function(e){if(/TEXTAREA|INPUT/.test((e.target||{}).tagName||''))return;if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1);}if(e.key==='ArrowLeft'){e.preventDefault();go(-1);}});
+window.addEventListener('resize',function(){focus(lastIds,lastAll);});
+layout();render();
+// ---------- key ----------
+var key=$('key'),KS=[['per','Person'],['fam','Family, as a group'],['co','Company'],['listed','Listed company'],['private','Private holding co.'],['trust','Trust'],['gov','Regulator'],['fund','Fund'],['post','Post (tweet)'],['doc','Contract'],['video','Video'],['globe','Country']];
+function kh(t){var h=document.createElement('h4');h.textContent=t;key.appendChild(h);}
+function krow(draw,label,vb){var r=document.createElement('div');r.className='r';var sv=document.createElementNS(NS,'svg');sv.setAttribute('width',30);sv.setAttribute('height',26);sv.setAttribute('viewBox',vb);draw(sv);r.appendChild(sv);var sp=document.createElement('span');sp.textContent=label;r.appendChild(sp);key.appendChild(r);}
+kh('Pins');KS.forEach(function(k){krow(function(sv){icon(el('g',{'class':'k-'+k[0]},sv),k[0]);},k[1],'-25 -44 52 46');});
+krow(function(sv){el('rect',{'class':'cn',x:-17,y:-30,width:34,height:17,rx:3},sv);var t=el('text',{'class':'cnt',x:0,y:-18,'text-anchor':'middle'},sv);t.textContent='RU';},'Country tag','-25 -44 52 46');
+krow(function(sv){el('rect',{x:-18,y:-36,width:36,height:32,rx:1,fill:'var(--note)',stroke:'var(--perB)','stroke-width':1.6},sv);el('circle',{cx:0,cy:-33,r:3.5,fill:'#c92a2a'},sv);},'Note: motive','-25 -44 52 46');
+kh('Strings');[['own','owns or runs'],['fam','family'],['act','did this to'],['side','sided with'],['ctry','country behind it'],['trail','led me there']].forEach(function(k){
+ krow(function(sv){var g=el('g',{'class':'str '+k[0]},sv);el('line',{x1:2,y1:9,x2:k[0]==='act'?24:28,y2:9},g);},k[1],'0 0 30 18');});
+var keyOn=window.innerWidth>760,keyTouched=false;function showKey(){key.classList.toggle('hide',!keyOn);$('keyb').textContent=keyOn?'Hide key':'Key';}
+$('keyb').onclick=function(){keyOn=!keyOn;keyTouched=true;showKey();};showKey();
+window.__board={T:T,P:P,S:S,go:function(n){i=n;render();}};
+})();
+</script>
+</body>
+</html>

@@ -22,6 +22,14 @@ Newest first.
 | 30 October 2026 | [The factory I built, and why I shut it down](posts/2026-10-30-the-factory.html) | A system that turned every Slack and email request into a ticket and closed 618 of 867 in a couple of days, then burnt too many tokens. |
 | 28 October 2026 | [How I organise my Claude threads](posts/2026-10-28-organising-claude-threads.html) | Threads by project, with a control room and child threads, work better than threads by function. |
 
+## Personal explorations
+
+Research I do outside work, one question at a time.
+
+| Date | Exploration | What it's about |
+|---|---|---|
+| 19 November 2026 | [Who builds the Vande Bharat trains](explorations/case-board.html) | A step-by-step board following one night's research, from a train contract to who controls Tata. |
+
 For AI agents: [llms.txt](https://pranav6082.github.io/llms.txt) lists every post as plain text.
 
 [LinkedIn](https://www.linkedin.com/in/pranav6082/)
