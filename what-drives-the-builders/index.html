@@ -117,12 +117,14 @@ body{background:var(--bg);color:var(--ink);font:15px/1.4 -apple-system,system-ui
 .bar{display:flex;gap:10px;align-items:center;justify-content:flex-start;padding:12px 44px 16px;border-top:1px solid var(--line);max-width:780px;width:100%;margin:0 auto}
 button{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:8px 16px;cursor:pointer}
 button.pri{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.bar button{font-size:14px;padding:6px 14px;min-height:40px;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:8px}.bar button.pri{background:transparent;color:var(--ink);border-color:var(--muted);font-weight:600}.bar button:disabled{opacity:.3}
 button:disabled{opacity:.35;cursor:default}
 #mapcol{position:relative;min-height:0;background:var(--cork)}
 #stage{position:absolute;inset:0;overflow:hidden;background:var(--cork)}
 #board{display:block;width:100%;height:100%}
-#icard{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;padding:28px 28px 64px;background:var(--cork)}#icard.hide{display:none}#icard img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.2)}#mapcol.introon .zbar{display:none}
-@media (max-width:767px){#icard{padding:12px 12px 54px}}
+#icard{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;padding:28px 28px 64px;background:var(--cork)}#icard.hide{display:none}#icard img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.2)}body.introon .zbar,body.introon .mapbar,body.introon #key{display:none!important}body.introon #icard{padding:0;background:#1F4A36}body.introon #icard img{border-radius:0;box-shadow:none}
+#ititle{display:none;font-size:42px;line-height:1.08;font-weight:700;letter-spacing:-.015em;margin:4px 0 24px;color:var(--ink)}body.introon #ititle{display:block}
+@media (max-width:767px){#icard{padding:12px 12px 54px}body.introon #mapcol{height:calc(100vw * 630 / 1200);border-bottom:0}body.introon #icard img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover}body.introon #ititle{display:none}}
 .mapbar{position:absolute;right:10px;bottom:10px;display:flex;gap:6px;z-index:3}
 .mapbar button{font-size:13px;padding:6px 11px;opacity:.95}
 #key{position:fixed;top:8px;right:8px;z-index:5;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12px;box-shadow:0 2px 10px rgba(0,0,0,.18);display:grid;grid-template-columns:auto auto;gap:2px 12px;max-width:calc(100vw - 16px)}
@@ -149,10 +151,10 @@ button:disabled{opacity:.35;cursor:default}
  #key{top:8px;left:8px;right:8px;max-height:60vh;overflow:auto}
 }
 @media (max-width:767px){
- #sIn{padding-bottom:84px}
- .bar{position:fixed;left:0;right:0;bottom:0;z-index:4;justify-content:space-between;max-width:none;margin:0;padding:10px 16px calc(12px + env(safe-area-inset-bottom));background:var(--panel)}
- .bar button{font-size:17px;padding:12px 22px;min-height:48px}
- .bar button.pri{padding:12px 30px}
+ #sIn{padding-bottom:64px}
+ .bar{position:fixed;left:0;right:0;bottom:0;z-index:4;justify-content:space-between;max-width:none;margin:0;padding:6px 12px calc(6px + env(safe-area-inset-bottom));background:var(--panel)}
+ .bar button{font-size:14px;padding:6px 14px;min-height:40px}
+ .bar button.pri{padding:6px 16px}
 }
 .zbar{position:absolute;left:10px;bottom:10px;display:flex;gap:6px;z-index:3}
 .zbar button{font-size:13px;padding:6px 11px;opacity:.95;min-width:36px}
@@ -168,6 +170,7 @@ button:disabled{opacity:.35;cursor:default}
  <div id="sIn">
   <div id="prog" aria-hidden="true"><i id="progb"></i></div>
   <p class="meta"><span id="count"></span><span class="src" id="src"></span></p>
+  <h1 id="ititle">What drives the builders</h1>
   <div id="nar"></div>
   <div id="newb"><span class="lbl">In this step</span><div id="intros"></div></div>
   <p id="nw"></p>
@@ -1423,7 +1426,7 @@ function render(){
   $('sIn').scrollTop=0;
   $('prev').disabled=i===0;$('next').disabled=i===T.length-1;
   var fid=Object.keys(nw).concat(Object.keys(nn));if(st.f)fid=fid.concat(st.f);focus(fid,!!st.core||(!!st.people&&!fid.length));
-  showIntro(0);$('icard').classList.toggle('hide',i>=INTRO);$('mapcol').classList.toggle('introon',i<INTRO);
+  showIntro(0);$('icard').classList.toggle('hide',i>=INTRO);document.body.classList.toggle('introon',i<INTRO);
 }
 function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
 function showNotes(id){var p=P[id];$('nw').innerHTML='<b>'+esc(p.n)+':</b> '+(notes[id].length?notes[id].map(esc).join(' · '):'no notes yet');}
