@@ -4,31 +4,30 @@ description: "Pranav Garg, cofounder of Kolo (advisors for Indian homeowners bui
 image: /og-home.png
 ---
 <style>
-.home{--bg:#fff;--fg:#1f2328;--mute:#59636e;--line:#e5e7eb;--blue:#0a66c2;--page:#eef1f5}
-.home .top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 6px}
-.home h1{font-size:26px;margin:0}
-.home .li{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#fff;background:#0a66c2;padding:5px 10px;border-radius:999px}
-.home .lead{color:var(--mute);margin:0 0 20px;font-size:15px}
+.home{max-width:560px;margin:0 auto;color:#1f2328;font-size:16px;line-height:1.5}
 .home a{color:inherit;text-decoration:none}
-.home .tile{flex:none;display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
-.home .g{margin-top:22px}
-.home .gh{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;margin-bottom:4px}
-.home .t2{display:grid;grid-template-columns:21px 1fr;padding:9px 0;border-bottom:1px solid var(--line);color:var(--blue);font-weight:600;font-size:15px;line-height:1.35}
-.home .foot{margin-top:28px;color:var(--mute);font-size:14px}
-.home .desc{color:var(--mute);font-size:14px;line-height:1.4;font-weight:400}
-.home .group-desc{margin:4px 0 6px}
-.home .flow-desc{display:block;margin-top:4px;grid-column:2}
-.home .flow-label{display:block;color:var(--mute);font-size:12px;font-weight:600;line-height:1.4;margin-top:4px}
-.home .compact{display:inline;font-size:14px;font-weight:400;color:var(--mute)}
-.home .inline-label{font-size:12px;color:var(--mute);font-weight:600}
-.home .small-icon{display:inline-grid;vertical-align:middle;place-items:center;color:var(--blue);margin-right:6px}
-.home .group-inline{font-size:14px;font-weight:400;color:var(--mute);line-height:1.35;margin-top:2px}
-.home .heading-copy{display:block}
-.home{max-width:560px;margin:0 auto;color:var(--fg);font-size:16px}
-.home h1{border:0;padding:0;margin:0;font-size:28px}
-.home a:hover{text-decoration:none}
-.home a.t2:hover{text-decoration:underline}
-.home p{margin-bottom:0}
-.home .lead{margin-bottom:20px}
+.home h1{font-size:28px;font-weight:700;margin:0 0 8px;letter-spacing:-.4px;border:0;padding:0}
+.home .lead{margin:0;color:#3d444d}
+.home .lead a,.home .meta a{color:#0a66c2}
+.home .meta{margin:8px 0 0;font-size:15px}
+.home h2{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#8c959f;margin:40px 0 12px;border:0;padding:0}
+.home ul{list-style:none;margin:0;padding:0}.home li{margin:0 0 14px}
+.home li a{font-weight:500;color:#1f2328;text-decoration:underline;text-decoration-color:#d0d7de;text-underline-offset:4px;text-decoration-thickness:1px}
+.home li a:hover{text-decoration-color:#1f2328}
+.home .d{display:block;color:#6e7781;font-size:14px;margin-top:3px}
+.home .intro{color:#6e7781;font-size:15px;margin:0 0 14px}
+.home .foot{margin-top:44px;font-size:13px}.home .foot a{color:#8c959f}
 </style>
-<div class="home"><div class="top"><h1>Pranav Garg</h1><a class="li" href="https://www.linkedin.com/in/pranav6082/"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg> LinkedIn</a></div><p class="lead">Cofounder of <a href="https://koloapp.in" style="color:var(--blue)">Kolo</a>, advisors for Indian homeowners building a home. I do nearly all my product and business work through Claude, and write about what works and what doesn't.</p><div class="g"><div class="gh"><span class="tile" style="--c:#0a66c2"><svg viewBox="0 0 24 24" width="22" height="22"><path stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg></span><span>How I work with Claude</span></div><p class="desc group-desc">My setup, threads and how I use tokens.</p><a class="t2" href="posts/how-i-claude.html"><span class="small-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6zM14 4v4h4M9 12h6M9 16h6"/></svg></span>How I Claude: the whole setup</a><a class="t2" href="posts/2026-10-28-organising-claude-threads.html"><span class="small-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6zM14 4v4h4M9 12h6M9 16h6"/></svg></span>How I organise my Claude threads</a><a class="t2" href="posts/2026-10-30-tokens-are-a-resource.html"><span class="small-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6zM14 4v4h4M9 12h6M9 16h6"/></svg></span>Tokens are a resource, like money and time</a></div><div class="g"><div class="gh"><span class="tile" style="--c:#1a7f37"><svg viewBox="0 0 24 24" width="22" height="22"><rect stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" x="5" y="3" width="14" height="18" rx="2"/><path stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 8h6M9 12h6M9 16h3"/></svg></span><span>What it has done</span></div><p class="desc group-desc">What AI has changed in the business.</p><a class="t2" href="posts/2026-11-16-ai-native-bookkeeping.html"><span class="small-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6zM14 4v4h4M9 12h6M9 16h6"/></svg></span>AI-native bookkeeping, TDS and GST</a><a class="t2" href="posts/2026-10-30-the-factory.html"><span class="small-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6zM14 4v4h4M9 12h6M9 16h6"/></svg></span>The factory I built, and why I shut it down</a></div><div class="g"><div class="gh"><span class="tile" style="--c:#cf222e"><svg viewBox="0 0 24 24" width="22" height="22"><path stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 21V9l8-5 8 5v12"/><path stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 21v-6h6v6"/></svg></span><span>Outside work</span></div><p class="desc group-desc">Interactive research, one step at a time: who built something that lasts, who runs it now, and what drives them.</p><a class="t2" href="what-drives-the-builders/"><span class="small-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6zM14 4v4h4M9 12h6M9 16h6"/></svg></span>What drives the builders<span class="desc flow-desc">From a post on X about a new train maker to the people behind India's trains: Tata, TVS, the Mistry family, Alstom and Russia's TMH.</span></a><a class="t2" href="what-drives-the-builders/reliance/"><span class="small-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6zM14 4v4h4M9 12h6M9 16h6"/></svg></span>What drives the builders, 2<span class="desc flow-desc">From the AC we bought at Reliance Digital to how Reliance came to run shops, phones, cricket and AI, and who decides what comes next.</span></a></div><p class="foot"><a href="llms.txt">For AI agents</a></p></div>
+<div class="home">
+<h1>Pranav Garg</h1>
+<p class="lead">Cofounder of <a href="https://koloapp.in">Kolo</a>, advisors for Indian homeowners building a home. I do nearly all my product and business work through Claude, and write about what works and what doesn't.</p>
+<p class="meta"><a href="https://www.linkedin.com/in/pranav6082/">LinkedIn</a></p>
+<h2>How I work with Claude</h2>
+<ul><li><a href="posts/how-i-claude.html">How I Claude: the whole setup</a></li><li><a href="posts/2026-10-28-organising-claude-threads.html">How I organise my Claude threads</a></li><li><a href="posts/2026-10-30-tokens-are-a-resource.html">Tokens are a resource, like money and time</a></li></ul>
+<h2>What it has done</h2>
+<ul><li><a href="posts/2026-11-16-ai-native-bookkeeping.html">AI-native bookkeeping, TDS and GST</a></li><li><a href="posts/2026-10-30-the-factory.html">The factory I built, and why I shut it down</a></li></ul>
+<h2>Outside work</h2>
+<p class="intro">Interactive research, one step at a time: who built something that lasts, and what drives them.</p>
+<ul><li><a href="what-drives-the-builders/">Who builds India's trains</a><span class="d">Tata, TVS, the Mistry family, Alstom and Russia's TMH</span></li><li><a href="what-drives-the-builders/reliance/">How Reliance came to run shops, phones, cricket and AI</a><span class="d">Mukesh Ambani and his children</span></li></ul>
+<p class="foot"><a href="llms.txt">For AI agents</a></p>
+</div>
