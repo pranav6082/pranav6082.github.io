@@ -4,18 +4,18 @@ description: "Pranav Garg, cofounder of Kolo (advisors for Indian homeowners bui
 image: /og-home.png
 ---
 <style>
-.home{max-width:560px;margin:0 auto;color:#1f2328;font-size:17px;line-height:1.65}
+.home{max-width:560px;margin:0 auto;color:#1f2328;font-size:16px;line-height:1.5}
 .home a{color:inherit;text-decoration:none}
-.home h1{font-size:30px;font-weight:700;margin:0 0 14px;letter-spacing:-.5px;border:0;padding:0;line-height:1.2}
-.home header p{margin:0 0 12px;color:#3d444d}.home header a{color:#0a66c2}
+.home h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.5px;border:0;padding:0;line-height:1.2}
+.home header p{margin:0 0 6px;color:#3d444d}.home header a{color:#0a66c2}
 .home .by{font-size:15px}
-.home .entry{display:block;margin:44px 0 0}
-.home h2{font-size:20px;font-weight:500;margin:0 0 12px;line-height:1.3;border:0;padding:0}
-.home .t{text-decoration:underline;text-decoration-color:#d0d7de;text-underline-offset:5px;text-decoration-thickness:1px}
+.home .entry{display:block;margin:32px 0 0}
+.home h2{font-size:18px;font-weight:600;margin:0 0 6px;line-height:1.3;border:0;padding:0}
+.home .t{text-decoration:underline;text-decoration-color:#d0d7de;text-underline-offset:4px;text-decoration-thickness:1px}
 .home .entry:hover .t{text-decoration-color:#1f2328}
-.home .entry p{margin:0 0 12px;color:#3d444d}
+.home .entry p{margin:0 0 6px;color:#3d444d}
 .home .nw{white-space:nowrap}.home .more{color:#c4c9cf}
-.home .foot{margin-top:48px;font-size:13px}.home .foot a{color:#8c959f}
+.home .foot{margin-top:40px;font-size:13px}.home .foot a{color:#8c959f}
 </style>
 <div class="home">
 <header><h1>Pranav Garg</h1><p>Cofounder of <a href="https://koloapp.in">Kolo</a>, advisors for Indian homeowners building a home.</p><p>I do nearly all my product and business work through Claude, and write about what works and what doesn't.</p><p class="by"><a href="https://www.linkedin.com/in/pranav6082/">LinkedIn</a></p></header>
