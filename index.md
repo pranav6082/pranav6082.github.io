@@ -13,11 +13,11 @@ image: /og-home.png
 .home .tile{flex:none;display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
 .home .g{margin-top:22px}
 .home .gh{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;margin-bottom:4px}
-.home .t2{display:block;padding:9px 0 9px 48px;border-bottom:1px solid var(--line);color:var(--blue);font-weight:600;font-size:15px;line-height:1.35}
+.home .t2{display:grid;grid-template-columns:21px 1fr;padding:9px 0;border-bottom:1px solid var(--line);color:var(--blue);font-weight:600;font-size:15px;line-height:1.35}
 .home .foot{margin-top:28px;color:var(--mute);font-size:14px}
 .home .desc{color:var(--mute);font-size:14px;line-height:1.4;font-weight:400}
-.home .group-desc{margin:2px 0 6px 48px}
-.home .flow-desc{display:block;margin-top:4px}
+.home .group-desc{margin:4px 0 6px}
+.home .flow-desc{display:block;margin-top:4px;grid-column:2}
 .home .flow-label{display:block;color:var(--mute);font-size:12px;font-weight:600;line-height:1.4;margin-top:4px}
 .home .compact{display:inline;font-size:14px;font-weight:400;color:var(--mute)}
 .home .inline-label{font-size:12px;color:var(--mute);font-weight:600}
