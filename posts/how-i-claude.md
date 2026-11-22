@@ -1,5 +1,6 @@
 ---
 title: "How I Claude"
+image: /posts/img/how-i-claude/00-cover.png
 description: "My attempt to become AI-native: the Claude setup and the harness that learn how I work, then do the work, what it took, and what it has done for Kolo so far."
 ---
 
