@@ -6,7 +6,7 @@ description: "How an AI agent now closes Kolo's monthly books and prepares GST a
 
 # AI-native accounting and filing: bookkeeping, TDS and GST
 
-*Pranav Garg, cofounder of Kolo. Posted on [LinkedIn](https://www.linkedin.com/in/pranav6082/) on 16 November 2026.*
+*Pranav Garg, cofounder of Kolo. Posted on [LinkedIn](https://www.linkedin.com/in/pranav6082/).*
 
 <h2>Why do this</h2>
 <p>This is one of my many attempts to get <strong>hard productivity gains</strong> with AI that drive <strong>direct business outcomes</strong>.</p>

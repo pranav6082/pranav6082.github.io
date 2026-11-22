@@ -6,7 +6,7 @@ description: "A system that turned every Slack and email request into a ticket a
 
 # The factory I built, and why I shut it down
 
-*Pranav Garg, cofounder of Kolo. Posted on [LinkedIn](https://www.linkedin.com/in/pranav6082/) on 30 October 2026.*
+*Pranav Garg, cofounder of Kolo. Posted on [LinkedIn](https://www.linkedin.com/in/pranav6082/).*
 
 All my product work is via Claude Code threads. My attempt: move from babysitting them → human-in-the-loop, autonomous, self-improving system: one that gets work to move with less of my involvement per task type.
 

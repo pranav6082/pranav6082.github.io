@@ -6,7 +6,7 @@ description: "Token spend has to move the outcome in proportion, the same rule t
 
 # Tokens are a resource, like money and time
 
-*Pranav Garg, cofounder of Kolo. Posted on [LinkedIn](https://www.linkedin.com/in/pranav6082/) on 30 October 2026.*
+*Pranav Garg, cofounder of Kolo. Posted on [LinkedIn](https://www.linkedin.com/in/pranav6082/).*
 
 AI didn't change the fundamental rule in business. Resources - money, time and now tokens - each one has to move the work, then the product, then the company.
 

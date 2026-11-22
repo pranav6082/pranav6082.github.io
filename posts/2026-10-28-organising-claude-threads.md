@@ -6,7 +6,7 @@ description: "Threads by project, with a control room and child threads, work be
 
 # How I organise my Claude threads
 
-*Pranav Garg, cofounder of Kolo. Posted on [LinkedIn](https://www.linkedin.com/in/pranav6082/) on 28 October 2026.*
+*Pranav Garg, cofounder of Kolo. Posted on [LinkedIn](https://www.linkedin.com/in/pranav6082/).*
 
 100% of my product work now is through AI chat window - Claude desktop and mobile app. One of the very high impact things which evolved is how I organised Claude threads.
 
