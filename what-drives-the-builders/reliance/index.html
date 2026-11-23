@@ -590,7 +590,7 @@ function render(){
   $('sIn').scrollTop=0;
   $('prev').disabled=i===0;$('next').disabled=i===T.length-1;
   var fid=Object.keys(nw).concat(Object.keys(nn));if(st.f)fid=fid.concat(st.f);focus(fid,!!st.core||(!!st.people&&!fid.length));
-  if(i===T.length-1){var mo=document.createElement('p');mo.className='more';mo.innerHTML='<a href="../">← Previous article: who builds India\'s trains, and who owns them</a>';nb.appendChild(mo);}
+  if(i===T.length-1){var mo=document.createElement('p');mo.className='more';mo.innerHTML='<a href="../">← Previous article: who builds India\'s trains, and who owns them</a>';nb.appendChild(mo);var mo2=document.createElement('p');mo2.className='more';mo2.innerHTML='<a href="../akshayakalpa/">Next article: where clean food starts →</a>';nb.appendChild(mo2);}
   showIntro(0);$('icard').classList.toggle('hide',i>=INTRO);document.body.classList.toggle('introon',i<INTRO);
 }
 function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}

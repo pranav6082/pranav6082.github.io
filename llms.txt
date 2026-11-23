@@ -14,6 +14,7 @@
 
 - [What drives the builders](https://pranav6082.github.io/what-drives-the-builders/): People, their motivations and aspirations, and how those shape nation building and technology building. One night of research, step by step.
 - [What drives the builders, 2](https://pranav6082.github.io/what-drives-the-builders/reliance/): Two nights of asking how one oil company came to run shops, phones, cricket and AI, and who decides what it does next.
+- [What drives the builders, 3: where clean food starts](https://raw.githubusercontent.com/pranav6082/pranav6082.github.io/main/what-drives-the-builders/akshayakalpa/akshayakalpa.md): One organic dairy, Akshayakalpa, followed one question at a time: soil, farmer income, and why two people built it. All 25 steps with his questions, the findings, and the facts with years and sources. Interactive version: https://pranav6082.github.io/what-drives-the-builders/akshayakalpa/
 
 ## Optional
 
