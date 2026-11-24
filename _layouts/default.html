@@ -20,7 +20,7 @@
     <div class="container-lg px-3 my-5 markdown-body">
       {% if is_work_article %}
       <a class="article-back" href="{{ '/' | relative_url }}">← Back to Home</a>
-      {% elsif site.title and site.title != page.title %}
+      {% elsif site.title and site.title != page.title and page.url != "/work/" and page.url != "/explorations/" %}
       <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
       {% endif %}
 
