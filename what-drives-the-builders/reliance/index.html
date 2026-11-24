@@ -274,8 +274,8 @@ var S={
 var INTRO,CONC,MID;function stepLabel(k){return k<INTRO?'Introduction':k>=CONC?'Conclusion':'Step '+(k-INTRO+1)+' of '+MID;}
 var T=[
  {id:'n0',act:'How it started',p:[
- "Reliance turns crude oil into chemicals at Jamnagar. It also sold us our AC, the cheapest one we could find, at Reliance Digital. The same name covers a refinery, grocery shops, a phone network, cricket on TV and now AI data centres.",
- "I wanted to know how one oil company ends up doing all of that, and who actually decides what it does next."],add:[],nt:[],mv:[],intro:1},
+ "Reliance turns crude oil into chemicals at Jamnagar. It also sold Pranav an AC: \"cheapest was in reliance digital\" (his words, Gemini, 20 June). The same name covers a refinery, grocery shops, a phone network, cricket on TV and now AI data centres.",
+ "The trail below is his own questions from two nights: typed to Gemini on 19\u201320 June, spoken to Google AI Mode on 29 October."],add:[],nt:[],mv:[],intro:1},
  {id:'n0b',act:'How it started',p:[
  "Every answer came back to a few people. Mukesh Ambani decides where the money goes. His three children each run a part. Hired CEOs run pieces of those parts, and some of them leave. His father, Dhirubhai, started the company, and it will pass to the children. The people change; Reliance stays.",
  "This is two nights of asking, four months apart: typing in June, talking in October. Each step adds one piece to the map."],add:[],nt:[],mv:[],intro:2},
@@ -284,47 +284,47 @@ var T=[
  {id:'r1',act:'Why retail after oil',p:[
  "Reliance made its name turning oil into chemicals, then moved into shops.",
  ">Why did reliance did retail after oil",
- "One night in June I asked Gemini why a company like that would start selling groceries. It gave four reasons: a hedge against oil prices and the climate shift, most Indian shops still being unorganised, steadier cash from shoppers than from business buyers, and stores that feed the phone business."],add:['ril','o2c'],nt:[],mv:[]},
+ "Pranav typed this to Gemini on 19 June at 11:40 pm. It gave four reasons: a hedge against oil prices and the climate shift, most Indian shops still being unorganised, steadier cash from shoppers than from business buyers, and stores that feed the phone business."],add:['ril','o2c'],nt:[],mv:[]},
  {id:'r2',act:'Why retail after oil',p:[
  "Retail is big: about $44 billion a year, and groceries are most of it.",
  ">Break down retail buisness in terms of revenue and business metrics in usd by category and brand names",
- "All four reasons pointed at shoppers, so I wanted the size. The answer: $43.8 billion in revenue and 387 million registered customers, with groceries far ahead of everything else."],add:['retail'],nt:[],mv:[]},
+ "His next question asked for the size. The answer: $43.8 billion in revenue and 387 million registered customers, with groceries far ahead of everything else."],add:['retail'],nt:[],mv:[]},
  {id:'r3',act:'Why retail after oil',p:[
  "Reliance didn't simply buy Big Bazaar. It took over the store leases after the deal fell through.",
- "With that split in hand I ranked the brands myself: Smart Bazaar, Reliance Digital, Reliance Fresh. Mostly right, with Smart Bazaar first. Then I remembered Big Bazaar. The $3.4 billion deal for it fell through in 2022, so Reliance took about 800 store leases straight from the landlords."],add:[],nt:[],mv:[],f:['retail']},
+ "He then ranked the brands himself: \"So biggest would be by revenue smart bazaar, reliance digital today, reliance fresh?\" (Gemini, 19 June). Mostly right, with Smart Bazaar first. Next he asked: \"Big bazaar was aquired by reliance?\" The $3.4 billion deal for it fell through in 2022, so Reliance took about 800 store leases straight from the landlords."],add:[],nt:[],mv:[],f:['retail']},
  {id:'r4',act:'Why retail after oil',p:[
  "JioMart is Reliance's online grocery store.",
  ">And wtf is jiomart - who buys from it",
- "I'd heard the name for years without knowing who actually uses it. Two groups do: shoppers in smaller towns hunting discounts, and corner shops that restock through it."],add:['jiomart','re_jm'],nt:[],mv:[]},
+ "The answer: two groups use it: shoppers in smaller towns hunting discounts, and corner shops that restock through it."],add:['jiomart','re_jm'],nt:[],mv:[]},
  {id:'r5',act:'Who owns what',p:[
  "Reliance isn't one company. It's a parent that owns separate businesses, and Jio is one of them.",
  ">Jio is child company under ril?",
- "I'd come in asking about shops. If Jio sits under RIL, I wanted to know what else does."],add:['jio'],nt:[],mv:[]},
+ "Until here his questions were about shops. This one moves to the parent company."],add:['jio'],nt:[],mv:[]},
  {id:'r6',act:'Who owns what',p:[
  "Under the parent sit separate empires: energy, retail, telecom, media and finance.",
- "I asked for the whole structure of RIL in one chart, and added what I knew: Jio Studios and the IPL team sit in the media business too."],add:['media'],nt:[],mv:[]},
+ "He asked for the whole structure of RIL in one chart, and added: \"Jiostudio, ipl team is also there\" (Gemini, 19 June). Both sit in the media business."],add:['media'],nt:[],mv:[]},
  {id:'r7',act:'Who owns what',p:[
  "A Reliance share is a share of the parent, RIL. Retail isn't listed on its own.",
  ">Reliance retail is independently listed?\nTodays reliance share we buy is ril share?",
  "RIL owns most of Retail and most of Jio, so buying RIL is buying a slice of all of them."],add:[],nt:[['retail','not listed on its own']],mv:[],f:['ril','retail','jio']},
  {id:'r8',act:'Who owns what',p:[
  "Jio Financial was split off from RIL and listed on its own. It runs funds with BlackRock.",
- "I compared it with Zerodha: will it run mutual funds under its own name? Yes, with BlackRock, the American fund giant, as its partner."],add:['jfs','ri_jf','blackrock','jf_br'],nt:[],mv:[]},
+ "He compared it with Zerodha: \"Jio finance then will have mutual Funds on their names? Like zerodha?\" (Gemini, 19 June). Yes, with BlackRock, the American fund giant, as its partner."],add:['jfs','ri_jf','blackrock','jf_br'],nt:[],mv:[]},
  {id:'r9',act:'What binds it together',p:[
- "I wanted the one idea that holds oil, shops, phones, cricket and funds together.",
+ "The vision question: what holds oil, shops, phones, cricket and funds together.",
  ">Why this business? Amd whats the overarching philosophy amd vision which binds all of this together",
- "A vision tells me what the people at the top want. The answer: \"What is good for India is good for Reliance.\" Each business goes after a bottleneck in daily life."],add:[],nt:[],mv:[],f:['ril','o2c','retail','jio','media','jfs']},
+ "The answer: \"What is good for India is good for Reliance.\" Each business goes after a bottleneck in daily life."],add:[],nt:[],mv:[],f:['ril','o2c','retail','jio','media','jfs']},
  {id:'r10',act:'What binds it together',p:[
  "\"Nation building\" isn't a full answer. They still have to pick which ten things to do.",
  ">Its not that simple right - nation building needs say thousand things - they have to select whcih 10 they do and sequence them",
  "The AI backed off, and called Reliance a careful allocator of money, with a filter for which ten."],add:[],nt:[],mv:[],f:['ril']},
  {id:'r11',act:'What binds it together',p:[
- "My guess at their filter: huge money upfront, and everyone ends up using it. AI fits perfectly.",
- "Payments: everyone uses them, but they need no big money upfront. Highways and airports: big money, but not everyone uses them. This is my reading of their filter, not something they've said."],add:[],nt:[],mv:[],f:['ril','jio']},
+ "His guess at their filter, in his words: \"AI then fits perfectly- huge upfront costs plus everyone will use\" (Gemini, 20 June, 12:16 am).",
+ "Payments: everyone uses them, but they need no big money upfront. Highways and airports: big money, but not everyone uses them. This is his reading of their filter, not something Reliance has said."],add:[],nt:[],mv:[],f:['ril','jio']},
  {id:'r12',act:'What binds it together',p:[
  "For AI, Reliance would buy chips, make the power, build data centres and use someone else's model.",
  ">So ai - buy chips, produce energy, build data centers, buy model - dont think they are building theor own model from scratch- app is theors anyways",
- "TV fits my filter too: news, serials, streaming, cricket, Bollywood."],add:['dc','ji_dc'],nt:[],mv:[]},
+ "He added TV: \"TV - news, serials - old and ott, cricket, bollywood all very big yes\" (Gemini, 20 June, 12:21 am)."],add:['dc','ji_dc'],nt:[],mv:[]},
  {id:'r13',act:'What binds it together',p:[
  "Open models make more sense for them than paying GPT or Claude for every token.",
  "Open models can sit in a data centre in India, be trained and improved, and be handed to Jio. For chips: Nvidia when they need the most advanced, maybe Google's TPUs too."],add:[],nt:[],mv:[],f:['dc','jio']},
@@ -342,7 +342,7 @@ var T=[
  "Pankaj Pawar and Kiran Thomas at Jio, Jeyandran Venugopal at Retail, Hitesh Sethia at Jio Financial, Kevin Vaz and Kiran Mani in media."],add:['ceos','ce_mu'],nt:[],mv:[]},
  {id:'r17',act:'The people',p:[
  "Anant, the youngest son, runs the energy side, oil included.",
- "Gemini suggested a follow-up and I tapped it: who runs the old oil business, if the heirs are focused on retail, tech and green energy?"],add:['anant','an_o2','an_mu'],nt:[],mv:[]},
+ "Gemini suggested a follow-up and he tapped it: who runs the old oil business, if the heirs are focused on retail, tech and green energy?"],add:['anant','an_o2','an_mu'],nt:[],mv:[]},
  {id:'r18',act:'The people',p:[
  "A family business hiring global tech people is a marriage that may not last.",
  ">Tech ceos is where core indian folls meet global folks - so that marriage is interesting if it survives- these tech ceos are all new"],add:[],nt:[],mv:['will the hired tech people stay?'],people:1,f:['ceos','mukesh']},
@@ -351,18 +351,18 @@ var T=[
  ">Kiran mani left for oai",
  "The answer called it the perfect case study of that fragile marriage."],add:['kiran','ki_md','openai','ki_oa','usa','us_oa'],nt:[],mv:[],people:1},
  {id:'r20',act:'The people',p:[
- "To keep people like that, the job has to feel like a mission for the country, plus world-class standing. That's my guess, not a fact.",
- ">Nation building- like in arm forces - has to Probably be up for nation building plus high class in ceoness"],add:[],nt:[],mv:['a mission, plus standing (my guess)'],people:1,f:['ceos','kiran']},
+ "His guess, not a fact: to keep people like that, the job has to feel like a mission for the country, plus world-class standing.",
+ ">Nation building- like in arm forces - has to Probably be up for nation building plus high class in ceoness"],add:[],nt:[],mv:['a mission, plus standing (his guess)'],people:1,f:['ceos','kiran']},
  {id:'r21',act:'Government and the gaps',p:[
  "Reliance works alongside the government, as a kind of infrastructure partner.",
  ">And how specifically is this tied with government and politics as nation building is theor core role",
- "If nation building is the pitch, I wanted to see where the government comes in. The answer pointed to Digital India and the like."],add:['india','gov','in_gv','gv_ri'],nt:[],mv:[]},
+ "His premise, in his words: \"nation building is theor core role\" (Gemini, 20 June, 1:03 am). The answer pointed to Digital India and the like."],add:['india','gov','in_gv','gv_ri'],nt:[],mv:[]},
  {id:'r22',act:'Government and the gaps',p:[
- "By my own filter, health, education and farming should be in. Reliance is barely there.",
+ "In his words: \"Heath and education are also what everyone needs plus has investments\" (Gemini, 20 June, 1:03 am). Reliance is barely there.",
  ">But ynlike retail and telecom - yhey are nil in education and heath and things like agri - farmers- sector wjere 400m people are",
  "Everyone needs them, and they take big money. The answer: these run on trust and people, not spending. Farming turned political after the 2020–21 protests, health needs doctors, and an app can't replace a teacher."],add:[],nt:[],mv:[],f:['ril','gov']},
  {id:'r23',act:'The other groups',p:[
- "Next I put Reliance beside Adani, Tata and Birla, to compare how each group thinks.",
+ "Next he put Reliance beside Adani, Tata and Birla, to compare their ideologies.",
  ">Adani vs tata vs birlas in same axis compare ideologies etc whatever we have discussed in the thread",
  "Reliance owns the pipes everyone uses. Adani builds what the state needs. Tata is mostly owned by charitable trusts. Birla makes cement and aluminium."],add:['groups','gr_ri'],nt:[],mv:[]},
  {id:'r24',act:'The other groups',p:[
@@ -374,43 +374,43 @@ var T=[
  ">So reliance mostly in category they operate - they mostly come for everything, sheer dominance",
  "Even retail, small next to telecom and streaming, is big enough to set the market."],add:[],nt:[],mv:[],f:['ril','retail','jio']},
  {id:'r26',act:'The other groups',p:[
- "We bought our AC at Reliance Digital because it was the cheapest.",
+ "Pranav bought an AC at Reliance Digital. It was the cheapest.",
  ">We had to buy ac - cheapest was in reliance digital",
- "The answer: it buys straight from makers, gets volume rebates, and earns the margin back elsewhere in the group. I said Amazon and Croma have the same advantages. Same pool, it said, different games: Amazon spends to win, Croma sells on service."],add:['digital','re_rd'],nt:[],mv:[]},
+ "The answer: it buys straight from makers, gets volume rebates, and earns the margin back elsewhere in the group. He said: \"Amazon, chroma, others also will have all this advantages\" (Gemini, 20 June, 1:27 am). Same pool, it said, different games: Amazon spends to win, Croma sells on service."],add:['digital','re_rd'],nt:[],mv:[]},
  {id:'r27',act:'The other groups',p:[
  "It isn't just Reliance. No group, and not even the government, has made a dent in education, health and farming.",
  ">I think not just teliance - no business group and even govt has not made a demt in education , health and agriculture",
- "I added this the next afternoon."],add:[],nt:[],mv:[],f:['groups','gov']},
+ "He added this the next afternoon (20 June, 2:22 pm)."],add:[],nt:[],mv:[],f:['groups','gov']},
  {id:'r28',act:'The other groups',p:[
  "Jamnagar is where the refinery is, on the coast of Gujarat.",
- "That evening I looked it up on Maps, to see the refinery and whether it has a port. Maps showed a Jamnagar Port, and that is where the June trail ends."],add:['jamnagar','o2_jn'],nt:[],mv:[]},
+ "That evening (20 June, 8:05\u20138:11 pm) he searched Maps for the refinery and asked \"jamnagar has a port?\". Maps showed a Jamnagar Port, and that is where the June trail ends."],add:['jamnagar','o2_jn'],nt:[],mv:[]},
 
  // ---------- night 2: October ----------
  {id:'s1',act:'Who runs what',p:[
  "Each of Mukesh's three children runs one part: Anant energy, Isha retail, Akash telecom.",
  "<So, company: Anand Money has the oil business, Esha Money has the retail business, and Akash Money has the telecom business. Is that split correct?",
- "Four months later I came back to it late at night, speaking instead of typing. Jio Platforms had listed the week before. The split was mostly right, names aside."],add:['isha','is_re','is_mu','akash','ak_ji','ak_mu'],nt:[['jio','listed October 2026']],mv:[]},
+ "Four months later, on 29 October at 3:21 am, he came back to it, speaking instead of typing. Jio Platforms had listed the week before. The split was mostly right, names aside."],add:['isha','is_re','is_mu','akash','ak_ji','ak_mu'],nt:[['jio','listed October 2026']],mv:[]},
  {id:'s2',act:'Who runs what',p:[
  "Media sits with Akash too: JioHotstar, Mumbai Indians, the film studio.",
  "<So then what about G Hotstar and Mumbai Zenith, the other sports franchise that is under all?"],add:['ak_md'],nt:[],mv:[]},
  {id:'s3',act:'Who runs what',p:[
  "Four people sit at the top: Mukesh and his three children.",
  "<Basically all Reliance businesses, we are trying to map them to these four individuals who hit them directly.",
- "I wanted every business mapped to one of them."],add:[],nt:[],mv:[],people:1,f:['mukesh','anant','isha','akash']},
+ "His framing: \"We are saying there are these four individuals.\" (AI Mode, 29 Oct)."],add:[],nt:[],mv:[],people:1,f:['mukesh','anant','isha','akash']},
  {id:'s4',act:'Whose money',p:[
  "The children run the businesses. The money is Mukesh's.",
  "<Obviously everything is under Mukesh's money overall anyways.",
  "The answer agreed: he decides where the capital goes, and they run the operations."],add:[],nt:[['mukesh','decides where the money goes']],mv:['Mukesh: the money stays with him'],people:1,f:['mukesh','ril']},
- {id:'s5',act:'What I can buy',p:[
+ {id:'s5',act:'What he can buy',p:[
  "A Reliance share is still a share of RIL, the parent.",
  "<Now so when I buy the share of Reliance that is R I L's share is it",
- "The same question I'd asked in June."],add:[],nt:[],mv:[],f:['ril']},
- {id:'s6',act:'What I can buy',p:[
+ "In June he had typed: \"Todays reliance share we buy is ril share?\""],add:[],nt:[],mv:[],f:['ril']},
+ {id:'s6',act:'What he can buy',p:[
  "The new listing was Jio Platforms, the telecom and tech arm.",
  "<So the latest Jio IPO is is for what then?",
- "RIL is listed. Jio Financial was split off and listed. This was the third."],add:[],nt:[],mv:[],f:['ril','jfs','jio']},
+ "What he already had: \"So I understand RIL is listed and then demerged independently Jio Finance is listed.\" (AI Mode, 29 Oct). This was the third."],add:[],nt:[],mv:[],f:['ril','jfs','jio']},
  {id:'s7',act:'How they feed each other',p:[
- "I guessed wrong: media sits with Akash, not Anant. The data centres sit under Jio Platforms.",
+ "His guess was wrong: media sits with Akash, not Anant. The data centres sit under Jio Platforms.",
  "<So this network 18 and the whole thing sits under Anant is it like Jio Hotstar and Jio cinemas"],add:[],nt:[],mv:[],f:['akash','media','dc','jio']},
  {id:'s8',act:'How they feed each other',p:[
  "Anant's energy business powers Akash's data centres. The brothers' businesses feed each other.",
@@ -440,19 +440,19 @@ var T=[
  {id:'s16',act:'Is the flywheel real',p:[
  "Cross-selling alone can't be the strategy. Each business has to make money on its own.",
  "<So it looks like cross-selling itself cannot be a business strategy, right?",
- "I took a summary of everything to a fresh chat. Someone with Jio fibre may watch Hotstar, but won't keep buying more and more from the same family."],add:[],nt:[],mv:[],f:['jio','media','retail']},
+ "He took a summary of everything to a fresh Gemini chat: \"Someone using fiber sure can use Hotstar but necessarily they will not use more and more and more products of the ecosystem, right\" (29 Oct)."],add:[],nt:[],mv:[],f:['jio','media','retail']},
  {id:'s17',act:'Is the flywheel real',p:[
- "My reading of the method: spend big upfront, price out the others, then lock customers into the whole family of businesses.",
+ "His reading of the method, in his words: \"high volume, upfront investment, and then pricing out the incumbents\" (Gemini, 29 Oct).",
  "<The core thing in itself has to work. Plus as a standalone player, you will have a CAC problem there. This whole flywheel can severely reduce CAC",
- "The AI agreed and laid it out in four stages: oil cash pays for the build, tens of billions go into fibre, towers and stores, prices drop low enough to squeeze rivals, and the services lock customers in. An AI agreeing doesn't make it true."],add:[],nt:[],mv:['invest big, price out, lock in (my reading)'],people:1,f:['ril','mukesh']},
+ "The AI agreed and laid it out in four stages: oil cash pays for the build, tens of billions go into fibre, towers and stores, prices drop low enough to squeeze rivals, and the services lock customers in. An AI agreeing doesn't make it true."],add:[],nt:[],mv:['invest big, price out, lock in (his reading)'],people:1,f:['ril','mukesh']},
 
  // ---------- conclusion ----------
  {id:'c1',act:'Where the nights landed',p:[
- "Two nights, and I ended up at the same family both times. Mukesh keeps the money. Anant, Isha and Akash each run a part. The hired CEOs run pieces of those parts, and some, like Kiran Mani, leave for OpenAI.",
+ "Both nights ended at the same family. Mukesh keeps the money. Anant, Isha and Akash each run a part. The hired CEOs run pieces of those parts, and some, like Kiran Mani, leave for OpenAI.",
  "Oil paid for the shops, the phones and now the data centres, and the parts feed each other. It runs like a family business that happens to be one of the biggest in the country."],add:[],nt:[],mv:[],core:1},
  {id:'n8',act:'What is still open',p:[
- "What stays with me is what's missing. By their own filter, huge money upfront and everyone uses it, health, education and farming should be in. Around 400 million people work in farming. Reliance is barely there, and neither is any other group, or the government.",
- "So I'm left with a question that isn't about Reliance. Who builds those, and what would make someone want to?"],add:[],nt:[],mv:[],core:1}
+ "What's missing: by his filter, huge money upfront and everyone uses it, health, education and farming should be in. Around 400 million people work in farming. In his words: \"no business group and even govt has not made a demt in education , health and agriculture\" (Gemini, 20 June, 2:22 pm).",
+ "That leaves a question that isn't about Reliance: who builds those, and what would make someone want to?"],add:[],nt:[],mv:[],core:1}
 ];
 INTRO=T.findIndex(function(t){return t.id==='n0b';})+1;CONC=T.findIndex(function(t){return t.id==='c1';});MID=CONC-INTRO;
 
@@ -578,7 +578,7 @@ function render(){
   $('src').textContent=st.act;
   var rank='';if(st.core){rank=Object.keys(deg).sort(function(a,b){return deg[b]-deg[a]}).slice(0,4).map(function(k){return P[k].n+' '+deg[k]}).join(', ');}
   var nb=$('nar');nb.innerHTML='';
-  st.p.forEach(function(t){if(t.charAt(0)==='>'||t.charAt(0)==='<'){var bq=document.createElement('blockquote');bq.innerHTML='<span>'+(t.charAt(0)==='<'?'What I said':'What I typed')+'</span>';var q=document.createElement('q');q.textContent=t.slice(1);bq.appendChild(q);nb.appendChild(bq);}
+  st.p.forEach(function(t){if(t.charAt(0)==='>'||t.charAt(0)==='<'){var bq=document.createElement('blockquote');bq.innerHTML='<span>'+(t.charAt(0)==='<'?'What he said':'What he typed')+'</span>';var q=document.createElement('q');q.textContent=t.slice(1);bq.appendChild(q);nb.appendChild(bq);}
    else{var pp=document.createElement('p');if(!nb.children.length&&!st.intro)pp.className='lead';pp.textContent=t.replace('{RANK}',rank);nb.appendChild(pp);}});
   var ib=$('intros');ib.innerHTML='';var inv={},nx=[];function addI(id){if(P[id]&&!inv[id]){inv[id]=1;nx.push(id);}}Object.keys(nw).forEach(addI);Object.keys(nn).forEach(addI);(st.f||[]).forEach(function(id){if(P[id])addI(id);else if(S[id]){addI(S[id][0]);addI(S[id][1]);}});Object.keys(nw).forEach(function(id){if(S[id]){addI(S[id][0]);addI(S[id][1]);}});
   $('newb').classList.toggle('hide',!nx.length);
@@ -595,8 +595,8 @@ function render(){
 }
 function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
 function showNotes(id){var p=P[id];$('nw').innerHTML='<b>'+esc(p.n)+':</b> '+(notes[id].length?notes[id].map(esc).join(' · '):'no notes yet');}
-var KL={tweet:'the tweet',page:'a page I opened',search:'Google search','AI Mode':'AI Mode','AI Mode, new search':'AI Mode, new search',board:'the board'};
-var TL={tweet:'What I saw',page:'What I opened',search:'What I searched','AI Mode':'What I typed','AI Mode, new search':'What I typed'};
+var KL={tweet:'the tweet',page:'a page he opened',search:'Google search','AI Mode':'AI Mode','AI Mode, new search':'AI Mode, new search',board:'the board'};
+var TL={tweet:'What he saw',page:'What he opened',search:'What he searched','AI Mode':'What he typed','AI Mode, new search':'What he typed'};
 var KW={per:'person',fam:'family',co:'company',listed:'listed company',private:'private holding company',trust:'trust',gov:'government',team:'group of people',place:'place',tech:'technology',fund:'fund',post:'post',doc:'contract',video:'video',globe:'country'};
 // ---------- zoom to what the story is about ----------
 var BX=-180,BY=-180,BW=1820,BH=1340,vb=[BX,BY,BW,BH],anim=null,lastIds=[],lastAll=true;
