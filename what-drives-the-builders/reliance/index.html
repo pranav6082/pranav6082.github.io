@@ -589,9 +589,9 @@ function render(){
   $('nw').innerHTML='';
   $('sIn').scrollTop=0;
   $('prev').disabled=i===0;$('next').disabled=i===T.length-1;
-  var fid=Object.keys(nw).concat(Object.keys(nn));if(st.f)fid=fid.concat(st.f);focus(fid,!!st.core||(!!st.people&&!fid.length));
-  if(i===T.length-1){var mo=document.createElement('p');mo.className='more';mo.innerHTML='<a href="../">← Previous article: who builds India\'s trains, and who owns them</a>';nb.appendChild(mo);var mo2=document.createElement('p');mo2.className='more';mo2.innerHTML='<a href="../akshayakalpa/">Next article: where clean food starts →</a>';nb.appendChild(mo2);}
+    if(i===T.length-1){var mo=document.createElement('p');mo.className='more';mo.innerHTML='<a href="../">← Previous article: who builds India\'s trains, and who owns them</a>';nb.appendChild(mo);var mo2=document.createElement('p');mo2.className='more';mo2.innerHTML='<a href="../akshayakalpa/">Next article: where clean food starts →</a>';nb.appendChild(mo2);}
   showIntro(0);$('icard').classList.toggle('hide',i>=INTRO);document.body.classList.toggle('introon',i<INTRO);
+  CBFit.step(st);
 }
 function esc(s){return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
 function showNotes(id){var p=P[id];$('nw').innerHTML='<b>'+esc(p.n)+':</b> '+(notes[id].length?notes[id].map(esc).join(' · '):'no notes yet');}
@@ -621,7 +621,7 @@ function zoomAt(nz,mx,my){nz=Math.max(0.5,Math.min(8,nz));var W=stage.clientWidt
  if(mx==null){mx=W/2;my=H/2;}var c=vb,s=Math.min(W/c[2],H/c[3]),ox=(W-c[2]*s)/2,oy=(H-c[3]*s)/2,bx=c[0]+(mx-ox)/s,by=c[1]+(my-oy)/s;
  Z=nz;var w=baseVB[2]/Z,h=baseVB[3]/Z,s2=Math.min(W/w,H/h),ox2=(W-w*s2)/2,oy2=(H-h*s2)/2,nx=bx-(mx-ox2)/s2,ny=by-(my-oy2)/s2;
  PX=nx+w/2-(baseVB[0]+baseVB[2]/2);PY=ny+h/2-(baseVB[1]+baseVB[3]/2);applyUser();}
-$('zin').onclick=function(){zoomAt(Z*1.4)};$('zout').onclick=function(){zoomAt(Z/1.4)};$('zreset').onclick=function(){Z=1;PX=0;PY=0;applyUser();};$('zreset').disabled=true;
+$('zin').onclick=function(){zoomAt(Z*1.4)};$('zout').onclick=function(){zoomAt(Z/1.4)};$('zreset').onclick=function(){CBFit.step(T[i]);};$('zreset').disabled=true;
 stage.addEventListener('wheel',function(e){e.preventDefault();var r=stage.getBoundingClientRect();var d=e.deltaMode===1?e.deltaY*16:e.deltaY;zoomAt(Z*Math.exp(-d*(e.ctrlKey?0.01:0.002)),e.clientX-r.left,e.clientY-r.top);},{passive:false});
 var ptr={},pinch=null,dragged=false,last=null;
 function pts(){return Object.keys(ptr).map(function(k){return ptr[k]})}
@@ -635,13 +635,75 @@ stage.addEventListener('pointermove',function(e){if(!ptr[e.pointerId])return;ptr
 function up(e){delete ptr[e.pointerId];if(pts().length<2)pinch=null;if(!pts().length){last=null;stage.classList.remove('drag');}}
 stage.addEventListener('pointerup',up);stage.addEventListener('pointercancel',up);
 stage.addEventListener('click',function(e){if(dragged){e.stopPropagation();e.preventDefault();dragged=false;}},true);
+
+// ---------- auto-fit each step to the parts it talks about (lakonia/qa-tools#1950) ----------
+/* case-board auto-fit (lakonia/qa-tools#1950). Paste into every board, after its zoom code.
+   On every step change the map eases to fit the parts that step talks about, with a margin.
+   Spread-out parts -> zoom out; one small part -> zoom in (never past the board's max zoom).
+   His own zoom/pan is kept until the next step change. "Fit all" shows the whole diagram.
+
+   Wire it with one call after the board's zoom code exists:
+     CBFit.init({
+       svg: MAP,                       // the <svg> map
+       full: {x:0,y:0,w:W0,h:H0},      // whole-diagram box in viewBox units
+       aim: aim,                       // the board's eased setter: aim({x,y,w,h})
+       minW: ZMIN,                     // narrowest viewBox width allowed (max zoom in)
+       fitMin: W0/2.5,                 // optional: auto-fit never zooms in past this (default max(minW, full.w/2.5))
+       maxW: ZMAX,                     // widest viewBox width allowed (max zoom out)
+       parts: function(step){ return [svgElements] }  // what this step talks about
+     });
+   then call CBFit.step(step) at the end of render() (instead of the old fitMap),
+   and give the corner tools a button that calls CBFit.all().
+   A step can name its parts explicitly with step.fit = ['nodeId', ...] or a CSS selector string;
+   the board's parts() function should honour that first, then fall back to what the step highlights.
+   An empty list (intro, "all" steps) fits the whole diagram. */
+(function(){
+  var C=null;
+  function box(els){
+    var svg=C.svg,inv=svg.getScreenCTM();if(!inv)return null;inv=inv.inverse();
+    var x0=1e9,y0=1e9,x1=-1e9,y1=-1e9,n=0;
+    els.forEach(function(el){
+      if(!el||!el.getBBox)return;var b;try{b=el.getBBox();}catch(e){return;}
+      if(!b||(!b.width&&!b.height))return;var m=el.getScreenCTM();if(!m)return;m=inv.multiply(m);
+      [[b.x,b.y],[b.x+b.width,b.y],[b.x,b.y+b.height],[b.x+b.width,b.y+b.height]].forEach(function(p){
+        var q=svg.createSVGPoint();q.x=p[0];q.y=p[1];q=q.matrixTransform(m);
+        x0=Math.min(x0,q.x);y0=Math.min(y0,q.y);x1=Math.max(x1,q.x);y1=Math.max(y1,q.y);});n++;});
+    return n?{x:x0,y:y0,w:x1-x0,h:y1-y0}:null;
+  }
+  function view(b,whole){
+    var r=C.svg.getBoundingClientRect(),ar=(r.width>10&&r.height>10)?r.width/r.height:C.full.w/C.full.h;
+    var m=whole?0.02*Math.max(b.w,b.h):Math.max(24,0.08*Math.max(b.w,b.h));
+    var w=b.w+2*m,h=b.h+2*m;
+    if(w/h<ar)w=h*ar;else h=w/ar;               // match the map's on-screen shape so nothing is cut
+    var lo=C.fitMin||Math.max(C.minW,C.full.w/2.5);var f=1;if(w<lo)f=lo/w;if(w>C.maxW)f=C.maxW/w;w*=f;h*=f;
+    return {x:b.x+b.w/2-w/2,y:b.y+b.h/2-h/2,w:w,h:h};
+  }
+  function els(step){
+    var a=[];try{a=C.parts(step)||[];}catch(e){a=[];}
+    return Array.prototype.filter.call(a,function(e){return !!e;});
+  }
+  var CBFit={
+    init:function(cfg){C=cfg;window.addEventListener('resize',function(){if(CBFit.cur!==undefined)CBFit.step(CBFit.cur,true);});},
+    cur:undefined,last:[],
+    step:function(step,quiet){
+      if(!C)return;CBFit.cur=step;var e=els(step);CBFit.last=e;
+      var b=e.length?box(e):null;C.aim(view(b||C.full,!b));
+    },
+    all:function(){if(!C)return;CBFit.last=[];C.aim(view(C.full,true));},
+    box:function(e){return box(e);}
+  };
+  window.CBFit=CBFit;
+})();
+function fitAim(v){Z=1;PX=0;PY=0;setVB([v.x,v.y,v.w,v.h]);$('zreset').disabled=true;$('zin').disabled=false;$('zout').disabled=false;}
+function fitIds(st){if(st.fit)return st.fit.slice();var a=(st.add||[]).concat((st.nt||[]).map(function(n){return n[0];})).concat(st.f||[]);if(st.core||(st.people&&!a.length))return [];return a;}
+CBFit.init({svg:svg,full:{x:BX,y:BY-10,w:BW,h:BH+230},aim:fitAim,minW:BW/8,maxW:BW*2,parts:function(st){if(fit||T.indexOf(st)<INTRO)return [];var out=[];fitIds(st).forEach(function(id){if(PE[id])out.push(PE[id]);else if(SE[id]){out.push(SE[id]);if(PE[S[id][0]])out.push(PE[S[id][0]]);if(PE[S[id][1]])out.push(PE[S[id][1]]);}});return out;}});
 function layout(){$('fit').textContent=fit?'This step':'Whole board';}
 function go(d){i=Math.max(0,Math.min(T.length-1,i+d));if(i>0&&!keyTouched&&typeof showKey==='function'&&keyOn){keyOn=false;showKey();}render();}
 $('next').onclick=function(){go(1)};
 $('prev').onclick=function(){go(-1)};
-$('fit').onclick=function(){fit=!fit;layout();focus(lastIds,true);};
+$('fit').onclick=function(){fit=!fit;layout();CBFit.step(T[i]);};
 document.addEventListener('keydown',function(e){if(/TEXTAREA|INPUT/.test((e.target||{}).tagName||''))return;if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1);}if(e.key==='ArrowLeft'){e.preventDefault();go(-1);}});
-window.addEventListener('resize',function(){focus(lastIds,lastAll);if(T[i].intro)introLayout(T[i].intro);});
+window.addEventListener('resize',function(){if(T[i].intro)introLayout(T[i].intro);});
 layout();render();
 // ---------- key ----------
 var key=$('key'),KS=[['per','Person'],['fam','Family, as a group'],['co','Company'],['listed','Listed company'],['gov','Government'],['team','Group of people'],['place','Place'],['tech','Technology'],['fund','Fund'],['globe','Country']];

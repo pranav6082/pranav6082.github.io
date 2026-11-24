@@ -109,7 +109,7 @@ ol.chs{margin:4px 0 0;padding-left:22px}ol.chs li{margin:0 0 14px;font-size:18px
  <aside id="mapcol">
   <div id="card"><b>Where clean food starts</b><small>One organic dairy, followed one question at a time: soil, farmer income, and why two people built it</small></div>
   <svg id="board" viewBox="60 80 640 520" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Board: Akshayakalpa, its founders, its farms and its money"></svg>
-  <div class="zbar" id="zbar"><button id="zout" aria-label="Zoom out">−</button><button id="zin" aria-label="Zoom in">+</button><button id="zreset">Reset</button></div>
+  <div class="zbar" id="zbar"><button id="zout" aria-label="Zoom out">−</button><button id="zin" aria-label="Zoom in">+</button><button id="zreset">Reset</button><button id="zall" aria-label="Show the whole board">All</button></div>
  </aside>
 </div>
 <script>
@@ -164,7 +164,7 @@ var T=[
   "For comparison, the government's survey of farm households for 2018-19 put average income at ₹10,218 a month.",
   "=In his words · voice chat with Gemini, 3 Nov 2026, 6:34 am|So that's revenue, right? But again, right, their main cost is they have to pay out farmers."],
   led:['q','And then farmer payout would be how much? 38 crore?','Voice chat with Gemini, 3 Nov 2026, 6:38 am'],add:['fam','x3','g1','g2']},
- {chap:'Chapter 3 of 4 · What a farmer earns',h:'Where the money goes',vb:3,ask:['He asked','And then farmer payout would be how much? 38 crore?','Voice chat with Gemini, 3 Nov 2026, 6:38 am'],p:[
+ {chap:'Chapter 3 of 4 · What a farmer earns',h:'Where the money goes',fit:['g3', 'co', 'fam', 'x3'],vb:3,ask:['He asked','And then farmer payout would be how much? 38 crore?','Voice chat with Gemini, 3 Nov 2026, 6:38 am'],p:[
   "He worked it out himself, out loud:",
   "=In his words · voice chat with Gemini, 3 Nov 2026|So out of 60 crore that is coming in, 36 is going to farmers. Rest is 24.",
   "That 60% share is an estimate, not a figure the company has published. What Shashi has said is the rule behind it:",
@@ -180,7 +180,7 @@ var T=[
   "Milk is chilled near the farm, then goes to one of three plants, the biggest at Tiptur. It reaches a Bangalore home in about 24 hours. Shashi says the usual is closer to 96. About 40% now sells through quick-commerce apps.",
   "=In his words · voice chat with Gemini, 3 Nov 2026, 6:50 am|So they have only one processing plant, right? They don't have like multiple?"],
   led:['q','So, uh, so you’re saying so there is a specific location where everything comes together? And in and around there, there are about a thousand farmers, so like a van goes through those thousand farmers and collects?','Voice chat with Gemini, 3 Nov 2026, 7:02 am'],add:['plant','homes','x5','x6','g4']},
- {chap:'Chapter 3 of 4 · What a farmer earns',h:'The whole chain',vb:3,ask:['He asked','So, uh, so you’re saying so there is a specific location where everything comes together? And in and around there, there are about a thousand farmers, so like a van goes through those thousand farmers and collects?','Voice chat with Gemini, 3 Nov 2026, 7:02 am'],p:[
+ {chap:'Chapter 3 of 4 · What a farmer earns',h:'The whole chain',fit:['g5', 'fam', 'plant', 'homes', 'x5', 'x6'],vb:3,ask:['He asked','So, uh, so you’re saying so there is a specific location where everything comes together? And in and around there, there are about a thousand farmers, so like a van goes through those thousand farmers and collects?','Voice chat with Gemini, 3 Nov 2026, 7:02 am'],p:[
   "Not quite one van. The chain runs in steps. The farm. A local chiller, where the milk is cooled and tested. Tankers that bring it from the chillers to the plant.",
   "Then processing at the plant, dispatch to the edge of the city, and from there to homes."],
   led:['q','And they say Akshayakalpa.org, right? So, but again, they are VC-backed. So, what does it mean? I mean, what does it mean?','Voice chat with Gemini, 3 Nov 2026, 7:47 am'],add:['g5']},
@@ -192,13 +192,13 @@ var T=[
   "Then bigger funds: Rainmatter from 2020; BII, the UK government's development investor, in 2022; A91 Partners in 2024; and ABC Impact, linked to Singapore's Temasek, leading a ₹175 crore round in 2026.",
   "Each new city cluster took about seven years to turn a profit, so the money had to last that long."],
   led:['q','No, I mean, so what’s the game here? What’s the like overall game of the company from what he has mentioned in the interviews from his own mouth?','Voice chat with Gemini, 3 Nov 2026, 8:49 am'],add:['rain','bii','a91','abc','m4','m5','m6','m7']},
- {chap:'Chapter 3 of 4 · What a farmer earns',h:'What is the game?',vb:3,ask:['He asked','No, I mean, so what’s the game here? What’s the like overall game of the company from what he has mentioned in the interviews from his own mouth?','Voice chat with Gemini, 3 Nov 2026, 8:49 am'],p:[
+ {chap:'Chapter 3 of 4 · What a farmer earns',h:'What is the game?',fit:['fam', 'co', 'x3'],vb:3,ask:['He asked','No, I mean, so what’s the game here? What’s the like overall game of the company from what he has mentioned in the interviews from his own mouth?','Voice chat with Gemini, 3 Nov 2026, 8:49 am'],p:[
   "The AI kept answering with the vision. He wanted the game: what has to work for everything else to work. He answered it himself:",
   "=In his words · voice chat with Gemini, 3 Nov 2026, 9:06 am|The core loop, what he's saying is everything is tied to the farmer economics.",
   "He had said much the same the day before:",
   "=In his words · spoken note, 2 Nov 2026, 1:52 pm|first it has to make economical sense for their partners first. So their partners are farmers. So farmers, it has to make economical sense first and then for them it has to make economical sense"],
   led:['p','Next: how the threads tie together.'],add:[]},
- {chap:'Chapter 3 of 4 · What a farmer earns',h:'Why the kite has to work',vb:5,p:[
+ {chap:'Chapter 3 of 4 · What a farmer earns',h:'Why the kite has to work',fit:['x7', 'x1', 'soil', 'farm', 'fam'],vb:5,p:[
   "=In his words · voice chat with Gemini, 3 Nov 2026, 9:11 am|Right, so that's why I was saying, right? That it's fundamentally about supply. And for the fundamental of the supply, the kite has to work.",
   "So the threads tie together. The soil keeps the farm alive, the farm pays the family, and only a farm that pays keeps sending milk.",
   "=In his words · voice chat with Gemini, 3 Nov 2026, 9:12 am|That supply kite is there. Then you could build value-added products, etc. etc. on top."],
@@ -304,16 +304,77 @@ function render(){var t=T[i],h='';
  document.getElementById('prev').disabled=i===0;document.getElementById('next').disabled=i===T.length-1;
  if(i===T.length-1){var mo=document.createElement('p');mo.className='more';mo.innerHTML='<a href="../reliance/">← Previous article: how one oil company came to do everything</a>';document.getElementById('nar').appendChild(mo);}
  document.getElementById('sIn').scrollTop=0;
- V0=VB[t.vb||1];V=V0.slice();setV();}
+ CBFit.step(t);}
 document.getElementById('prev').onclick=function(){if(i>0){i--;render();}};
 document.getElementById('next').onclick=function(){if(i<T.length-1){i++;render();}};
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')document.getElementById('next').click();if(e.key==='ArrowLeft')document.getElementById('prev').click();});
 // zoom and pan on the board
 function setV(){svg.setAttribute('viewBox',V.join(' '));}
-function zoom(f){var cx=V[0]+V[2]/2,cy=V[1]+V[3]/2;V[2]*=f;V[3]*=f;V[0]=cx-V[2]/2;V[1]=cy-V[3]/2;setV();}
+var TG=null,RAF=0;function aim(v){TG=[v.x,v.y,v.w,v.h];if(!RAF)RAF=requestAnimationFrame(tick);}
+function tick(){RAF=0;if(!TG)return;var d=0;V=V.map(function(x,j){var n=x+(TG[j]-x)*0.2;d=Math.max(d,Math.abs(TG[j]-n));return n;});if(d<0.4){V=TG.slice();TG=null;}setV();if(TG)RAF=requestAnimationFrame(tick);}
+function zoom(f){TG=null;var cx=V[0]+V[2]/2,cy=V[1]+V[3]/2;V[2]*=f;V[3]*=f;V[0]=cx-V[2]/2;V[1]=cy-V[3]/2;setV();}
 document.getElementById('zin').onclick=function(){zoom(.8);};document.getElementById('zout').onclick=function(){zoom(1.25);};
-document.getElementById('zreset').onclick=function(){V=V0.slice();setV();};
-var drag=null;svg.addEventListener('pointerdown',function(e){drag=[e.clientX,e.clientY];svg.setPointerCapture(e.pointerId);});
+// auto-fit each step to the parts it talks about (lakonia/qa-tools#1950)
+/* case-board auto-fit (lakonia/qa-tools#1950). Paste into every board, after its zoom code.
+   On every step change the map eases to fit the parts that step talks about, with a margin.
+   Spread-out parts -> zoom out; one small part -> zoom in (never past the board's max zoom).
+   His own zoom/pan is kept until the next step change. "Fit all" shows the whole diagram.
+
+   Wire it with one call after the board's zoom code exists:
+     CBFit.init({
+       svg: MAP,                       // the <svg> map
+       full: {x:0,y:0,w:W0,h:H0},      // whole-diagram box in viewBox units
+       aim: aim,                       // the board's eased setter: aim({x,y,w,h})
+       minW: ZMIN,                     // narrowest viewBox width allowed (max zoom in)
+       fitMin: W0/2.5,                 // optional: auto-fit never zooms in past this (default max(minW, full.w/2.5))
+       maxW: ZMAX,                     // widest viewBox width allowed (max zoom out)
+       parts: function(step){ return [svgElements] }  // what this step talks about
+     });
+   then call CBFit.step(step) at the end of render() (instead of the old fitMap),
+   and give the corner tools a button that calls CBFit.all().
+   A step can name its parts explicitly with step.fit = ['nodeId', ...] or a CSS selector string;
+   the board's parts() function should honour that first, then fall back to what the step highlights.
+   An empty list (intro, "all" steps) fits the whole diagram. */
+(function(){
+  var C=null;
+  function box(els){
+    var svg=C.svg,inv=svg.getScreenCTM();if(!inv)return null;inv=inv.inverse();
+    var x0=1e9,y0=1e9,x1=-1e9,y1=-1e9,n=0;
+    els.forEach(function(el){
+      if(!el||!el.getBBox)return;var b;try{b=el.getBBox();}catch(e){return;}
+      if(!b||(!b.width&&!b.height))return;var m=el.getScreenCTM();if(!m)return;m=inv.multiply(m);
+      [[b.x,b.y],[b.x+b.width,b.y],[b.x,b.y+b.height],[b.x+b.width,b.y+b.height]].forEach(function(p){
+        var q=svg.createSVGPoint();q.x=p[0];q.y=p[1];q=q.matrixTransform(m);
+        x0=Math.min(x0,q.x);y0=Math.min(y0,q.y);x1=Math.max(x1,q.x);y1=Math.max(y1,q.y);});n++;});
+    return n?{x:x0,y:y0,w:x1-x0,h:y1-y0}:null;
+  }
+  function view(b,whole){
+    var r=C.svg.getBoundingClientRect(),ar=(r.width>10&&r.height>10)?r.width/r.height:C.full.w/C.full.h;
+    var m=whole?0.02*Math.max(b.w,b.h):Math.max(24,0.08*Math.max(b.w,b.h));
+    var w=b.w+2*m,h=b.h+2*m;
+    if(w/h<ar)w=h*ar;else h=w/ar;               // match the map's on-screen shape so nothing is cut
+    var lo=C.fitMin||Math.max(C.minW,C.full.w/2.5);var f=1;if(w<lo)f=lo/w;if(w>C.maxW)f=C.maxW/w;w*=f;h*=f;
+    return {x:b.x+b.w/2-w/2,y:b.y+b.h/2-h/2,w:w,h:h};
+  }
+  function els(step){
+    var a=[];try{a=C.parts(step)||[];}catch(e){a=[];}
+    return Array.prototype.filter.call(a,function(e){return !!e;});
+  }
+  var CBFit={
+    init:function(cfg){C=cfg;window.addEventListener('resize',function(){if(CBFit.cur!==undefined)CBFit.step(CBFit.cur,true);});},
+    cur:undefined,last:[],
+    step:function(step,quiet){
+      if(!C)return;CBFit.cur=step;var e=els(step);CBFit.last=e;
+      var b=e.length?box(e):null;C.aim(view(b||C.full,!b));
+    },
+    all:function(){if(!C)return;CBFit.last=[];C.aim(view(C.full,true));},
+    box:function(e){return box(e);}
+  };
+  window.CBFit=CBFit;
+})();
+CBFit.init({svg:svg,full:{x:VB[7][0],y:VB[7][1],w:VB[7][2],h:VB[7][3]},aim:aim,minW:VB[7][2]/8,fitMin:VB[1][2],maxW:VB[7][2]*1.5,parts:function(t){if(T.indexOf(t)<2)return [];return (t.fit||t.add).map(function(id){return E[id]&&E[id][0];});}});
+document.getElementById('zreset').onclick=function(){CBFit.step(T[i]);};document.getElementById('zall').onclick=function(){CBFit.all();};
+var drag=null;svg.addEventListener('pointerdown',function(e){TG=null;drag=[e.clientX,e.clientY];svg.setPointerCapture(e.pointerId);});
 svg.addEventListener('pointermove',function(e){if(!drag)return;var r=svg.getBoundingClientRect(),k=Math.max(V[2]/r.width,V[3]/r.height);V[0]-=(e.clientX-drag[0])*k;V[1]-=(e.clientY-drag[1])*k;drag=[e.clientX,e.clientY];setV();});
 svg.addEventListener('pointerup',function(){drag=null;});
 // draggable split between story and board
