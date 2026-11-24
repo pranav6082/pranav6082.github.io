@@ -180,7 +180,7 @@ button:disabled{opacity:.35;cursor:default}
 </main>
 <aside id="mapcol">
  <div id="stage"><svg id="board" xmlns="http://www.w3.org/2000/svg" viewBox="-170 -120 1630 1080" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Evidence board"></svg><svg id="intro" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -10 640 450" preserveAspectRatio="xMidYMid meet" role="img" aria-label="People form entities; people pass, the entity stays"></svg></div>
- <div id="icard"><img src="og-card-v2.png" width="1200" height="630" alt="What drives the builders. People, what drives them, and how that shapes who builds India."></div><div class="zbar" role="group" aria-label="Map zoom"><button id="zout" aria-label="Zoom out">−</button><button id="zin" aria-label="Zoom in">+</button><button id="zreset" aria-label="Reset zoom">Reset</button></div><div class="mapbar"><button id="keyb">Key</button><button id="fit">Whole board</button></div>
+ <div id="icard"><img src="og-card-v2.png" width="1200" height="630" alt="What drives the builders. People, what drives them, and how that shapes who builds India."></div><div class="zbar" id="ztools" role="group" aria-label="Map zoom"><button id="zout" aria-label="Zoom out">−</button><button id="zin" aria-label="Zoom in">+</button><button id="zreset" aria-label="Reset zoom">Reset</button></div><div class="mapbar"><button id="keyb">Key</button><button id="fit">Whole board</button></div>
 </aside>
 </div>
 <div id="key" class="hide"></div>
@@ -1517,12 +1517,18 @@ stage.addEventListener('click',function(e){if(dragged){e.stopPropagation();e.pre
     return n?{x:x0,y:y0,w:x1-x0,h:y1-y0}:null;
   }
   function view(b,whole){
-    var r=C.svg.getBoundingClientRect(),ar=(r.width>10&&r.height>10)?r.width/r.height:C.full.w/C.full.h;
+    var r=C.svg.getBoundingClientRect();
+    // keep the parts clear of the corner zoom tools: reserve the band they cover at the top or bottom of the map
+    var t=C.tools||document.getElementById('ztools'),pad=0,low=false;
+    if(t&&r.height>10){var q=t.getBoundingClientRect();if(q.height&&q.bottom>r.top&&q.top<r.bottom&&q.right>r.left&&q.left<r.right){
+      if(q.top<r.top+r.height/2)pad=Math.min(r.height*0.3,q.bottom-r.top+6);else{low=true;pad=Math.min(r.height*0.3,r.bottom-q.top+6);}}}
+    var ha=r.height-pad,ar=(r.width>10&&ha>10)?r.width/ha:C.full.w/C.full.h;
     var m=whole?0.02*Math.max(b.w,b.h):Math.max(24,0.08*Math.max(b.w,b.h));
     var w=b.w+2*m,h=b.h+2*m;
     if(w/h<ar)w=h*ar;else h=w/ar;               // match the map's on-screen shape so nothing is cut
     var lo=C.fitMin||Math.max(C.minW,C.full.w/2.5);var f=1;if(w<lo)f=lo/w;if(w>C.maxW)f=C.maxW/w;w*=f;h*=f;
-    return {x:b.x+b.w/2-w/2,y:b.y+b.h/2-h/2,w:w,h:h};
+    var top=ha>10?pad*h/ha:0;                   // the reserved band, in diagram units
+    return {x:b.x+b.w/2-w/2,y:b.y+b.h/2-h/2-(low?0:top),w:w,h:h+top};
   }
   function els(step){
     var a=[];try{a=C.parts(step)||[];}catch(e){a=[];}
