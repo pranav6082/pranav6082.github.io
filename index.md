@@ -19,18 +19,11 @@ image: /og-home.png
 .home .feed-label{margin:36px 0 0;padding-top:20px;border-top:1px solid #eaeef2;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8c959f}.home .feed-label + .entry{margin-top:12px}
 .home .hero{margin:26px 0 0}
 .home .hero img{display:block;width:100%;height:auto}
-.home .home-nav{display:flex;flex-wrap:wrap;gap:0 24px;margin:28px 0 0;padding-top:8px;border-top:1px solid #eaeef2}
-.home .home-nav a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
-.home .home-nav a:hover,.home .home-nav a:focus-visible{text-decoration-color:#1f2328}
 .home a:focus-visible{outline:2px solid #0a66c2;outline-offset:4px;border-radius:2px}
 </style>
 <div class="home">
 <header><h1>Pranav Garg</h1><p>Cofounder of <a href="https://koloapp.in">Kolo</a>, advisors for Indian homeowners building a home.</p><p>I do nearly all my product and business work through Claude, and write about what works and what doesn't.</p></header>
 <figure class="hero"><img src="assets/images/homepage-peek.webp" width="1120" height="509" alt="A hand lifts the edge of a dark surface, revealing the lighter material below." fetchpriority="high"></figure>
-<nav class="home-nav" aria-label="Homepage navigation">
-<a class="t" href="work/">Work</a>
-<a class="t" href="explorations/">Explorations</a>
-<a class="t" href="https://www.linkedin.com/in/pranav6082/">LinkedIn</a>
-</nav>
+{% include home-navigation.html %}
 <p class="foot"><a href="llms.txt">For AI agents</a></p>
 </div>
