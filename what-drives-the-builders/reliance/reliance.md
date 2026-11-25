@@ -2,13 +2,13 @@
 
 *What drives the builders, part 2. By Pranav Garg. Interactive version, with the board: https://pranav6082.github.io/what-drives-the-builders/reliance/*
 
-This is the text of every step on the interactive page, in order. Lines under "What I typed" or "What I said" are his own words as he typed or spoke them. "In this step" lists what the step adds to the board.
+This is the text of every step on the interactive page, in order. Lines under "What he typed" or "What he said" are his own words as he typed or spoke them. "In this step" lists what the step adds to the board.
 
 ## Introduction: How it started
 
-Reliance turns crude oil into chemicals at Jamnagar. It also sold us our AC, the cheapest one we could find, at Reliance Digital. The same name covers a refinery, grocery shops, a phone network, cricket on TV and now AI data centres.
+Reliance turns crude oil into chemicals at Jamnagar. It also sold Pranav an AC: "cheapest was in reliance digital" (his words, Gemini, 20 June). The same name covers a refinery, grocery shops, a phone network, cricket on TV and now AI data centres.
 
-I wanted to know how one oil company ends up doing all of that, and who actually decides what it does next.
+The trail below is his own questions from two nights: typed to Gemini on 19–20 June, spoken to Google AI Mode on 29 October.
 
 ## Introduction: How it started
 
@@ -20,9 +20,9 @@ This is two nights of asking, four months apart: typing in June, talking in Octo
 
 Reliance made its name turning oil into chemicals, then moved into shops.
 
-> **What I typed:** Why did reliance did retail after oil
+> **What he typed:** Why did reliance did retail after oil
 
-One night in June I asked Gemini why a company like that would start selling groceries. It gave four reasons: a hedge against oil prices and the climate shift, most Indian shops still being unorganised, steadier cash from shoppers than from business buyers, and stores that feed the phone business.
+Pranav typed this to Gemini on 19 June at 11:40 pm. It gave four reasons: a hedge against oil prices and the climate shift, most Indian shops still being unorganised, steadier cash from shoppers than from business buyers, and stores that feed the phone business.
 
 **In this step:**
 
@@ -33,9 +33,9 @@ One night in June I asked Gemini why a company like that would start selling gro
 
 Retail is big: about $44 billion a year, and groceries are most of it.
 
-> **What I typed:** Break down retail buisness in terms of revenue and business metrics in usd by category and brand names
+> **What he typed:** Break down retail buisness in terms of revenue and business metrics in usd by category and brand names
 
-All four reasons pointed at shoppers, so I wanted the size. The answer: $43.8 billion in revenue and 387 million registered customers, with groceries far ahead of everything else.
+His next question asked for the size. The answer: $43.8 billion in revenue and 387 million registered customers, with groceries far ahead of everything else.
 
 **In this step:**
 
@@ -45,7 +45,7 @@ All four reasons pointed at shoppers, so I wanted the size. The answer: $43.8 bi
 
 Reliance didn't simply buy Big Bazaar. It took over the store leases after the deal fell through.
 
-With that split in hand I ranked the brands myself: Smart Bazaar, Reliance Digital, Reliance Fresh. Mostly right, with Smart Bazaar first. Then I remembered Big Bazaar. The $3.4 billion deal for it fell through in 2022, so Reliance took about 800 store leases straight from the landlords.
+He then ranked the brands himself: "So biggest would be by revenue smart bazaar, reliance digital today, reliance fresh?" (Gemini, 19 June). Mostly right, with Smart Bazaar first. Next he asked: "Big bazaar was aquired by reliance?" The $3.4 billion deal for it fell through in 2022, so Reliance took about 800 store leases straight from the landlords.
 
 **In this step:**
 
@@ -55,9 +55,9 @@ With that split in hand I ranked the brands myself: Smart Bazaar, Reliance Digit
 
 JioMart is Reliance's online grocery store.
 
-> **What I typed:** And wtf is jiomart - who buys from it
+> **What he typed:** And wtf is jiomart - who buys from it
 
-I'd heard the name for years without knowing who actually uses it. Two groups do: shoppers in smaller towns hunting discounts, and corner shops that restock through it.
+The answer: two groups use it: shoppers in smaller towns hunting discounts, and corner shops that restock through it.
 
 **In this step:**
 
@@ -68,9 +68,9 @@ I'd heard the name for years without knowing who actually uses it. Two groups do
 
 Reliance isn't one company. It's a parent that owns separate businesses, and Jio is one of them.
 
-> **What I typed:** Jio is child company under ril?
+> **What he typed:** Jio is child company under ril?
 
-I'd come in asking about shops. If Jio sits under RIL, I wanted to know what else does.
+Until here his questions were about shops. This one moves to the parent company.
 
 **In this step:**
 
@@ -80,7 +80,7 @@ I'd come in asking about shops. If Jio sits under RIL, I wanted to know what els
 
 Under the parent sit separate empires: energy, retail, telecom, media and finance.
 
-I asked for the whole structure of RIL in one chart, and added what I knew: Jio Studios and the IPL team sit in the media business too.
+He asked for the whole structure of RIL in one chart, and added: "Jiostudio, ipl team is also there" (Gemini, 19 June). Both sit in the media business.
 
 **In this step:**
 
@@ -90,7 +90,7 @@ I asked for the whole structure of RIL in one chart, and added what I knew: Jio 
 
 A Reliance share is a share of the parent, RIL. Retail isn't listed on its own.
 
-> **What I typed:** Reliance retail is independently listed?
+> **What he typed:** Reliance retail is independently listed?
 Todays reliance share we buy is ril share?
 
 RIL owns most of Retail and most of Jio, so buying RIL is buying a slice of all of them.
@@ -105,7 +105,7 @@ RIL owns most of Retail and most of Jio, so buying RIL is buying a slice of all 
 
 Jio Financial was split off from RIL and listed on its own. It runs funds with BlackRock.
 
-I compared it with Zerodha: will it run mutual funds under its own name? Yes, with BlackRock, the American fund giant, as its partner.
+He compared it with Zerodha: "Jio finance then will have mutual Funds on their names? Like zerodha?" (Gemini, 19 June). Yes, with BlackRock, the American fund giant, as its partner.
 
 **In this step:**
 
@@ -115,11 +115,11 @@ I compared it with Zerodha: will it run mutual funds under its own name? Yes, wi
 
 ## Step 9 of 44: What binds it together
 
-I wanted the one idea that holds oil, shops, phones, cricket and funds together.
+The vision question: what holds oil, shops, phones, cricket and funds together.
 
-> **What I typed:** Why this business? Amd whats the overarching philosophy amd vision which binds all of this together
+> **What he typed:** Why this business? Amd whats the overarching philosophy amd vision which binds all of this together
 
-A vision tells me what the people at the top want. The answer: "What is good for India is good for Reliance." Each business goes after a bottleneck in daily life.
+The answer: "What is good for India is good for Reliance." Each business goes after a bottleneck in daily life.
 
 **In this step:**
 
@@ -134,7 +134,7 @@ A vision tells me what the people at the top want. The answer: "What is good for
 
 "Nation building" isn't a full answer. They still have to pick which ten things to do.
 
-> **What I typed:** Its not that simple right - nation building needs say thousand things - they have to select whcih 10 they do and sequence them
+> **What he typed:** Its not that simple right - nation building needs say thousand things - they have to select whcih 10 they do and sequence them
 
 The AI backed off, and called Reliance a careful allocator of money, with a filter for which ten.
 
@@ -144,9 +144,9 @@ The AI backed off, and called Reliance a careful allocator of money, with a filt
 
 ## Step 11 of 44: What binds it together
 
-My guess at their filter: huge money upfront, and everyone ends up using it. AI fits perfectly.
+His guess at their filter, in his words: "AI then fits perfectly- huge upfront costs plus everyone will use" (Gemini, 20 June, 12:16 am).
 
-Payments: everyone uses them, but they need no big money upfront. Highways and airports: big money, but not everyone uses them. This is my reading of their filter, not something they've said.
+Payments: everyone uses them, but they need no big money upfront. Highways and airports: big money, but not everyone uses them. This is his reading of their filter, not something Reliance has said.
 
 **In this step:**
 
@@ -157,9 +157,9 @@ Payments: everyone uses them, but they need no big money upfront. Highways and a
 
 For AI, Reliance would buy chips, make the power, build data centres and use someone else's model.
 
-> **What I typed:** So ai - buy chips, produce energy, build data centers, buy model - dont think they are building theor own model from scratch- app is theors anyways
+> **What he typed:** So ai - buy chips, produce energy, build data centers, buy model - dont think they are building theor own model from scratch- app is theors anyways
 
-TV fits my filter too: news, serials, streaming, cricket, Bollywood.
+He added TV: "TV - news, serials - old and ott, cricket, bollywood all very big yes" (Gemini, 20 June, 12:21 am).
 
 **In this step:**
 
@@ -181,7 +181,7 @@ Open models can sit in a data centre in India, be trained and improved, and be h
 
 Every one of these plans needs a huge number of people.
 
-> **What I typed:** All of this would require massive massive workforce- excluding ops work
+> **What he typed:** All of this would require massive massive workforce- excluding ops work
 
 The answer agreed that people are the choke point: money buys land and chips, not engineers. Reliance's plan is to lure Indian researchers home with computing power and to fund university programmes.
 
@@ -194,7 +194,7 @@ The answer agreed that people are the choke point: money buys land and chips, no
 
 Mukesh runs all of it with a very small group at the top.
 
-> **What I typed:** I mean not just the ai thing - while ril business- how does mukesh operates? Like Microsoft has cvp, jensen has 23 direct reports
+> **What he typed:** I mean not just the ai thing - while ril business- how does mukesh operates? Like Microsoft has cvp, jensen has 23 direct reports
 
 Microsoft has layers of vice presidents. Jensen Huang keeps a flat team. Reliance has a small circle, led by the owner.
 
@@ -207,7 +207,7 @@ Microsoft has layers of vice presidents. Jensen Huang keeps a flat team. Relianc
 
 Each business has hired CEOs, about seven in all, and they answer to Mukesh.
 
-> **What I typed:** Who all are these ceos and how many
+> **What he typed:** Who all are these ceos and how many
 
 Pankaj Pawar and Kiran Thomas at Jio, Jeyandran Venugopal at Retail, Hitesh Sethia at Jio Financial, Kevin Vaz and Kiran Mani in media.
 
@@ -220,7 +220,7 @@ Pankaj Pawar and Kiran Thomas at Jio, Jeyandran Venugopal at Retail, Hitesh Seth
 
 Anant, the youngest son, runs the energy side, oil included.
 
-Gemini suggested a follow-up and I tapped it: who runs the old oil business, if the heirs are focused on retail, tech and green energy?
+Gemini suggested a follow-up and he tapped it: who runs the old oil business, if the heirs are focused on retail, tech and green energy?
 
 **In this step:**
 
@@ -232,7 +232,7 @@ Gemini suggested a follow-up and I tapped it: who runs the old oil business, if 
 
 A family business hiring global tech people is a marriage that may not last.
 
-> **What I typed:** Tech ceos is where core indian folls meet global folks - so that marriage is interesting if it survives- these tech ceos are all new
+> **What he typed:** Tech ceos is where core indian folls meet global folks - so that marriage is interesting if it survives- these tech ceos are all new
 
 **In this step:**
 
@@ -243,7 +243,7 @@ A family business hiring global tech people is a marriage that may not last.
 
 Kiran Mani shows it: he ran JioStar's digital side, then left to run OpenAI in Asia.
 
-> **What I typed:** Kiran mani left for oai
+> **What he typed:** Kiran mani left for oai
 
 The answer called it the perfect case study of that fragile marriage.
 
@@ -256,9 +256,9 @@ The answer called it the perfect case study of that fragile marriage.
 
 ## Step 20 of 44: The people
 
-To keep people like that, the job has to feel like a mission for the country, plus world-class standing. That's my guess, not a fact.
+His guess, not a fact: to keep people like that, the job has to feel like a mission for the country, plus world-class standing.
 
-> **What I typed:** Nation building- like in arm forces - has to Probably be up for nation building plus high class in ceoness
+> **What he typed:** Nation building- like in arm forces - has to Probably be up for nation building plus high class in ceoness
 
 **In this step:**
 
@@ -269,9 +269,9 @@ To keep people like that, the job has to feel like a mission for the country, pl
 
 Reliance works alongside the government, as a kind of infrastructure partner.
 
-> **What I typed:** And how specifically is this tied with government and politics as nation building is theor core role
+> **What he typed:** And how specifically is this tied with government and politics as nation building is theor core role
 
-If nation building is the pitch, I wanted to see where the government comes in. The answer pointed to Digital India and the like.
+His premise, in his words: "nation building is theor core role" (Gemini, 20 June, 1:03 am). The answer pointed to Digital India and the like.
 
 **In this step:**
 
@@ -281,9 +281,9 @@ If nation building is the pitch, I wanted to see where the government comes in. 
 
 ## Step 22 of 44: Government and the gaps
 
-By my own filter, health, education and farming should be in. Reliance is barely there.
+In his words: "Heath and education are also what everyone needs plus has investments" (Gemini, 20 June, 1:03 am). Reliance is barely there.
 
-> **What I typed:** But ynlike retail and telecom - yhey are nil in education and heath and things like agri - farmers- sector wjere 400m people are
+> **What he typed:** But ynlike retail and telecom - yhey are nil in education and heath and things like agri - farmers- sector wjere 400m people are
 
 Everyone needs them, and they take big money. The answer: these run on trust and people, not spending. Farming turned political after the 2020–21 protests, health needs doctors, and an app can't replace a teacher.
 
@@ -294,9 +294,9 @@ Everyone needs them, and they take big money. The answer: these run on trust and
 
 ## Step 23 of 44: The other groups
 
-Next I put Reliance beside Adani, Tata and Birla, to compare how each group thinks.
+Next he put Reliance beside Adani, Tata and Birla, to compare their ideologies.
 
-> **What I typed:** Adani vs tata vs birlas in same axis compare ideologies etc whatever we have discussed in the thread
+> **What he typed:** Adani vs tata vs birlas in same axis compare ideologies etc whatever we have discussed in the thread
 
 Reliance owns the pipes everyone uses. Adani builds what the state needs. Tata is mostly owned by charitable trusts. Birla makes cement and aluminium.
 
@@ -309,7 +309,7 @@ Reliance owns the pipes everyone uses. Adani builds what the state needs. Tata i
 
 Real estate, banks, education, health: none of the big groups really owns them.
 
-> **What I typed:** Real estate? Banks? Education? Heath? These sectors are not covered/owned by these groups
+> **What he typed:** Real estate? Banks? Education? Heath? These sectors are not covered/owned by these groups
 
 Lining the groups up made the gaps show. The answer: real estate is local land and politics, banks run into the RBI's rules for business groups, and health and education come back to trust.
 
@@ -321,7 +321,7 @@ Lining the groups up made the gaps show. The answer: real estate is local land a
 
 Where Reliance goes, it comes for all of it.
 
-> **What I typed:** So reliance mostly in category they operate - they mostly come for everything, sheer dominance
+> **What he typed:** So reliance mostly in category they operate - they mostly come for everything, sheer dominance
 
 Even retail, small next to telecom and streaming, is big enough to set the market.
 
@@ -333,11 +333,11 @@ Even retail, small next to telecom and streaming, is big enough to set the marke
 
 ## Step 26 of 44: The other groups
 
-We bought our AC at Reliance Digital because it was the cheapest.
+Pranav bought an AC at Reliance Digital. It was the cheapest.
 
-> **What I typed:** We had to buy ac - cheapest was in reliance digital
+> **What he typed:** We had to buy ac - cheapest was in reliance digital
 
-The answer: it buys straight from makers, gets volume rebates, and earns the margin back elsewhere in the group. I said Amazon and Croma have the same advantages. Same pool, it said, different games: Amazon spends to win, Croma sells on service.
+The answer: it buys straight from makers, gets volume rebates, and earns the margin back elsewhere in the group. He said: "Amazon, chroma, others also will have all this advantages" (Gemini, 20 June, 1:27 am). Same pool, it said, different games: Amazon spends to win, Croma sells on service.
 
 **In this step:**
 
@@ -348,9 +348,9 @@ The answer: it buys straight from makers, gets volume rebates, and earns the mar
 
 It isn't just Reliance. No group, and not even the government, has made a dent in education, health and farming.
 
-> **What I typed:** I think not just teliance - no business group and even govt has not made a demt in education , health and agriculture
+> **What he typed:** I think not just teliance - no business group and even govt has not made a demt in education , health and agriculture
 
-I added this the next afternoon.
+He added this the next afternoon (20 June, 2:22 pm).
 
 **In this step:**
 
@@ -361,7 +361,7 @@ I added this the next afternoon.
 
 Jamnagar is where the refinery is, on the coast of Gujarat.
 
-That evening I looked it up on Maps, to see the refinery and whether it has a port. Maps showed a Jamnagar Port, and that is where the June trail ends.
+That evening (20 June, 8:05–8:11 pm) he searched Maps for the refinery and asked "jamnagar has a port?". Maps showed a Jamnagar Port, and that is where the June trail ends.
 
 **In this step:**
 
@@ -372,9 +372,9 @@ That evening I looked it up on Maps, to see the refinery and whether it has a po
 
 Each of Mukesh's three children runs one part: Anant energy, Isha retail, Akash telecom.
 
-> **What I said:** So, company: Anand Money has the oil business, Esha Money has the retail business, and Akash Money has the telecom business. Is that split correct?
+> **What he said:** So, company: Anand Money has the oil business, Esha Money has the retail business, and Akash Money has the telecom business. Is that split correct?
 
-Four months later I came back to it late at night, speaking instead of typing. Jio Platforms had listed the week before. The split was mostly right, names aside.
+Four months later, on 29 October at 3:21 am, he came back to it, speaking instead of typing. Jio Platforms had listed the week before. The split was mostly right, names aside.
 
 **In this step:**
 
@@ -388,7 +388,7 @@ Four months later I came back to it late at night, speaking instead of typing. J
 
 Media sits with Akash too: JioHotstar, Mumbai Indians, the film studio.
 
-> **What I said:** So then what about G Hotstar and Mumbai Zenith, the other sports franchise that is under all?
+> **What he said:** So then what about G Hotstar and Mumbai Zenith, the other sports franchise that is under all?
 
 **In this step:**
 
@@ -399,9 +399,9 @@ Media sits with Akash too: JioHotstar, Mumbai Indians, the film studio.
 
 Four people sit at the top: Mukesh and his three children.
 
-> **What I said:** Basically all Reliance businesses, we are trying to map them to these four individuals who hit them directly.
+> **What he said:** Basically all Reliance businesses, we are trying to map them to these four individuals who hit them directly.
 
-I wanted every business mapped to one of them.
+His framing: "We are saying there are these four individuals." (AI Mode, 29 Oct).
 
 **In this step:**
 
@@ -414,7 +414,7 @@ I wanted every business mapped to one of them.
 
 The children run the businesses. The money is Mukesh's.
 
-> **What I said:** Obviously everything is under Mukesh's money overall anyways.
+> **What he said:** Obviously everything is under Mukesh's money overall anyways.
 
 The answer agreed: he decides where the capital goes, and they run the operations.
 
@@ -423,25 +423,25 @@ The answer agreed: he decides where the capital goes, and they run the operation
 - **Mukesh Ambani** (person): runs RIL
 - **Reliance Industries** (listed company): RIL, the listed parent
 
-## Step 33 of 44: What I can buy
+## Step 33 of 44: What he can buy
 
 A Reliance share is still a share of RIL, the parent.
 
-> **What I said:** Now so when I buy the share of Reliance that is R I L's share is it
+> **What he said:** Now so when I buy the share of Reliance that is R I L's share is it
 
-The same question I'd asked in June.
+In June he had typed: "Todays reliance share we buy is ril share?"
 
 **In this step:**
 
 - **Reliance Industries** (listed company): RIL, the listed parent
 
-## Step 34 of 44: What I can buy
+## Step 34 of 44: What he can buy
 
 The new listing was Jio Platforms, the telecom and tech arm.
 
-> **What I said:** So the latest Jio IPO is is for what then?
+> **What he said:** So the latest Jio IPO is is for what then?
 
-RIL is listed. Jio Financial was split off and listed. This was the third.
+What he already had: "So I understand RIL is listed and then demerged independently Jio Finance is listed." (AI Mode, 29 Oct). This was the third.
 
 **In this step:**
 
@@ -451,9 +451,9 @@ RIL is listed. Jio Financial was split off and listed. This was the third.
 
 ## Step 35 of 44: How they feed each other
 
-I guessed wrong: media sits with Akash, not Anant. The data centres sit under Jio Platforms.
+His guess was wrong: media sits with Akash, not Anant. The data centres sit under Jio Platforms.
 
-> **What I said:** So this network 18 and the whole thing sits under Anant is it like Jio Hotstar and Jio cinemas
+> **What he said:** So this network 18 and the whole thing sits under Anant is it like Jio Hotstar and Jio cinemas
 
 **In this step:**
 
@@ -466,7 +466,7 @@ I guessed wrong: media sits with Akash, not Anant. The data centres sit under Ji
 
 Anant's energy business powers Akash's data centres. The brothers' businesses feed each other.
 
-> **What I said:** So, in geo platforms, we'll need energy for data centers. So, it's like this vertical is getting its services to that vertical.
+> **What he said:** So, in geo platforms, we'll need energy for data centers. So, it's like this vertical is getting its services to that vertical.
 
 Data centres need power, and the oil business is the energy business too.
 
@@ -479,7 +479,7 @@ Data centres need power, and the oil business is the energy business too.
 
 Jio Financial is not a bank. It's an investment company the RBI regulates.
 
-> **What I said:** Jiofin is for what then? Finance for what
+> **What he said:** Jiofin is for what then? Finance for what
 
 It does wallets, loans and investing, for people and for shops.
 
@@ -491,7 +491,7 @@ It does wallets, loans and investing, for people and for shops.
 
 Splitting finance off was a deliberate move, and games this big need a big reason.
 
-> **What I said:** why go all the way to create the independent structures demerge all of that I mean because these are like very very very very big games right so the objective also must have been like quite grand
+> **What he said:** why go all the way to create the independent structures demerge all of that I mean because these are like very very very very big games right so the objective also must have been like quite grand
 
 The reason given: a finance arm needs its own capital and carries loans, so splitting it off keeps that weight off RIL's books.
 
@@ -515,7 +515,7 @@ So they lend now, and the fund house with BlackRock grows over time, the way Zer
 
 The payments side is the Paytm game, with a much bigger group behind it.
 
-> **What I said:** And payments Bank is separate from nbfc arm. What's the payments Bank game So looks like this consumer thing is what paytm is
+> **What he said:** And payments Bank is separate from nbfc arm. What's the payments Bank game So looks like this consumer thing is what paytm is
 
 **In this step:**
 
@@ -526,7 +526,7 @@ The payments side is the Paytm game, with a much bigger group behind it.
 
 In UPI, Jio barely shows up. Its play is shops, not people.
 
-> **What I said:** if you take UPI payment share … Google Pay, PhonePe, and Paytm. So … where is sort of Jio this payments bank in that?
+> **What he said:** if you take UPI payment share … Google Pay, PhonePe, and Paytm. So … where is sort of Jio this payments bank in that?
 
 The QR codes and card machines at the counter, like Pine Labs.
 
@@ -540,7 +540,7 @@ The QR codes and card machines at the counter, like Pine Labs.
 
 Jio's payments are for walking into a store and scanning a code, not paying on a website.
 
-> **What I said:** So, the Jio thing that we're talking about is for all offline payments. Go to the store or the vendor, scan the QR.
+> **What he said:** So, the Jio thing that we're talking about is for all offline payments. Go to the store or the vendor, scan the QR.
 
 **In this step:**
 
@@ -551,9 +551,9 @@ Jio's payments are for walking into a store and scanning a code, not paying on a
 
 Cross-selling alone can't be the strategy. Each business has to make money on its own.
 
-> **What I said:** So it looks like cross-selling itself cannot be a business strategy, right?
+> **What he said:** So it looks like cross-selling itself cannot be a business strategy, right?
 
-I took a summary of everything to a fresh chat. Someone with Jio fibre may watch Hotstar, but won't keep buying more and more from the same family.
+He took a summary of everything to a fresh Gemini chat: "Someone using fiber sure can use Hotstar but necessarily they will not use more and more and more products of the ecosystem, right" (29 Oct).
 
 **In this step:**
 
@@ -563,9 +563,9 @@ I took a summary of everything to a fresh chat. Someone with Jio fibre may watch
 
 ## Step 44 of 44: Is the flywheel real
 
-My reading of the method: spend big upfront, price out the others, then lock customers into the whole family of businesses.
+His reading of the method, in his words: "high volume, upfront investment, and then pricing out the incumbents" (Gemini, 29 Oct).
 
-> **What I said:** The core thing in itself has to work. Plus as a standalone player, you will have a CAC problem there. This whole flywheel can severely reduce CAC
+> **What he said:** The core thing in itself has to work. Plus as a standalone player, you will have a CAC problem there. This whole flywheel can severely reduce CAC
 
 The AI agreed and laid it out in four stages: oil cash pays for the build, tens of billions go into fibre, towers and stores, prices drop low enough to squeeze rivals, and the services lock customers in. An AI agreeing doesn't make it true.
 
@@ -576,15 +576,15 @@ The AI agreed and laid it out in four stages: oil cash pays for the build, tens 
 
 ## Conclusion: Where the nights landed
 
-Two nights, and I ended up at the same family both times. Mukesh keeps the money. Anant, Isha and Akash each run a part. The hired CEOs run pieces of those parts, and some, like Kiran Mani, leave for OpenAI.
+Both nights ended at the same family. Mukesh keeps the money. Anant, Isha and Akash each run a part. The hired CEOs run pieces of those parts, and some, like Kiran Mani, leave for OpenAI.
 
 Oil paid for the shops, the phones and now the data centres, and the parts feed each other. It runs like a family business that happens to be one of the biggest in the country.
 
 ## Conclusion: What is still open
 
-What stays with me is what's missing. By their own filter, huge money upfront and everyone uses it, health, education and farming should be in. Around 400 million people work in farming. Reliance is barely there, and neither is any other group, or the government.
+What's missing: by his filter, huge money upfront and everyone uses it, health, education and farming should be in. Around 400 million people work in farming. In his words: "no business group and even govt has not made a demt in education , health and agriculture" (Gemini, 20 June, 2:22 pm).
 
-So I'm left with a question that isn't about Reliance. Who builds those, and what would make someone want to?
+That leaves a question that isn't about Reliance: who builds those, and what would make someone want to?
 
 [← Previous article: who builds India's trains, and who owns them](https://pranav6082.github.io/what-drives-the-builders/)
 
