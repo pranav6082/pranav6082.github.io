@@ -1,16 +1,16 @@
 ---
-title: "The factory I built, and why I shut it down"
+title: "The AI software factory I built, and why I shut it down"
 date: 2026-10-30
 description: "A system that turned every Slack and email request into a ticket and closed 618 of 867 in a couple of days, then burnt too many tokens."
 ---
 
-# The factory I built, and why I shut it down
+# The AI software factory I built, and why I shut it down
 
 *Pranav Garg, cofounder of Kolo. Posted on [LinkedIn](https://www.linkedin.com/in/pranav6082/).*
 
 All my product work is via Claude Code threads. My attempt: move from babysitting them → human-in-the-loop, autonomous, self-improving system: one that gets work to move with less of my involvement per task type.
 
-Around end of August I started building what I call the "factory"
+Around end of August I started building what I call the "AI software factory"
 
 It read Slack and email every 5 minutes, and every request became a GitHub issue with a follow-up date. It caught the messages I'd have missed.
 
